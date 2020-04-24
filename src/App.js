@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import UserApps from "./components/UserApps";
+import Interviews from "./components/Interviews";
 import "./App.css";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
       </Route>
       <Route path="/applications">
         <UserApps />
+        <Interviews />
       </Route>
     </Router>
   );
