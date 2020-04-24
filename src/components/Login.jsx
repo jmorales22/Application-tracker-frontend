@@ -55,36 +55,21 @@ class Login extends Component {
 
   render() {
 
-    const { email, password } = this.state;
 
     return (
       <div>
-          <h1>Login</h1>
-        <form onSubmit={(e) => this.handleSubmit(e)}>
-         
-          <input
-            type="text"
-            data-testid="messageText"
-            placeholder="Email"
-            onChange={this.handleChange}
-            name="email"
-            value={email}
-            required
-          />
-          <br/>
-          <input
-            type="text"
-            data-testid="messageText"
-            placeholder="Password"
-            onChange={this.handleChange}
-            name="password"
-            value={password}
-            required
-          />
-          <br/>
-          <button type="submit" data-testid="submitButton">
-            Submit
-          </button>
+        <h2>Login</h2>
+        <form action="/applications">
+          <label>
+            User Name
+            <input type="text" name="user_name" placeholder="username" />
+          </label>
+          <label>
+            Password
+            <input type="password" name="password" placeholder="password" />
+          </label>
+          <br />
+          <button type="submit">Register</button>
         </form>
       </div>
     );
