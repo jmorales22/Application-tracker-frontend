@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom';
 class UserApps extends Component {
     state = {
       apps: [],
+      user_id: '3'
     };
   
     async getData() {
-      const response = await fetch('http://localhost:2000/apps');
+      let user_id = this.state.user_id;
+      const response = await fetch(`http://localhost:2000/applications/${user_id}`);
       const data = await response.json();
       return data;
     };
