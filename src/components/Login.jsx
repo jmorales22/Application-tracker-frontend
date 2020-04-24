@@ -5,7 +5,7 @@ class Login extends Component {
     return (
       <div>
         <h2>Login</h2>
-        <form action="/user/signup" method="POST">
+        <form action="/applications">
           <label>
             User Name
             <input type="text" name="user_name" placeholder="username" />
