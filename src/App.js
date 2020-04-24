@@ -19,6 +19,7 @@ function App() {
       admin: "",
     },
   ];
+
   return (
     <LoginContext.Provider value={loggedIn[0]}>
       <Router>
