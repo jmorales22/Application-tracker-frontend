@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import NoData from "./NoData";
 
 class UserApps extends Component {
   state = {
@@ -28,28 +29,37 @@ class UserApps extends Component {
     let appsArray = this.state.apps;
 
     return (
-      <ul className="UserApp">
-        {appsArray.length > 0 ? (
-          appsArray.map((app) => (
+      <>
+        <h3> Your submitted application data:</h3>
+        <ul style={userApp}>
+          {appsArray.length > 0 ? (
+            appsArray.map((app) => (
+              <li>
+                City: {app.city}
+                <br />
+                Position: {app.position}
+                <br />
+                Postion description: {app.position_description}
+                <br />
+                Application Date: {app.application_date}
+                <br />
+                Offer Extended? {app.offer_extended}
+                <br />
+                <br />
+              </li>
+            ))
+          ) : (
             <li>
-              {app.city}
-              <br />
-              {app.position}
-              <br />
-              {app.position_description}
-              <br />
-              {app.application_date}
-              <br />
-              {app.offer_extended}
-              <br />
-              <br />
+              <NoData />
             </li>
-          ))
-        ) : (
-          <li>No Data</li>
-        )}
-      </ul>
+          )}
+        </ul>
+      </>
     );
   }
 }
+
+const userApp = {
+  listStyle: "none",
+};
 export default UserApps;
