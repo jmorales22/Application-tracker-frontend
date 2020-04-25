@@ -32,7 +32,7 @@ class Signup extends Component {
 
   handleSubmit = async (e) => {
     //e.preventDefault();
-
+    
     try {
     
     const { firstName, lastName, email, password, contact } = this.state;

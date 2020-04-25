@@ -11,6 +11,7 @@ import UserApps from "./components/UserApps";
 import Interviews from "./components/Interviews";
 import "./App.css";
 
+/*use context hook*/
 function App() {
   const loggedIn = [{
     status: "false",
