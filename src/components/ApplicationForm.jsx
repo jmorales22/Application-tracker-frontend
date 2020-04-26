@@ -34,7 +34,14 @@ class ApplicationForm extends Component {
     //e.preventDefault();
 
     try {
-      const { city, position, description, date, offer, public } = this.state;
+      const {
+        city,
+        position,
+        description,
+        date,
+        offer,
+        makePublic,
+      } = this.state;
 
       const data = {
         city: city,
@@ -42,10 +49,10 @@ class ApplicationForm extends Component {
         position_description: description,
         application_date: date,
         offer_extended: offer,
-        make_public: public,
+        make_public: makePublic,
       };
 
-      const url = "http://localhost:2000/";
+      const url = "http://localhost:2000/userapplications";
       const response = await postAPI(url, data);
 
       if (response.status === 200) {
@@ -60,7 +67,7 @@ class ApplicationForm extends Component {
   };
 
   render() {
-    const {} = this.state;
+    const { city, position, description, date, offer, makePublic } = this.state;
 
     return (
       <div>
@@ -68,54 +75,97 @@ class ApplicationForm extends Component {
         <form onSubmit={(e) => this.handleSubmit(e)}>
           <input
             type="text"
-            data-testid="messageText"
-            placeholder=""
+            placeholder="city"
             onChange={this.handleChange}
-            name=""
-            value={}
+            name="city"
+            value={city}
             required
           />
           <br />
           <input
             type="text"
-            data-testid="messageText"
-            placeholder=""
+            placeholder="position"
             onChange={this.handleChange}
-            name=""
-            value={}
+            name="position"
+            value={position}
             required
           />
           <br />
           <input
             type="text"
-            data-testid="messageText"
-            placeholder=""
+            placeholder="job description"
             onChange={this.handleChange}
-            name=""
-            value={}
+            name="description"
+            value={description}
             required
           />
           <br />
           <input
             type="text"
-            data-testid="messageText"
-            placeholder=""
+            placeholder="applied date"
             onChange={this.handleChange}
-            name=""
-            value={}
+            name="date"
+            value={date}
             required
           />
           <br />
-          <input
-            type="text"
-            data-testid="messageText"
-            placeholder=""
-            onChange={this.handleChange}
-            name=""
-            value={}
-            required
-          />
-          <br />
+          <label>
+            Job Offer?
+            <input
+              type="radio"
+              placeholder="job offer?"
+              onChange={this.handleChange}
+              name="offer"
+              value="Yes"
+              checked={offer === "Yes"}
+            />
+            Yes
+          </label>
+          <label>
+            <input
+              type="radio"
+              placeholder="job offer?"
+              onChange={this.handleChange}
+              name="offer"
+              value="No"
+              checked={offer === "No"}
+            />
+            No
+          </label>
+          <label>
+            <input
+              type="radio"
+              placeholder="job offer?"
+              onChange={this.handleChange}
+              name="offer"
+              value="Nothing yet"
+              checked={offer === "Nothing yet"}
+            />
+            Nothing Yet
+          </label>
+          <div>
+            <label>
+              Make Info Public?
+              <input
+                type="radio"
+                name="makePublic"
+                value="Yes"
+                checked={makePublic === "Yes"}
+                onChange={this.handleChange}
+              />
+              Yes
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="makePublic"
+                value="No"
+                checked={makePublic === "No"}
+                onChange={this.handleChange}
+              />
+              No
+            </label>
+          </div>
           <button type="submit" data-testid="submitButton">
             Submit
           </button>

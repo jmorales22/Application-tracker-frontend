@@ -9,13 +9,14 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import UserApps from "./components/UserApps";
 import Interviews from "./components/Interviews";
+import ApplicationForm from "./components/ApplicationForm";
 import "./App.css";
 
 function App() {
   const loggedIn = [
     {
       status: "false",
-      user_id: 0,
+      user_id: 4,
       admin: "",
     },
   ];
@@ -37,6 +38,9 @@ function App() {
         <Route path="/applications">
           <UserApps />
           <Interviews />
+        </Route>
+        <Route path="/applicationform">
+          <ApplicationForm />
         </Route>
       </Router>
       <TestComponent></TestComponent>

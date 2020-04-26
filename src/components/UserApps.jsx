@@ -5,7 +5,7 @@ import NoData from "./NoData";
 class UserApps extends Component {
   state = {
     apps: [],
-    user_id: "500",
+    user_id: "4",
   };
 
   async getData() {
