@@ -16,7 +16,6 @@ const postAPI = async (url, data) => {
 
 class ApplicationForm extends Component {
   state = {
-    company_id: "",
     city: "",
     position: "",
     position_description: "",
@@ -36,7 +35,6 @@ class ApplicationForm extends Component {
 
     try {
       const {
-        company,
         city,
         position,
         description,
@@ -46,7 +44,6 @@ class ApplicationForm extends Component {
       } = this.state;
 
       const data = {
-        company_id: company,
         city: city,
         position: position,
         position_description: description,
@@ -55,7 +52,7 @@ class ApplicationForm extends Component {
         make_public: makePublic,
       };
 
-      const url = "http://localhost:2000/userapplication";
+      const url = "http://localhost:2000/userapplications";
       const response = await postAPI(url, data);
 
       if (response.status === 200) {
@@ -70,29 +67,12 @@ class ApplicationForm extends Component {
   };
 
   render() {
-    const {
-      company,
-      city,
-      position,
-      description,
-      date,
-      offer,
-      makePublic,
-    } = this.state;
+    const { city, position, description, date, offer, makePublic } = this.state;
 
     return (
       <div>
         <h1>Complete your application information.</h1>
         <form onSubmit={(e) => this.handleSubmit(e)}>
-          <input
-            type="text"
-            placeholder="company"
-            onChange={this.handleChange}
-            name="company"
-            value={company}
-            required
-          />
-          <br />
           <input
             type="text"
             placeholder="city"
