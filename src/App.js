@@ -1,23 +1,24 @@
-import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import LoginContext from "./context/LoginContext";
-import TestComponent from "./components/TestComponent";
-import Intro from "./components/Intro";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Login from "./components/Login";
-import Signup from "./components/Signup";
-import UserApps from "./components/UserApps";
-import Interviews from "./components/Interviews";
-import ApplicationForm from "./components/ApplicationForm";
-import "./App.css";
+
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import LoginContext from './context/LoginContext';
+import TestComponent from './components/TestComponent';
+import Intro from './components/Intro';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Login from './components/Login';
+import Signup from './components/Signup';
+import UserApps from './components/UserApps';
+import Interviews from './components/Interviews';
+import InterviewsEntry from './components/InterviewsEntry';
+import './App.css';
 
 function App() {
   const loggedIn = [
     {
-      status: "false",
-      user_id: 4,
-      admin: "",
+      status: 'false',
+      user_id: 2,
+      admin: '',
     },
   ];
 
@@ -39,10 +40,10 @@ function App() {
           <UserApps />
           <Interviews />
         </Route>
-        <Route path="/applicationform">
-          <ApplicationForm />
+      <Route path="/interviewsEntry">
+        <InterviewsEntry/>
         </Route>
-      </Router>
+        </Router>
       <TestComponent></TestComponent>
     </LoginContext.Provider>
   );
