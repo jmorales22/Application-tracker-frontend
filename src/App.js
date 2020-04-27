@@ -9,13 +9,14 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import UserApps from './components/UserApps';
 import Interviews from './components/Interviews';
+import InterviewsEntry from './components/InterviewsEntry';
 import './App.css';
 
 function App() {
   const loggedIn = [
     {
       status: 'false',
-      user_id: 0,
+      user_id: 2,
       admin: '',
     },
   ];
@@ -38,7 +39,10 @@ function App() {
           <UserApps />
           <Interviews />
         </Route>
-      </Router>
+      <Route path="/interviewsEntry">
+        <InterviewsEntry/>
+        </Route>
+        </Router>
       <TestComponent></TestComponent>
     </LoginContext.Provider>
   );
