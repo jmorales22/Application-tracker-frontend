@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import '../App.css';
 
 const postAPI = async (url, data) => {
@@ -16,10 +16,10 @@ const postAPI = async (url, data) => {
 
 class InterviewsEntry extends Component {
   state = {
-    user_id: '',
-    application_id: '',
-    company_id: '',
+    // application_id: '',
+    // company_id: '',
     round: '',
+    interview_type:'',
     interview_date: '',
     interview_rating: '',
     interviewer: '',
@@ -27,46 +27,48 @@ class InterviewsEntry extends Component {
     follow_up_phone: '',
     follow_up_email: '',
     whiteboarding: '',
+    code_challenge:'',
     comments: '',
   };
 
-  handlechange = e => {
+  handleChange = (e) => {
     this.setState ({
       [e.target.name]: e.target.value,
     });
   };
 
-  handleSubmit = async e => {
-    e.preventDefault ();
-
+  handleSubmit = async (e) => {
+    // e.preventDefault ();
     try {
       const {
-        user_id,
-        application_id,
-        company_id,
+        // application_id,
+        // company_id,
         round,
-        interviewDate,
-        interviewRating,
+        interview_type,
+        interview_date,
+        interview_rating,
         interviewer,
-        followUpPerson,
-        followUpPhone,
-        followUpEmail,
+        follow_up_person,
+        follow_up_phone,
+        follow_up_email,
         whiteboarding,
+        code_challenge,
         comments,
       } = this.state;
 
       const data = {
-        user_id: user_id,
-        application_id: application_id,
-        company_id: company_id,
+        // application_id: application_id,
+        // company_id: company_id,
         round: round,
-        interview_date: interviewDate,
-        interview_rating: interviewRating,
+        interview_type: interview_type,
+        interview_date: interview_date,
+        interview_rating: interview_rating,
         interviewer: interviewer,
-        follow_up_person: followUpPerson,
-        follow_up_phone: followUpPhone,
-        follow_up_email: followUpEmail,
+        follow_up_person: follow_up_person,
+        follow_up_phone: follow_up_phone,
+        follow_up_email: follow_up_email,
         whiteboarding: whiteboarding,
+        code_challenge: code_challenge,
         comments: comments,
       };
 
@@ -79,64 +81,55 @@ class InterviewsEntry extends Component {
       if (response.status !== 200) {
         alert ('Unable to input entry. Please try again later.');
       }
-    } catch (err) {
+    } 
+    catch (err) {
       return err;
     }
-  };
+}
 
   render () {
     const {
-      user_id,
-      application_id,
-      company_id,
-      round,
-      interviewDate,
-      interviewRating,
-      interviewer,
-      followUpPerson,
-      followUpPhone,
-      followUpEmail,
-      whiteboarding,
-      comments,
+    //   application_id,
+    //   company_id,
+    round,
+    interview_type,
+    interview_date,
+    interview_rating,
+    interviewer,
+    follow_up_person,
+    follow_up_phone,
+    follow_up_email,
+    whiteboarding,
+    code_challenge,
+    comments
     } = this.state;
-
+    console.log(this.state);
     return (
       <div>
         <h1>Complete your interview information here:</h1>
-        <form onSubmit={e => this.handleSubmit (e)}>
+        <form onSubmit={(e) => this.handleSubmit (e)}>
+          
+          {/* <br />
           <input
             type="text"
-            data-testid="messageText"
-            placeholder="User's Name"
-            onChange={this.handleChange}
-            name="user"
-            value={user_id}
-            required
-          />
-          <br />
-          <input
-            type="text"
-            data-testid="messageText"
             placeholder="Was an application submitted?"
             onChange={this.handleChange}
-            name="application"
+            name="application_id"
             value={application_id}
             required
           />
           <br />
           <input
             type="text"
-            data-testid="messageText"
             placeholder="Company Name"
             onChange={this.handleChange}
-            name="company"
+            name="company_id"
             value={company_id}
             required
           />
-          <br />
+          <br /> */}
           <input
             type="text"
-            data-testid="messageText"
             placeholder="Interview Round"
             onChange={this.handleChange}
             name="round"
@@ -146,27 +139,33 @@ class InterviewsEntry extends Component {
           <br />
           <input
             type="text"
-            data-testid="messageText"
+            placeholder="What type of interview did you have?"
+            onChange={this.handleChange}
+            name="interview_type"
+            value={interview_type}
+            required
+          />
+          <br />
+          <input
+            type="text"
             placeholder="Date of Interview"
             onChange={this.handleChange}
-            name="interviewDate"
-            value={interviewDate}
+            name="interview_date"
+            value={interview_date}
             required
           />
           <br />
           <input
             type="text"
-            data-testid="messageText"
             placeholder="Rate the Interview"
             onChange={this.handleChange}
-            name="interviewRating"
-            value={interviewRating}
+            name="interview_rating"
+            value={interview_rating}
             required
           />
           <br />
           <input
             type="text"
-            data-testid="messageText"
             placeholder="Interviewer's Name?"
             onChange={this.handleChange}
             name="interviewer"
@@ -176,37 +175,33 @@ class InterviewsEntry extends Component {
           <br />
           <input
             type="text"
-            data-testid="messageText"
             placeholder="Contact to follow up with?"
             onChange={this.handleChange}
-            name="followUpPerson"
-            value={followUpPerson}
+            name="follow_up_person"
+            value={follow_up_person}
             required
           />
           <br />
           <input
             type="text"
-            data-testid="messageText"
             placeholder="Phone number for follow-up?"
             onChange={this.handleChange}
-            name="followUpPhone"
-            value={followUpPhone}
+            name="follow_up_phone"
+            value={follow_up_phone}
             required
           />
           <br />
           <input
             type="text"
-            data-testid="messageText"
             placeholder="Follow-up email?"
             onChange={this.handleChange}
-            name="followUpEmail"
-            value={followUpEmail}
+            name="follow_up_email"
+            value={follow_up_email}
             required
           />
           <br />
           <input
             type="text"
-            data-testid="messageText"
             placeholder="Was whiteboarding required?"
             onChange={this.handleChange}
             name="whiteboarding"
@@ -216,7 +211,15 @@ class InterviewsEntry extends Component {
           <br />
           <input
             type="text"
-            data-testid="messageText"
+            placeholder="Was there a code challenge?"
+            onChange={this.handleChange}
+            name="code_challenge"
+            value={code_challenge}
+            required
+          />
+          <br />
+          <input
+            type="text"
             placeholder="Add comments"
             onChange={this.handleChange}
             name="comments"
@@ -232,4 +235,5 @@ class InterviewsEntry extends Component {
     );
   }
 }
+
 export default InterviewsEntry;
