@@ -9,8 +9,7 @@ const postAPI = async (url, data) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(data),
-  })
-  .then((response) => response.json());
+  }).then((response) => response.json());
   console.log(response);
   return response;
 };
@@ -21,54 +20,51 @@ class Signup extends Component {
     lastName: "",
     email: "",
     password: "",
-    contact: ""
+    contact: "",
   };
 
-    handleChange = (e) => {
-      this.setState({
-          [e.target.name]: e.target.value
-      })
-  }
+  handleChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
 
   handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-    
-    const { firstName, lastName, email, password, contact } = this.state;
+      const { firstName, lastName, email, password, contact } = this.state;
 
-    const data = {
-      first_name: firstName,
-      last_name: lastName,
-      email: email,
-      user_password: password,
-      is_admin: 'no',
-      contact_me: contact
-    };
+      const data = {
+        first_name: firstName,
+        last_name: lastName,
+        email: email,
+        user_password: password,
+        is_admin: "no",
+        contact_me: contact
+      };
 
-    const url = 'http://localhost:2000/adduser';
-    const response = await postAPI(url, data);
+      const url = "http://localhost:2000/adduser";
+      const response = await postAPI(url, data);
 
-    if (response.status === 200) {
-      alert('Account Created');
+      if (response.status === 200) {
+        alert("Account Created");
+      }
+      if (response.status !== 200) {
+        alert("Unable to sign up. Please try again later or go to login page.");
+      }
+    } catch (err) {
+      return err;
     }
-    if (response.status !== 200) {
-      alert('Unable to sign up. Please try again later or go to login page.');
-    }
-  }
-  catch (err) {
-    return err;
-  }
   };
 
   render() {
-
     const { firstName, lastName, email, password, contact } = this.state;
 
     return (
       <div>
-          <h1>Sign Up Here!</h1>
-        <form onSubmit={(e) => this.handleSubmit(e)}>
+        <h1>Sign Up Here!</h1>
+        <form onSubmit={(e) => this.handleSubmit(e)} action="/login">
           <input
             type="text"
             data-testid="messageText"
@@ -78,7 +74,7 @@ class Signup extends Component {
             value={firstName}
             required
           />
-          <br/>
+          <br />
           <input
             type="text"
             data-testid="messageText"
@@ -88,7 +84,7 @@ class Signup extends Component {
             value={lastName}
             required
           />
-          <br/>
+          <br />
           <input
             type="text"
             data-testid="messageText"
@@ -98,7 +94,7 @@ class Signup extends Component {
             value={email}
             required
           />
-          <br/>
+          <br />
           <input
             type="text"
             data-testid="messageText"
@@ -108,20 +104,33 @@ class Signup extends Component {
             value={password}
             required
           />
-          <br/>
-          <input
-            type="text"
-            data-testid="messageText"
-            placeholder="Contact?"
-            onChange={this.handleChange}
-            name="contact"
-            value={contact}
-            required
-          />
-          <br/>
-          <button type="submit" data-testid="submitButton">
-            Submit
-          </button>
+          <br />
+          <div className="form-check">
+            <label>
+              Make Contact Info Public?
+              <input
+                type="radio"
+                name="contact"
+                value="Yes"
+                checked={contact === "Yes"}
+                onChange={this.handleChange}
+                className="form-check-input"
+              />
+              Yes
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="contact"
+                value="No"
+                checked={contact === "No"}
+                onChange={this.handleChange}
+                className="form-check-input"
+              />
+              No
+            </label>
+          </div>
+          <button type="submit">SignUp!</button>
         </form>
       </div>
     );
