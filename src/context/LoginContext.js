@@ -1,38 +1,40 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-const LoginContext = React.createContext()
+const LoginContext = React.createContext({});
+const LoginConsumer = LoginContext.Consumer;
 
 class LoginProvider extends Component {
   // Context state
   state = {
-    status: "false",
-    user_id: 0,
-    admin: ""
-  }
+    user: {
+      admin: false,
+      status: false,
+      user_id: null,
+    },
+  };
 
   // Method to update state
-  setUser = user_id => {
-    this.setState(prevState => ({ user_id }))
-  }
+  setUser = (user) => {
+    this.setState((prevState) => ({ ...prevState, user }));
+  };
 
   render() {
-    const { children } = this.props
-    const { user_id } = this.state
-    const { setUser } = this
+    const { children } = this.props;
+    const { user } = this.state;
+    const { setUser } = this;
 
     return (
       <LoginContext.Provider
         value={{
-          user_id,
+          user,
           setUser,
         }}
       >
         {children}
       </LoginContext.Provider>
-    )
+    );
   }
 }
 
-export default LoginContext
-
-export { LoginProvider }
+export default LoginContext;
+export { LoginProvider, LoginConsumer };

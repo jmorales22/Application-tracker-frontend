@@ -1,29 +1,19 @@
-import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import LoginContext from "./context/LoginContext";
-import Intro from "./components/Intro";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Login from "./components/Login";
-import Signup from "./components/Signup";
-import UserApps from "./components/UserApps";
-import TestComponent from "./components/TestComponent";
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { LoginProvider } from './context/LoginContext';
+import ProtectedRoute from './components/ProtectedRoute';
+import Header from './components/Header';
+import Login from './components/Login';
+import Signup from './components/Signup';
+import UserApps from './components/UserApps';
 
-/*use context hook?*/
 function App() {
-  const loggedIn = {
-    status: "false",
-    user_id: 0,
-    admin: ""
-  };
-    return (
-      <div>
-        <LoginContext.Provider value={loggedIn}>
-        <Router>
+  return (
+    <LoginProvider>
+      <Router>
+        <Switch>
           <Route exact path="/">
             <Header />
-            <Intro />
-            <Footer />
           </Route>
           <Route exact path="/login">
             <Login />
@@ -31,14 +21,11 @@ function App() {
           <Route path="/signup">
             <Signup />
           </Route>
-          <Route path="/applications">
-            <UserApps />
-          </Route>
-        </Router>
-        <TestComponent></TestComponent>
-        </LoginContext.Provider>
-      </div>
-    );
-  }
+          <ProtectedRoute path="/applications" component={UserApps} />
+        </Switch>
+      </Router>
+    </LoginProvider>
+  );
+}
 
 export default App;
