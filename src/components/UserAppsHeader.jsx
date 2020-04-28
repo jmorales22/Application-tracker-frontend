@@ -3,7 +3,7 @@ import React from "react";
 function UserAppsHeader() {
   const handleClick = (e) => {
     e.preventDefault();
-    window.location.href = "http://localhost:3000/";
+    window.location.href = "http://localhost:3000/applicationform";
   };
   // const handleClick2 = (e) => {
   //   e.preventDefault();
