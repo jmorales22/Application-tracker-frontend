@@ -24,42 +24,22 @@ class UserInterviews extends Component {
     let appsArray = this.state.apps;
 
     return (
-      <ul className="UserInterviews">
-        {appsArray.length > 0 ? (
-          appsArray.map((app) => (
-            <li>
-              {app.user_id}
-              <br />
-              {app.application_id}
-              <br />
-              {app.company_id}
-              <br />
-              {app.round}
-              <br />
-              {app.interview_type}
-              <br />
-              {app.interview_date}
-              <br />
-              {app.interview_rating}
-              <br />
-              {app.interviewer}
-              <br />
-              {app.follow_up_person}
-              <br />
-              {app.follow_up_phone}
-              <br />
-              {app.follow_up_email}
-              <br />
-              {app.whitebording}
-              <br />
-              {app.comments}
-              <br />
-            </li>
-          ))
-        ) : (
-          <li>No Data</li>
-        )}
-      </ul>
+      <>
+        <h3>All user interview and application history:</h3>
+        <ul className="UserInterviews">
+          {appsArray.length > 0 ? (
+            appsArray.map((app) => (
+              <li>
+                {app.first_name} applied for: {app.position}
+                <br />
+                <br />
+              </li>
+            ))
+          ) : (
+            <li>No Data</li>
+          )}
+        </ul>
+      </>
     );
   }
 }
