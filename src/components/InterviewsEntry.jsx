@@ -1,16 +1,18 @@
-import React, { Component } from 'react';
-import '../App.css';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import InterviewsEntryHeader from "./InterviewsEntryHeader";
+import "../App.css";
 
 const postAPI = async (url, data) => {
-  const response = await fetch (url, {
-    method: 'POST',
+  const response = await fetch(url, {
+    method: "POST",
     headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
+      Accept: "application/json",
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify (data),
-  }).then (response => response.json ());
-  console.log (response);
+    body: JSON.stringify(data),
+  }).then((response) => response.json());
+  console.log(response);
   return response;
 };
 
@@ -18,21 +20,21 @@ class InterviewsEntry extends Component {
   state = {
     // application_id: '',
     // company_id: '',
-    round: '',
-    interview_type:'',
-    interview_date: '',
-    interview_rating: '',
-    interviewer: '',
-    follow_up_person: '',
-    follow_up_phone: '',
-    follow_up_email: '',
-    whiteboarding: '',
-    code_challenge:'',
-    comments: '',
+    round: "",
+    interview_type: "",
+    interview_date: "",
+    interview_rating: "",
+    interviewer: "",
+    follow_up_person: "",
+    follow_up_phone: "",
+    follow_up_email: "",
+    whiteboarding: "",
+    code_challenge: "",
+    comments: "",
   };
 
   handleChange = (e) => {
-    this.setState ({
+    this.setState({
       [e.target.name]: e.target.value,
     });
   };
@@ -72,43 +74,42 @@ class InterviewsEntry extends Component {
         comments: comments,
       };
 
-      const url = 'http://localhost:2000/interviewsEntry';
-      const response = await postAPI (url, data);
+      const url = "http://localhost:2000/interviewsEntry";
+      const response = await postAPI(url, data);
 
       if (response.status === 200) {
-        alert ('Entry Created');
+        alert("Entry Created");
       }
       if (response.status !== 200) {
-        alert ('Unable to input entry. Please try again later.');
+        alert("Unable to input entry. Please try again later.");
       }
-    } 
-    catch (err) {
+    } catch (err) {
       return err;
     }
-}
+  };
 
-  render () {
+  render() {
     const {
-    //   application_id,
-    //   company_id,
-    round,
-    interview_type,
-    interview_date,
-    interview_rating,
-    interviewer,
-    follow_up_person,
-    follow_up_phone,
-    follow_up_email,
-    whiteboarding,
-    code_challenge,
-    comments
+      //   application_id,
+      //   company_id,
+      round,
+      interview_type,
+      interview_date,
+      interview_rating,
+      interviewer,
+      follow_up_person,
+      follow_up_phone,
+      follow_up_email,
+      whiteboarding,
+      code_challenge,
+      comments,
     } = this.state;
     console.log(this.state);
     return (
       <div>
+        <InterviewsEntryHeader />
         <h1>Complete your interview information here:</h1>
-        <form onSubmit={(e) => this.handleSubmit (e)}>
-          
+        <form onSubmit={(e) => this.handleSubmit(e)}>
           {/* <br />
           <input
             type="text"
@@ -231,9 +232,19 @@ class InterviewsEntry extends Component {
             Submit
           </button>
         </form>
+        <Link style={linkStyle} to={`/applications`}>
+          Home Page
+        </Link>
+        <br />
+        <Link style={linkStyle} to={`/applicationform`}>
+          Enter your application information{" "}
+        </Link>
       </div>
     );
   }
 }
 
+const linkStyle = {
+  color: "blue",
+};
 export default InterviewsEntry;
