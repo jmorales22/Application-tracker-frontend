@@ -10,6 +10,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Intro from "./components/Intro";
 import Footer from "./components/Footer";
 import Interviews from "./components/Interviews";
+import ApplicationForm from "./components/ApplicationForm";
+import InterviewEntry from "./components/InterviewsEntry";
 import "./App.css";
 
 function App() {
