@@ -28,6 +28,12 @@ function App() {
           <Route path="/signup">
             <Signup />
           </Route>
+          <Route path="/applicationform">
+            <ApplicationForm />
+          </Route>
+          <Route path="/interviewentry">
+            <InterviewEntry />
+          </Route>
           <ProtectedRoute path="/applications" component={UserApps} />
             <UserApps />
             <Interviews />
