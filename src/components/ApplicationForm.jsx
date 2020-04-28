@@ -21,8 +21,8 @@ class ApplicationForm extends Component {
     position: "",
     position_description: "",
     application_date: "",
-    offer_extended: "",
-    make_public: "",
+    offer: "",
+    makePublic: "",
   };
 
   handleChange = (e) => {
@@ -107,7 +107,7 @@ class ApplicationForm extends Component {
             type="text"
             placeholder="job description"
             onChange={this.handleChange}
-            name="description"
+            name="position_description"
             value={description}
             required
           />
