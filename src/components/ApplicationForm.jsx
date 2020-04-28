@@ -20,8 +20,8 @@ class ApplicationForm extends Component {
     position: "",
     position_description: "",
     application_date: "",
-    offer_extended: "",
-    make_public: "",
+    offer: "",
+    makePublic: "",
   };
 
   handleChange = (e) => {
@@ -73,6 +73,15 @@ class ApplicationForm extends Component {
       <div>
         <h1>Complete your application information.</h1>
         <form onSubmit={(e) => this.handleSubmit(e)}>
+          {/* <input
+            type="text"
+            placeholder="company"
+            onChange={this.handleChange}
+            name="company"
+            value={company}
+            required
+          />
+          <br /> */}
           <input
             type="text"
             placeholder="city"
@@ -95,7 +104,7 @@ class ApplicationForm extends Component {
             type="text"
             placeholder="job description"
             onChange={this.handleChange}
-            name="description"
+            name="position_description"
             value={description}
             required
           />
