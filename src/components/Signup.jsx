@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import "../App.css";
 
 const postAPI = async (url, data) => {
@@ -31,6 +32,7 @@ class Signup extends Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
+    this.props.history.push("./login");
 
     try {
       const { firstName, lastName, email, password, contact } = this.state;
@@ -41,7 +43,7 @@ class Signup extends Component {
         email: email,
         user_password: password,
         is_admin: "no",
-        contact_me: contact
+        contact_me: contact,
       };
       const url = "http://localhost:2000/adduser";
       const response = await postAPI(url, data);
@@ -136,4 +138,4 @@ class Signup extends Component {
   }
 }
 
-export default Signup;
+export default withRouter(Signup);
