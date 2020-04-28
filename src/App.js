@@ -11,6 +11,7 @@ import Signup from './components/Signup';
 import UserApps from './components/UserApps';
 import Interviews from './components/Interviews';
 import InterviewsEntry from './components/InterviewsEntry';
+import ApplicationList from './components/ApplicationList';
 import './App.css';
 
 function App() {
@@ -42,6 +43,10 @@ function App() {
         </Route>
       <Route path="/interviewsEntry">
         <InterviewsEntry/>
+        </Route>
+        <Route exact path="/applications/:user_id?" component={UserApps}>
+        </Route>
+        <Route exact path="/manageapplications/:user_id?" component={ApplicationList}>
         </Route>
         </Router>
       <TestComponent></TestComponent>
