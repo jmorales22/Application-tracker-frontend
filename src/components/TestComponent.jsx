@@ -1,13 +1,31 @@
-import React, { Component } from "react";
-import LoginContext from "../context/LoginContext";
+import React, { Component } from 'react'
+import LoginContext from '../context/LoginContext'
 
-export default class TestComponent extends Component {
-  static contextType = LoginContext;
+class TestComponent extends Component {
+  static contextType = LoginContext
+
   render() {
+    const { user_id, setUser } = this.context
+
     return (
-      <LoginContext.Consumer>
-        {(value) => <p>{value.user_id}</p>}
-      </LoginContext.Consumer>
-    );
+      <div>
+        <button
+          onClick={() => {
+            const newUser = 12
+
+            console.log(this.context)
+            console.log(newUser)
+
+            setUser(newUser)
+
+          }}
+        >
+          Update User
+        </button>
+        <p>{`Current User Id: ${user_id}`}</p>
+      </div>
+    )
   }
 }
+
+export default TestComponent;

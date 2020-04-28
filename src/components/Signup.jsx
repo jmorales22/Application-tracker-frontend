@@ -43,7 +43,6 @@ class Signup extends Component {
         is_admin: "no",
         contact_me: contact
       };
-
       const url = "http://localhost:2000/adduser";
       const response = await postAPI(url, data);
 

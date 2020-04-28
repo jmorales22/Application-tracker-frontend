@@ -1,51 +1,45 @@
-
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import LoginContext from './context/LoginContext';
-import TestComponent from './components/TestComponent';
-import Intro from './components/Intro';
+import { LoginProvider } from './context/LoginContext';
+import ProtectedRoute from './components/ProtectedRoute';
 import Header from './components/Header';
-import Footer from './components/Footer';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import UserApps from './components/UserApps';
-import Interviews from './components/Interviews';
-import InterviewsEntry from './components/InterviewsEntry';
-import './App.css';
+
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Intro from "./components/Intro";
+import Footer from "./components/Footer";
+import Interviews from "./components/Interviews";
+import "./App.css";
 
 function App() {
-  const loggedIn = [
-    {
-      status: 'false',
-      user_id: 2,
-      admin: '',
-    },
-  ];
-
   return (
-    <LoginContext.Provider value={loggedIn[0]}>
+    <LoginProvider>
       <Router>
-        <Route exact path="/">
-          <Header />
-          <Intro />
-          <Footer />
-        </Route>
-        <Route exact path="/login">
-          <Login />
-        </Route>
-        <Route path="/signup">
-          <Signup />
-        </Route>
-        <Route path="/applications">
-          <UserApps />
-          <Interviews />
-        </Route>
-      <Route path="/interviewsEntry">
-        <InterviewsEntry/>
-        </Route>
-        </Router>
-      <TestComponent></TestComponent>
-    </LoginContext.Provider>
+        <Switch>
+          <Route exact path="/">
+            <Header />
+            <Intro />
+            <Footer />
+          </Route>
+          <Route exact path="/login">
+            <Login />
+          </Route>
+          <Route path="/signup">
+            <Signup />
+          </Route>
+          <Route path="/applicationform">
+            <ApplicationForm />
+          </Route>
+          <Route path="/interviewentry">
+            <InterviewEntry />
+          </Route>
+          <ProtectedRoute path="/applications" component={UserApps} />
+            <UserApps />
+            <Interviews />
+        </Switch>
+      </Router>
+    </LoginProvider>
   );
 }
 
