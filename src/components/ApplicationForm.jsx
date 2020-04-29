@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "../App.css";
+import { Link } from "react-router-dom";
+import ApplicationFormHeader from "./ApplicationFormHeader";
 
 const postAPI = async (url, data) => {
   const response = await fetch(url, {
@@ -15,7 +17,9 @@ const postAPI = async (url, data) => {
 };
 
 class ApplicationForm extends Component {
+
   state = {
+    user_id: this.props.user_id,
     company_name: "",
     city: "",
     position: "",
@@ -36,6 +40,7 @@ class ApplicationForm extends Component {
 
     try {
       const {
+        user_id,
         company_name,
         city,
         position,
@@ -46,6 +51,7 @@ class ApplicationForm extends Component {
       } = this.state;
 
       const data = {
+        user_id: user_id,
         company_name: company_name,
         city: city,
         position: position,
@@ -70,13 +76,25 @@ class ApplicationForm extends Component {
   };
 
   render() {
-    const { company, city, position, description, date, offer, makePublic } = this.state;
+    const {
+      company,
+      city,
+      position,
+      description,
+      date,
+      offer,
+      makePublic,
+    } = this.state;
+
+    console.log('this is props', this.props)
+    console.log('context', this.context)
 
     return (
       <div>
+        <ApplicationFormHeader />
         <h1>Complete your application information.</h1>
         <form onSubmit={(e) => this.handleSubmit(e)}>
-        <input
+          <input
             type="text"
             placeholder="company"
             onChange={this.handleChange}
@@ -84,7 +102,7 @@ class ApplicationForm extends Component {
             value={company}
             required
           />
-          <br/>
+          <br />
           <input
             type="text"
             placeholder="city"
@@ -186,5 +204,9 @@ class ApplicationForm extends Component {
     );
   }
 }
+
+const linkStyle = {
+  color: "blue",
+};
 
 export default ApplicationForm;
