@@ -1,27 +1,18 @@
 import React from "react";
+import Logout from "./Logout";
+import { Link } from "react-router-dom";
 
 function UserAppsHeader() {
-  const handleClick = (e) => {
-    e.preventDefault();
-    window.location.href = "http://localhost:3000/applicationform";
-  };
-  // const handleClick2 = (e) => {
-  //   e.preventDefault();
-  //   window.location.href = "http://localhost:3000/interviewentry";
-  // };
   return (
     <header style={headerStyle}>
       <div>
         <div style={h1Style}>App Track</div>
 
-        <button style={linkStyle} onClick={handleClick} to={`/applicationform`}>
+        <Link style={linkStyle} to={`/applicationform`}>
           Application Form
-        </button>
+        </Link>
         <br />
-        {/* <button style={linkStyle} onClick={handleClick2} to={`/interviewentry`}>
-          {" "}
-          Interview Information{" "}
-        </button> */}
+        <Logout />
       </div>
     </header>
   );
