@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import InterviewsEntryHeader from "./InterviewsEntryHeader";
 import "../App.css";
+import { Form, Input, Question } from "./styled";
 
 const postAPI = async (url, data) => {
   const response = await fetch(url, {
@@ -11,7 +12,7 @@ const postAPI = async (url, data) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(data),
-  }).then((response) => response.json());
+  }).then((response) => response.json());  
   console.log(response);
   return response;
 };
@@ -108,8 +109,9 @@ class InterviewsEntry extends Component {
     return (
       <div>
         <InterviewsEntryHeader />
-        <h1>Complete your interview information here:</h1>
+        <div style={h1Style}>Complete your interview information.</div>
         <form onSubmit={(e) => this.handleSubmit(e)}>
+          
           {/* <br />
           <input
             type="text"
@@ -129,104 +131,128 @@ class InterviewsEntry extends Component {
             required
           />
           <br /> */}
-          <input
-            type="text"
-            placeholder="Interview Round"
+          
+          <Form>
+            <Question>1. What round of interview are you in?</Question>
+            <Input type= "text"
+            placeholder=""
             onChange={this.handleChange}
             name="round"
-            value={round}
             required
-          />
-          <br />
-          <input
+            value={round}
+            />
+          </Form>   
+          <Form>
+            <Question>2. What type of interview did you have?</Question>
+            <Input
             type="text"
-            placeholder="What type of interview did you have?"
+            placeholder=""
             onChange={this.handleChange}
             name="interview_type"
             value={interview_type}
             required
           />
-          <br />
-          <input
-            type="text"
-            placeholder="Date of Interview"
+          </Form>
+          <Form>
+          <Question>3. What was the date of the interview?</Question>
+          <Input
+            type="date"
+            placeholder=""
             onChange={this.handleChange}
             name="interview_date"
             value={interview_date}
             required
           />
-          <br />
-          <input
+          </Form> 
+          
+          <Form> 
+          <Question>4. How would you rate the interview process?</Question>
+          <Input
             type="text"
-            placeholder="Rate the Interview"
+            placeholder=""
             onChange={this.handleChange}
             name="interview_rating"
             value={interview_rating}
             required
           />
-          <br />
-          <input
+          </Form> 
+          <Form> 
+          <Question>5. What is the interviewer's name?</Question>
+          <Input
             type="text"
-            placeholder="Interviewer's Name?"
+            placeholder=""
             onChange={this.handleChange}
             name="interviewer"
             value={interviewer}
             required
           />
-          <br />
-          <input
+          </Form>
+          <Form> 
+          <Question>6. What is the name of the person to follow-up with?</Question>
+          <Input
             type="text"
-            placeholder="Contact to follow up with?"
+            placeholder=""
             onChange={this.handleChange}
             name="follow_up_person"
             value={follow_up_person}
             required
           />
-          <br />
-          <input
+          </Form>
+          <Form> 
+          <Question>7. What is the phone number of the person to follow up with?</Question>
+          <Input
             type="text"
-            placeholder="Phone number for follow-up?"
+            placeholder=""
             onChange={this.handleChange}
             name="follow_up_phone"
             value={follow_up_phone}
             required
           />
-          <br />
-          <input
+          </Form>
+          <Form> 
+          <Question>8. What is the email address of the person to follow-up with?</Question>
+          <Input
             type="text"
-            placeholder="Follow-up email?"
+            placeholder=""
             onChange={this.handleChange}
             name="follow_up_email"
             value={follow_up_email}
             required
           />
-          <br />
-          <input
+          </Form>
+          <Form> 
+          <Question>9. Were you required to do whiteboarding for the interview?</Question>
+          <Input
             type="text"
-            placeholder="Was whiteboarding required?"
+            placeholder=""
             onChange={this.handleChange}
             name="whiteboarding"
             value={whiteboarding}
             required
           />
-          <br />
-          <input
+          </Form>
+          <Form> 
+          <Question>10. Were you required to complete a code challenge?</Question>
+          <Input
             type="text"
-            placeholder="Was there a code challenge?"
+            placeholder=""
             onChange={this.handleChange}
             name="code_challenge"
             value={code_challenge}
             required
           />
-          <br />
-          <input
+          </Form>
+          <Form>
+          <Question>11. Please additional comments here: </Question>
+          <Input
             type="text"
-            placeholder="Add comments"
+            placeholder=""
             onChange={this.handleChange}
             name="comments"
             value={comments}
             required
           />
+          </Form>
           <br />
           <button type="submit" data-testid="submitButton">
             Submit
@@ -247,4 +273,25 @@ class InterviewsEntry extends Component {
 const linkStyle = {
   color: "blue",
 };
+
+const h1Style = {
+  margin: "0",
+  display: "flex",
+  flexDirection: "row",
+  flexGrow: "0",
+  alignItems: "center",
+  height: "50px",
+  marginLeft: "30px",
+  fontSize: "35px",
+  fontFamily: "Comfortaa, cursive",
+  color: "black",
+  };
+  const pStyle = {
+    fontFamily: "Comfortaa, cursive",
+    marginLeft: "25px",
+    alignItems: "",
+    fontSize: "18px"
+  }
+
 export default InterviewsEntry;
+
