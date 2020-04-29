@@ -9,9 +9,14 @@ class LoginProvider extends Component {
     user: {
       admin: false,
       status: false,
-      user_id: null,
+      user_id: null
     },
   };
+
+  constructor() {
+    super()
+    this.setUser = this.setUser.bind(this)
+  }
 
   // Method to update state
   setUser = (user) => {
