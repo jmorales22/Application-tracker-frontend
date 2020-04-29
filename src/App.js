@@ -31,16 +31,9 @@ function App() {
           <Route path="/signup">
             <Signup />
           </Route>
-          <ProtectedRoute path="/applicationform">
-            <ApplicationForm />
-          </ProtectedRoute>
-          <ProtectedRoute path="/interviewentry">
-            <InterviewEntry />
-          </ProtectedRoute>
-          <ProtectedRoute path="/applications">
-            <UserApps />
-            <Interviews />
-          </ProtectedRoute>
+          <ProtectedRoute path="/applicationform" component={ApplicationForm} />
+          <ProtectedRoute path="/interviewentry/:app_id?/:company_id?" component={InterviewEntry} />
+          <ProtectedRoute path="/applications" component={UserApps} />
         </Switch>
       </Router>
     </LoginProvider>

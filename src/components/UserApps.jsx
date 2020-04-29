@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import LoginContext, { LoginConsumer } from '../context/LoginContext'
 import NoData from "./NoData";
 import UserAppsHeader from "./UserAppsHeader";
+import Interviews from "./Interviews";
+
 class UserApps extends Component {
   static contextType = LoginContext;
 
@@ -13,6 +15,7 @@ class UserApps extends Component {
 
   async getData() {
     let user_id = this.state.user_id;
+    console.log('user_id', user_id)
 
     const response = await fetch(
       `http://localhost:2000/applications/${user_id}`
@@ -31,6 +34,7 @@ class UserApps extends Component {
 
   render() {
     let appsArray = this.state.apps;
+    console.log('context', this.context)
 
     return (
       <>
@@ -50,7 +54,7 @@ class UserApps extends Component {
                 <br />
                 Offer Extended? {app.offer_extended}
                 <br />
-                <Link style={linkStyle} to={`/interviewentry`}>
+                <Link style={linkStyle} to={`/interviewentry/${app.id}/${app.company_id}`}>
                   Enter interview information{" "}
                 </Link>
                 <br />
@@ -63,15 +67,15 @@ class UserApps extends Component {
             </li>
           )}
         </ul>
+        <br/>
+        <Interviews />
       </>
     );
   }
 }
-
 const userApp = {
   listStyle: "none",
 };
-
 const linkStyle = {
   color: "blue",
 };
