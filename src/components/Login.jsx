@@ -46,7 +46,7 @@ class Login extends Component {
         const newUser = {
           status: true,
           user_id: response.userId,
-          admin: false,
+          admin: false
         };
         setUser(newUser);
         this.props.history.push('/applications');
@@ -87,6 +87,7 @@ class Login extends Component {
           </label>
           <br />
           <button type="submit">Submit</button>
+          
         </form>
       </div>
     );

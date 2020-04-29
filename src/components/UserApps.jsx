@@ -1,15 +1,19 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import LoginContext, { LoginConsumer } from '../context/LoginContext'
 import NoData from "./NoData";
-
+import UserAppsHeader from "./UserAppsHeader";
 class UserApps extends Component {
+  static contextType = LoginContext;
+
   state = {
     apps: [],
-    user_id: "4",
+    user_id: this.context.user.user_id
   };
 
   async getData() {
     let user_id = this.state.user_id;
+
     const response = await fetch(
       `http://localhost:2000/applications/${user_id}`
     );
@@ -21,7 +25,7 @@ class UserApps extends Component {
     const apps = await this.getData();
 
     this.setState({
-      apps: apps,
+      apps: apps
     });
   }
 
@@ -30,6 +34,7 @@ class UserApps extends Component {
 
     return (
       <>
+        <UserAppsHeader />
         <h3> Your submitted application data:</h3>
         <ul style={userApp}>
           {appsArray.length > 0 ? (
@@ -44,6 +49,10 @@ class UserApps extends Component {
                 Application Date: {app.application_date}
                 <br />
                 Offer Extended? {app.offer_extended}
+                <br />
+                <Link style={linkStyle} to={`/interviewentry`}>
+                  Enter interview information{" "}
+                </Link>
                 <br />
                 <br />
               </li>
@@ -61,5 +70,9 @@ class UserApps extends Component {
 
 const userApp = {
   listStyle: "none",
+};
+
+const linkStyle = {
+  color: "blue",
 };
 export default UserApps;
