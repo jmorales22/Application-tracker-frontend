@@ -17,7 +17,9 @@ const postAPI = async (url, data) => {
 };
 
 class ApplicationForm extends Component {
+
   state = {
+    user_id: this.props.user_id,
     company_name: "",
     city: "",
     position: "",
@@ -38,6 +40,7 @@ class ApplicationForm extends Component {
 
     try {
       const {
+        user_id,
         company_name,
         city,
         position,
@@ -48,6 +51,7 @@ class ApplicationForm extends Component {
       } = this.state;
 
       const data = {
+        user_id: user_id,
         company_name: company_name,
         city: city,
         position: position,
@@ -81,6 +85,9 @@ class ApplicationForm extends Component {
       offer,
       makePublic,
     } = this.state;
+
+    console.log('this is props', this.props)
+    console.log('context', this.context)
 
     return (
       <div>

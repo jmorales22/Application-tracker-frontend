@@ -18,8 +18,9 @@ const postAPI = async (url, data) => {
 
 class InterviewsEntry extends Component {
   state = {
-    // application_id: '',
-    // company_id: '',
+    user_id: this.props.user_id,
+    application_id: this.props.match.params.app_id,
+    company_id: this.props.match.params.company_id,
     round: "",
     interview_type: "",
     interview_date: "",
@@ -40,11 +41,12 @@ class InterviewsEntry extends Component {
   };
 
   handleSubmit = async (e) => {
-    // e.preventDefault ();
+    //e.preventDefault ();
     try {
       const {
-        // application_id,
-        // company_id,
+        user_id,
+        application_id,
+        company_id,
         round,
         interview_type,
         interview_date,
@@ -59,8 +61,9 @@ class InterviewsEntry extends Component {
       } = this.state;
 
       const data = {
-        // application_id: application_id,
-        // company_id: company_id,
+        user_id: user_id,
+        application_id: application_id,
+        company_id: company_id,
         round: round,
         interview_type: interview_type,
         interview_date: interview_date,
@@ -89,6 +92,8 @@ class InterviewsEntry extends Component {
   };
 
   render() {
+    console.log("this is the state", this.state)
+    console.log("these are the props", this.props)
     const {
       //   application_id,
       //   company_id,
@@ -110,25 +115,6 @@ class InterviewsEntry extends Component {
         <InterviewsEntryHeader />
         <h1>Complete your interview information here:</h1>
         <form onSubmit={(e) => this.handleSubmit(e)}>
-          {/* <br />
-          <input
-            type="text"
-            placeholder="Was an application submitted?"
-            onChange={this.handleChange}
-            name="application_id"
-            value={application_id}
-            required
-          />
-          <br />
-          <input
-            type="text"
-            placeholder="Company Name"
-            onChange={this.handleChange}
-            name="company_id"
-            value={company_id}
-            required
-          />
-          <br /> */}
           <input
             type="text"
             placeholder="Interview Round"
