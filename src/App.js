@@ -37,7 +37,7 @@ function App() {
           <ProtectedRoute path="/interviewentry">
             <InterviewEntry />
           </ProtectedRoute>
-          <ProtectedRoute path="/applications" component={UserApps}>
+          <ProtectedRoute path="/applications">
             <UserApps />
             <Interviews />
           </ProtectedRoute>

@@ -1,17 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Header() {
-  const handleClick = (e) => {
-    e.preventDefault();
-    window.location.href = "http://localhost:3000/applicationform";
-  };
   return (
     <header style={headerStyle}>
       <div>
         <div style={h1Style}>App Track</div>
-        <button style={linkStyle} onClick={handleClick} to={`/applicationform`}>
+        <Link style={linkStyle} to={`/applicationform`}>
           Application Form
-        </button>
+        </Link>
         <br />
       </div>
     </header>
