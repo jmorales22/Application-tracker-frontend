@@ -1,15 +1,19 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import LoginContext, { LoginConsumer } from '../context/LoginContext'
 import NoData from "./NoData";
 import UserAppsHeader from "./UserAppsHeader";
 class UserApps extends Component {
+  static contextType = LoginContext;
+
   state = {
     apps: [],
-    user_id: "4",
+    user_id: this.context.user.user_id
   };
 
   async getData() {
     let user_id = this.state.user_id;
+
     const response = await fetch(
       `http://localhost:2000/applications/${user_id}`
     );
@@ -21,7 +25,7 @@ class UserApps extends Component {
     const apps = await this.getData();
 
     this.setState({
-      apps: apps,
+      apps: apps
     });
   }
 
