@@ -1,4 +1,5 @@
 import React from "react";
+import Logout from "./Logout";
 
 function UserAppsHeader() {
   const handleClick = (e) => {
@@ -22,6 +23,7 @@ function UserAppsHeader() {
           {" "}
           Interview Information{" "}
         </button> */}
+        <Logout />
       </div>
     </header>
   );
