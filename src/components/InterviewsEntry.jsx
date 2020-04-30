@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import InterviewsEntryHeader from "./InterviewsEntryHeader";
-import "../App.css";
+import plus from "../images/plus.png";
 
 const postAPI = async (url, data) => {
   const response = await fetch(url, {
@@ -92,8 +92,8 @@ class InterviewsEntry extends Component {
   };
 
   render() {
-    console.log("this is the state", this.state)
-    console.log("these are the props", this.props)
+    console.log("this is the state", this.state);
+    console.log("these are the props", this.props);
     const {
       //   application_id,
       //   company_id,
@@ -113,6 +113,12 @@ class InterviewsEntry extends Component {
     return (
       <div>
         <InterviewsEntryHeader />
+        <p>
+          <Link style={linkStyle} to={`/applicationform`}>
+            <img src={plus} height="20" width="20" alt="add" />
+            Application Form
+          </Link>
+        </p>
         <h1>Complete your interview information here:</h1>
         <form onSubmit={(e) => this.handleSubmit(e)}>
           <input
@@ -218,13 +224,8 @@ class InterviewsEntry extends Component {
             Submit
           </button>
         </form>
-        <Link style={linkStyle} to={`/applications`}>
-          Home Page
-        </Link>
+
         <br />
-        <Link style={linkStyle} to={`/applicationform`}>
-          Enter your application information{" "}
-        </Link>
       </div>
     );
   }
@@ -232,5 +233,6 @@ class InterviewsEntry extends Component {
 
 const linkStyle = {
   color: "blue",
+  textDecoration: "none",
 };
 export default InterviewsEntry;

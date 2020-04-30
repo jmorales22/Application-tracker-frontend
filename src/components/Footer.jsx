@@ -2,7 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Footer() {
-  return <div style={footer}>footer</div>;
+  return (
+    <div style={footer}>
+      <p style={para}>
+        <Link style={linkStyle} to={`/about`}>
+          About
+        </Link>
+      </p>
+    </div>
+  );
 }
 
 const footer = {
@@ -12,5 +20,14 @@ const footer = {
   left: "0",
   backgroundColor: "#edebe6",
   height: "60px",
+};
+
+const linkStyle = {
+  color: "black",
+  textDecoration: "none",
+};
+
+const para = {
+  textAlign: "center",
 };
 export default Footer;

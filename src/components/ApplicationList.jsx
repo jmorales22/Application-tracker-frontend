@@ -4,7 +4,7 @@ import NoData from "./NoData";
 
 class UserApps extends Component {
   state = {
-    apps: []
+    apps: [],
   };
 
   async getData() {
@@ -29,35 +29,35 @@ class UserApps extends Component {
 
     return (
       <div>
-      <>
-        <h3> Your submitted application data:</h3>
-        <ul style={userApp}>
-          {appsArray.length > 0 ? (
-            appsArray.map((app) => (
-              <li>
+        <>
+          <h3> Your submitted application data:</h3>
+          <ul style={userApp}>
+            {appsArray.length > 0 ? (
+              appsArray.map((app) => (
+                <li>
                   {app.company_name}
-                  <br/>
-                City: {app.city}
-                <br />
-                Position: {app.position}
-                <br />
-                Postion description: {app.position_description}
-                <br />
-                Application Date: {app.application_date}
-                <br />
-                Offer Extended? {app.offer_extended}
-                <br />
-                <br />
-                <Link to={`/interviews}`}>Interview Tracking </Link>
+                  <br />
+                  City: {app.city}
+                  <br />
+                  Position: {app.position}
+                  <br />
+                  Postion description: {app.position_description}
+                  <br />
+                  Application Date: {app.application_date}
+                  <br />
+                  Offer Extended? {app.offer_extended}
+                  <br />
+                  <br />
+                  <Link to={`/interviews}`}>Interview Tracking </Link>
+                </li>
+              ))
+            ) : (
+              <li>
+                <NoData />
               </li>
-            ))
-          ) : (
-            <li>
-              <NoData />
-            </li>
-          )}
-        </ul>
-      </>
+            )}
+          </ul>
+        </>
       </div>
     );
   }

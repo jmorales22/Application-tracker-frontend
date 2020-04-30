@@ -18,8 +18,15 @@ class Logout extends Component {
     this.props.history.push("/");
   };
   render() {
-    return <Link onClick={this.logout}>Log out</Link>;
+    return (
+      <Link style={linkStyle} onClick={this.logout}>
+        Log out
+      </Link>
+    );
   }
 }
-
+const linkStyle = {
+  color: "blue",
+  textDecoration: "none",
+};
 export default withRouter(Logout);

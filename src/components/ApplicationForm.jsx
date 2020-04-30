@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "../App.css";
-import { Link } from "react-router-dom";
 import ApplicationFormHeader from "./ApplicationFormHeader";
+import { Link } from "react-router-dom";
+import plus from "../images/plus.png";
 
 const postAPI = async (url, data) => {
   const response = await fetch(url, {
@@ -17,7 +18,6 @@ const postAPI = async (url, data) => {
 };
 
 class ApplicationForm extends Component {
-
   state = {
     user_id: this.props.user_id,
     company_name: "",
@@ -86,13 +86,20 @@ class ApplicationForm extends Component {
       makePublic,
     } = this.state;
 
-    console.log('this is props', this.props)
-    console.log('context', this.context)
+    console.log("this is props", this.props);
+    console.log("context", this.context);
 
     return (
       <div>
         <ApplicationFormHeader />
+        <p>
+          <Link style={linkStyle} to={`/interviewEntry`}>
+            <img src={plus} height="20" width="20" alt="add" />
+            Interview Form
+          </Link>
+        </p>
         <h1>Complete your application information.</h1>
+
         <form onSubmit={(e) => this.handleSubmit(e)}>
           <input
             type="text"
@@ -206,6 +213,7 @@ class ApplicationForm extends Component {
 }
 
 const linkStyle = {
+  textDecoration: "none",
   color: "blue",
 };
 

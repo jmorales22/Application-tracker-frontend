@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import Logout from "./Logout";
 function Header() {
   return (
     <header style={headerStyle}>
@@ -9,6 +9,9 @@ function Header() {
         <Link style={linkStyle} to={`/applications`}>
           Home Page
         </Link>
+        <br />
+        <Logout />
+
         <br />
       </div>
     </header>
@@ -35,6 +38,7 @@ const h1Style = {
 
 const linkStyle = {
   color: "blue",
+  textDecoration: "none",
 };
 
 export default Header;
