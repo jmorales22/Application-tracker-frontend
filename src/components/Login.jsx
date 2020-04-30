@@ -1,20 +1,22 @@
-import React, { Component } from 'react';
-import LoginContext from '../context/LoginContext';
-import { withRouter } from 'react-router-dom';
+import React, { Component } from "react";
+import LoginContext from "../context/LoginContext";
+import { withRouter } from "react-router-dom";
+import LoginHeader from "./LoginHeader";
+import Footer from "./Footer";
 
 class Login extends Component {
   static contextType = LoginContext;
   state = {
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   };
 
   postAPI = async (url, data) => {
     const response = await fetch(url, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
+        Accept: "application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     }).then((response) => response.json());
@@ -39,19 +41,19 @@ class Login extends Component {
         user_password: password,
       };
 
-      const url = 'http://localhost:2000/login/loginuser';
+      const url = "http://localhost:2000/login/loginuser";
       const response = await this.postAPI(url, data);
 
       if (response.userId > 0) {
         const newUser = {
           status: true,
           user_id: response.userId,
-          admin: false
+          admin: false,
         };
         setUser(newUser);
-        this.props.history.push('/companies');
+        this.props.history.push("/applications");
       } else {
-        alert('Incorrect email and/or password');
+        alert("Incorrect email and/or password");
       }
     } catch (err) {
       return err;
@@ -63,6 +65,7 @@ class Login extends Component {
 
     return (
       <div>
+        <LoginHeader />
         <h2>Login</h2>
         <form onSubmit={(e) => this.handleSubmit(e)}>
           <label>
@@ -87,10 +90,10 @@ class Login extends Component {
           </label>
           <br />
           <button type="submit">Submit</button>
-          
         </form>
+        <Footer />
       </div>
     );
   }
 }
-export default withRouter(Login)
+export default withRouter(Login);

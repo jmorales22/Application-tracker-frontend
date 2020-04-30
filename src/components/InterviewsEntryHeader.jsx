@@ -1,14 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Logout from "./Logout";
 
 function Header() {
   return (
     <header style={headerStyle}>
       <div>
         <div style={h1Style}>App Track</div>
-        <Link style={linkStyle} to={`/applicationform`}>
-          Application Form
+        <Link style={linkStyle} to={`/applications`}>
+          Home Page
         </Link>
+        <br />
+        <Logout style={linkStyle} />
         <br />
       </div>
     </header>
@@ -32,9 +35,9 @@ const h1Style = {
   fontFamily: "Comfortaa, cursive",
   color: "#68696b",
 };
-
 const linkStyle = {
   color: "blue",
+  textDecoration: "none",
 };
 
 export default Header;

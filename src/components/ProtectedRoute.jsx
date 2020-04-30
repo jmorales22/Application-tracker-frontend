@@ -1,6 +1,6 @@
-import React from 'react';
-import { Route, Link } from 'react-router-dom';
-import { LoginConsumer } from '../context/LoginContext';
+import React from "react";
+import { Route, Link } from "react-router-dom";
+import { LoginConsumer } from "../context/LoginContext";
 
 const ProtectedRoute = ({ component: Component, ...rest }) => (
   <LoginConsumer>
@@ -13,7 +13,9 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
             ) : (
               <>
                 <p>UNAUTHORIZED</p>
-                <Link to="/login">Return to Login Page</Link>
+                <Link to="/login" style={linkStyle}>
+                  Return to Login Page
+                </Link>
               </>
             );
           }}
@@ -23,5 +25,8 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
     }}
   </LoginConsumer>
 );
-
+const linkStyle = {
+  color: "blue",
+  textDecoration: "none",
+};
 export default ProtectedRoute;
