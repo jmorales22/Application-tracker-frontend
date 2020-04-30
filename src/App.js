@@ -9,10 +9,6 @@ import UserApps from "./components/UserApps";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Intro from "./components/Intro";
 import Footer from "./components/Footer";
-<<<<<<< HEAD
-import PublicApps from "./components/PublicApps";
-=======
->>>>>>> 82578323911c681da60348f19edd0d2d29cc7785
 import ApplicationForm from "./components/ApplicationForm";
 import InterviewEntry from "./components/InterviewsEntry";
 import Companies from "./components/Companies";
