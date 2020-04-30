@@ -6,6 +6,7 @@ import UserAppsHeader from "./UserAppsHeader";
 import plus from "../images/plus.png";
 import UserInterviews from "./Interviews";
 import PublicApps from "./PublicApps";
+import Companies from "./Companies";
 
 function showInterviews(component) {
   return component;
@@ -85,6 +86,10 @@ class UserApps extends Component {
             </li>
           )}
         </ul>
+        <br />
+        <Link style={linkStyle} to={`/companies`}>
+          See a List of All User Application Companies
+        </Link>
         <br />
         <PublicApps />
       </>

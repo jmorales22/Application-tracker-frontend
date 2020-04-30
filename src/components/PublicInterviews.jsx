@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import NoInterviewData from "./NoInterviewData";
-
+import PublicInterviewsHeader from "./PublicInterviewsHeader";
 class PublicInterviews extends Component {
   state = {
     interviews: [],
@@ -28,7 +28,8 @@ class PublicInterviews extends Component {
     return (
       <div>
         <>
-        <h3> Interview Information</h3>
+          <PublicInterviewsHeader />
+          <h3> Interview Information</h3>
           <ul style={userApp}>
             {interviewsArray.length > 0 ? (
               interviewsArray.map((interview) => (
