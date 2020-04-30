@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import InterviewsEntryHeader from "./InterviewsEntryHeader";
 import "../App.css";
-import { Form, Input, Question } from "./styled";
+import { Main, Input, Pstyle } from "./styled";
+
 
 const postAPI = async (url, data) => {
   const response = await fetch(url, {
@@ -114,7 +115,7 @@ class InterviewsEntry extends Component {
     return (
       <div>
         <InterviewsEntryHeader />
-        <div style={h1Style}>Complete your interview information.</div>
+        <h2>Complete your interview information.</h2>
         <form onSubmit={(e) => this.handleSubmit(e)}>
           
           {/* <br />
@@ -137,20 +138,52 @@ class InterviewsEntry extends Component {
           />
           <br /> */}
           
-          <Form>
-            <Question>1. What round of interview are you in?</Question>
-            
-          <input
+          <Main>
+          {/* <Pstyle>1. What round of interview are you in?
+          <Input
             type="text"
             placeholder="Interview Round"
             onChange={this.handleChange}
             name="round"
             required
             value={round}
-            />
-          </Form>   
-          <Form>
-            <Question>2. What type of interview did you have?</Question>
+            /></Pstyle> */}
+            <p>1. What round of interview are you in?</p>
+            <div className="form-check"> Round 1
+            <label>
+              <input
+              type="radio"
+              name="round"
+              value= "round1"
+              checked={this.state.selectedOption === "round1"}
+              className="form-check-input"
+
+              />
+            </label>
+          </div>
+          <div className="form-check"> Round 2
+            <label>
+              <input
+              type="radio"
+              name="round"
+              value="round2"
+              checked={this.state.selectedOption === "round2"}
+              className="form-check-input"
+              />
+            </label>
+          </div>
+          <div className="form-check"> Round 3
+            <label>
+              <input
+              type="radio"
+              name="round"
+              value="round3"
+              checked={this.state.selectedOption === "round3"}
+              className="form-check-input"
+              />
+            </label>
+          </div>
+            {/* <Pstyle>2. What type of interview did you have?
             <Input
             type="text"
             placeholder=""
@@ -158,10 +191,55 @@ class InterviewsEntry extends Component {
             name="interview_type"
             value={interview_type}
             required
-          />
-          </Form>
-          <Form>
-          <Question>3. What was the date of the interview?</Question>
+          /></Pstyle> */}
+          <p>2. What type of interview did you have?</p>
+          <div className="form-check"> In Person
+            <label>
+              <input
+              type="radio"
+              name="interview_type"
+              value="In Person"
+              checked={this.state.selectedOption === "In Person"}
+              className="form-check-input"
+              />
+            </label>
+          </div>
+
+          <div className="form-check"> Phone
+            <label>
+              <input
+              type="radio"
+              name="interview_type"
+              value="Phone"
+              checked={this.state.selectedOption === "Phone"}
+              className="form-check-input"
+              />
+            </label>
+          </div>
+
+          <div className="form-check"> Video
+            <label>
+              <input
+              type="radio"
+              name="interview_type"
+              value="Video"
+              checked={this.state.selectedOption === "Video"}
+              className="form-check-input"
+              />
+            </label>
+          </div>
+          <div className="form-check"> Other
+            <label>
+              <input
+              type="radio"
+              name="interview_type"
+              value="Other"
+              checked={this.state.selectedOption === "Other"}
+              className="form-check-input"
+              />
+            </label>
+          </div>
+          <Pstyle>3. What was the date of the interview?
           <Input
             type="date"
             placeholder=""
@@ -169,11 +247,9 @@ class InterviewsEntry extends Component {
             name="interview_date"
             value={interview_date}
             required
-          />
-          </Form> 
-          
-          <Form> 
-          <Question>4. How would you rate the interview process?</Question>
+          /></Pstyle>
+        
+          {/* <Pstyle>4. How would you rate the interview process?
           <Input
             type="text"
             placeholder=""
@@ -181,10 +257,42 @@ class InterviewsEntry extends Component {
             name="interview_rating"
             value={interview_rating}
             required
-          />
-          </Form> 
-          <Form> 
-          <Question>5. What is the interviewer's name?</Question>
+          /></Pstyle> */}
+          <p>4. How would you rate the interview process?</p>
+          <div className="form-check"> Easy
+            <label>
+              <input
+              type="radio"
+              name="interview_rating"
+              value="Easy"
+              checked={this.state.selectedOption === "Easy"}
+              className="form-check-input"
+              />
+            </label>
+          </div>
+          <div className="form-check"> Moderate
+            <label>
+              <input
+              type="radio"
+              name="interview_rating"
+              value="Moderate"
+              checked={this.state.selectedOption === "Moderate"}
+              className="form-check-input"
+              />
+            </label>
+          </div>
+          <div className="form-check"> Difficult
+            <label>
+              <input
+              type="radio"
+              name="interview_rating"
+              value="Difficult"
+              checked={this.state.selectedOption === "Difficult"}
+              className="form-check-input"
+              />
+            </label>
+          </div>
+          <Pstyle>5. What is the interviewer's name?
           <Input
             type="text"
             placeholder=""
@@ -192,10 +300,8 @@ class InterviewsEntry extends Component {
             name="interviewer"
             value={interviewer}
             required
-          />
-          </Form>
-          <Form> 
-          <Question>6. What is the name of the person to follow-up with?</Question>
+          /></Pstyle>
+          <Pstyle>6. What is the name of the person to follow-up with?
           <Input
             type="text"
             placeholder=""
@@ -203,10 +309,8 @@ class InterviewsEntry extends Component {
             name="follow_up_person"
             value={follow_up_person}
             required
-          />
-          </Form>
-          <Form> 
-          <Question>7. What is the phone number of the person to follow up with?</Question>
+          /></Pstyle>
+          <Pstyle>7. What is the phone number of the person to follow up with?
           <Input
             type="text"
             placeholder=""
@@ -214,10 +318,8 @@ class InterviewsEntry extends Component {
             name="follow_up_phone"
             value={follow_up_phone}
             required
-          />
-          </Form>
-          <Form> 
-          <Question>8. What is the email address of the person to follow-up with?</Question>
+          /></Pstyle>
+          <Pstyle>8. What is the email address of the person to follow-up with?
           <Input
             type="text"
             placeholder=""
@@ -225,10 +327,8 @@ class InterviewsEntry extends Component {
             name="follow_up_email"
             value={follow_up_email}
             required
-          />
-          </Form>
-          <Form> 
-          <Question>9. Were you required to do whiteboarding for the interview?</Question>
+          /></Pstyle>
+          {/* <Pstyle>9. Were you required to do whiteboarding for the interview?
           <Input
             type="text"
             placeholder=""
@@ -236,10 +336,32 @@ class InterviewsEntry extends Component {
             name="whiteboarding"
             value={whiteboarding}
             required
-          />
-          </Form>
-          <Form> 
-          <Question>10. Were you required to complete a code challenge?</Question>
+          /></Pstyle> */}
+          {/* </div> */}
+          <p>9. Were you required to do whiteboarding for the interview?</p>
+          <div className="form-check"> Yes
+            <label>
+              <input
+              type="radio"
+              name="whiteboarding"
+              value="Yes"
+              checked={this.state.selectedOption === "Yes"}
+              className="form-check-input"
+              />
+            </label>
+          </div>
+          <div className="form-check"> No
+            <label>
+              <input
+              type="radio"
+              name="whiteboarding"
+              value="No"
+              checked={this.state.selectedOption === "No"}
+              className="form-check-input"
+              />
+            </label>
+          </div>
+          {/* <Pstyle>10. Were you required to complete a code challenge?
           <Input
             type="text"
             placeholder=""
@@ -247,10 +369,32 @@ class InterviewsEntry extends Component {
             name="code_challenge"
             value={code_challenge}
             required
-          />
-          </Form>
-          <Form>
-          <Question>11. Please additional comments here: </Question>
+          /></Pstyle> */}
+          <p>10. Were you required to complete a code challenge?</p>
+          <div className="form-check"> Yes
+            <label>
+              <input
+              type="radio"
+              name="code_challenge"
+              value="Yes"
+              checked={this.state.selectedOption === "Yes"}
+              className="form-check-input"
+              />
+            </label>
+          </div>
+          <div className="form-check"> No
+            <label>
+              <input
+              type="radio"
+              name="code_challenge"
+              value="No"
+              checked={this.state.selectedOption === "No"}
+              className="form-check-input"
+              />
+            </label>
+          </div>
+          
+          <Pstyle>11. Please provide additional comments here:
           <Input
             type="text"
             placeholder=""
@@ -258,9 +402,8 @@ class InterviewsEntry extends Component {
             name="comments"
             value={comments}
             required
-          />
-          </Form>
-          <br />
+          /></Pstyle>
+          </Main>
           <button type="submit" data-testid="submitButton">
             Submit
           </button>
@@ -276,24 +419,8 @@ class InterviewsEntry extends Component {
     );
   }
 }
-
 const linkStyle = {
   color: "blue",
 };
-
-const h1Style = {
-  margin: "0",
-  display: "flex",
-  flexDirection: "row",
-  flexGrow: "0",
-  alignItems: "center",
-  height: "50px",
-  marginLeft: "30px",
-  fontSize: "35px",
-  fontFamily: "Comfortaa, cursive",
-  color: "black",
-  };
-
-
 export default InterviewsEntry;
 
