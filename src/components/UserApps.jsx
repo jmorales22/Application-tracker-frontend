@@ -1,27 +1,28 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import LoginContext, { LoginConsumer } from '../context/LoginContext'
-import UserInterviews from './Interviews'
+import LoginContext, { LoginConsumer } from "../context/LoginContext";
 import NoData from "./NoData";
 import UserAppsHeader from "./UserAppsHeader";
-import PublicApps from "./PublicApps";
+import Interviews from "./Interviews";
+import plus from "../images/plus.png";
+import LoginContext, { LoginConsumer } from "../context/LoginContext";
+import UserInterviews from "./Interviews";
 
 function showInterviews(component) {
-
-  return component
-} 
+  return component;
+}
 
 class UserApps extends Component {
   static contextType = LoginContext;
 
   state = {
     apps: [],
-    user_id: this.context.user.user_id
+    user_id: this.context.user.user_id,
   };
 
   async getApps() {
     let user_id = this.state.user_id;
-    console.log('user_id', user_id)
+    console.log("user_id", user_id);
 
     const response = await fetch(
       `http://localhost:2000/applications/${user_id}`
@@ -34,17 +35,24 @@ class UserApps extends Component {
     const apps = await this.getApps();
 
     this.setState({
-      apps: apps
+      apps: apps,
     });
   }
 
   render() {
     let appsArray = this.state.apps;
+    console.log("context", this.context);
 
     return (
       <>
         <UserAppsHeader />
         <h3> Your submitted application data:</h3>
+        <p>
+          <Link style={linkStyle} to={`/applicationform`}>
+            <img src={plus} height="20" width="20" alt="add" />
+            Application Form
+          </Link>
+        </p>
         <ul style={userApp}>
           {appsArray.length > 0 ? (
             appsArray.map((app) => (
@@ -62,7 +70,10 @@ class UserApps extends Component {
                 Offer Extended? {app.offer_extended}
                 <br />
                 <UserInterviews appData={app}></UserInterviews>
-                <Link style={linkStyle} to={`/interviewentry/${app.id}/${app.company_id}`}>
+                <Link
+                  style={linkStyle}
+                  to={`/interviewentry/${app.id}/${app.company_id}`}
+                >
                   Enter interview information{" "}
                 </Link>
                 <br />
@@ -75,7 +86,7 @@ class UserApps extends Component {
             </li>
           )}
         </ul>
-        <br/>
+        <br />
         <PublicApps />
       </>
     );
@@ -86,5 +97,6 @@ const userApp = {
 };
 const linkStyle = {
   color: "blue",
+  textDecoration: "none",
 };
 export default UserApps;

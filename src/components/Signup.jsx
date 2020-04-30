@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import "../App.css";
-
+import SignUpHeader from "./SignupHeader";
+import Footer from "./Footer";
 const postAPI = async (url, data) => {
   const response = await fetch(url, {
     method: "POST",
@@ -64,7 +64,8 @@ class Signup extends Component {
 
     return (
       <div>
-        <h1>Sign Up Here!</h1>
+        <SignUpHeader />
+        <h2>Sign Up Here!</h2>
         <form onSubmit={(e) => this.handleSubmit(e)} action="/login">
           <input
             type="text"
@@ -133,6 +134,7 @@ class Signup extends Component {
           </div>
           <button type="submit">SignUp!</button>
         </form>
+        <Footer />
       </div>
     );
   }

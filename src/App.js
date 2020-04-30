@@ -5,14 +5,17 @@ import Header from "./components/Header";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import UserApps from "./components/UserApps";
-
+import About from "./components/About";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Intro from "./components/Intro";
 import Footer from "./components/Footer";
 import ApplicationForm from "./components/ApplicationForm";
 import InterviewEntry from "./components/InterviewsEntry";
+<<<<<<< HEAD
+=======
 import Companies from "./components/Companies";
 import PublicInterviews from "./components/PublicInterviews";
+>>>>>>> b182c5aa81744b24dd496412998d0f4780228203
 import "./App.css";
 
 function App() {
@@ -31,8 +34,14 @@ function App() {
           <Route path="/signup">
             <Signup />
           </Route>
+          <Route path="/about">
+            <About />
+          </Route>
           <ProtectedRoute path="/applicationform" component={ApplicationForm} />
-          <ProtectedRoute path="/interviewentry/:app_id?/:company_id?" component={InterviewEntry} />
+          <ProtectedRoute
+            path="/interviewentry/:app_id?/:company_id?"
+            component={InterviewEntry}
+          />
           <ProtectedRoute path="/applications" component={UserApps} />
           <ProtectedRoute exact path="/companies" component={Companies} />
           <ProtectedRoute exact path="/companies/:id?" component={PublicInterviews} />
