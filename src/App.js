@@ -9,10 +9,11 @@ import UserApps from "./components/UserApps";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Intro from "./components/Intro";
 import Footer from "./components/Footer";
-// import Interviews from "./components/Interviews";
+
 import ApplicationForm from "./components/ApplicationForm";
 import InterviewEntry from "./components/InterviewsEntry";
-// import ApplicationList from "./components/ApplicationList";
+import Companies from "./components/Companies";
+import PublicInterviews from "./components/PublicInterviews";
 import "./App.css";
 
 function App() {
@@ -34,6 +35,8 @@ function App() {
           <ProtectedRoute path="/applicationform" component={ApplicationForm} />
           <ProtectedRoute path="/interviewentry/:app_id?/:company_id?" component={InterviewEntry} />
           <ProtectedRoute path="/applications" component={UserApps} />
+          <ProtectedRoute exact path="/companies" component={Companies} />
+          <ProtectedRoute exact path="/companies/:id?" component={PublicInterviews} />
         </Switch>
       </Router>
     </LoginProvider>

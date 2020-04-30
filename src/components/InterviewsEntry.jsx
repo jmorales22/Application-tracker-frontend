@@ -14,7 +14,6 @@ const postAPI = async (url, data) => {
     },
     body: JSON.stringify(data),
   }).then((response) => response.json());  
-  console.log(response);
   return response;
 };
 
@@ -43,6 +42,9 @@ class InterviewsEntry extends Component {
   };
 
   handleSubmit = async (e) => {
+    e.preventDefault ();
+    this.props.history.push("/applications")
+    
     try {
       const {
         user_id,
@@ -93,8 +95,6 @@ class InterviewsEntry extends Component {
   };
 
   render() {
-    console.log("this is the state", this.state)
-    console.log("these are the props", this.props)
     const {
       round,
       interview_type,
