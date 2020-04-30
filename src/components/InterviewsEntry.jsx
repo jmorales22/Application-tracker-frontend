@@ -116,7 +116,6 @@ class InterviewsEntry extends Component {
         <InterviewsEntryHeader />
         <div style={h1Style}>Complete your interview information.</div>
         <form onSubmit={(e) => this.handleSubmit(e)}>
-<<<<<<< HEAD
           
           {/* <br />
           <input
@@ -140,13 +139,10 @@ class InterviewsEntry extends Component {
           
           <Form>
             <Question>1. What round of interview are you in?</Question>
-            <Input type= "text"
-            placeholder=""
-=======
+            
           <input
             type="text"
             placeholder="Interview Round"
->>>>>>> 6a4ea321dc609ec479f77b7a721c0445603aaa4f
             onChange={this.handleChange}
             name="round"
             required
@@ -284,7 +280,6 @@ class InterviewsEntry extends Component {
 const linkStyle = {
   color: "blue",
 };
-<<<<<<< HEAD
 
 const h1Style = {
   margin: "0",
@@ -298,15 +293,7 @@ const h1Style = {
   fontFamily: "Comfortaa, cursive",
   color: "black",
   };
-  const pStyle = {
-    fontFamily: "Comfortaa, cursive",
-    marginLeft: "25px",
-    alignItems: "",
-    fontSize: "18px"
-  }
+
 
 export default InterviewsEntry;
 
-=======
-export default InterviewsEntry;
->>>>>>> 6a4ea321dc609ec479f77b7a721c0445603aaa4f
