@@ -9,10 +9,10 @@ import UserApps from "./components/UserApps";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Intro from "./components/Intro";
 import Footer from "./components/Footer";
-import Interviews from "./components/Interviews";
+// import Interviews from "./components/Interviews";
 import ApplicationForm from "./components/ApplicationForm";
 import InterviewEntry from "./components/InterviewsEntry";
-import ApplicationList from "./components/ApplicationList";
+// import ApplicationList from "./components/ApplicationList";
 import "./App.css";
 
 function App() {
@@ -31,16 +31,9 @@ function App() {
           <Route path="/signup">
             <Signup />
           </Route>
-          <ProtectedRoute path="/applicationform">
-            <ApplicationForm />
-          </ProtectedRoute>
-          <ProtectedRoute path="/interviewentry">
-            <InterviewEntry />
-          </ProtectedRoute>
-          <ProtectedRoute path="/applications" component={UserApps}>
-            <UserApps />
-            <Interviews />
-          </ProtectedRoute>
+          <ProtectedRoute path="/applicationform" component={ApplicationForm} />
+          <ProtectedRoute path="/interviewentry/:app_id?/:company_id?" component={InterviewEntry} />
+          <ProtectedRoute path="/applications" component={UserApps} />
         </Switch>
       </Router>
     </LoginProvider>

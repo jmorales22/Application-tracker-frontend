@@ -19,8 +19,9 @@ const postAPI = async (url, data) => {
 
 class InterviewsEntry extends Component {
   state = {
-    // application_id: '',
-    // company_id: '',
+    user_id: this.props.user_id,
+    application_id: this.props.match.params.app_id,
+    company_id: this.props.match.params.company_id,
     round: "",
     interview_type: "",
     interview_date: "",
@@ -41,11 +42,12 @@ class InterviewsEntry extends Component {
   };
 
   handleSubmit = async (e) => {
-    // e.preventDefault ();
+    //e.preventDefault ();
     try {
       const {
-        // application_id,
-        // company_id,
+        user_id,
+        application_id,
+        company_id,
         round,
         interview_type,
         interview_date,
@@ -60,8 +62,9 @@ class InterviewsEntry extends Component {
       } = this.state;
 
       const data = {
-        // application_id: application_id,
-        // company_id: company_id,
+        user_id: user_id,
+        application_id: application_id,
+        company_id: company_id,
         round: round,
         interview_type: interview_type,
         interview_date: interview_date,
@@ -90,6 +93,8 @@ class InterviewsEntry extends Component {
   };
 
   render() {
+    console.log("this is the state", this.state)
+    console.log("these are the props", this.props)
     const {
       //   application_id,
       //   company_id,
@@ -111,6 +116,7 @@ class InterviewsEntry extends Component {
         <InterviewsEntryHeader />
         <div style={h1Style}>Complete your interview information.</div>
         <form onSubmit={(e) => this.handleSubmit(e)}>
+<<<<<<< HEAD
           
           {/* <br />
           <input
@@ -136,6 +142,11 @@ class InterviewsEntry extends Component {
             <Question>1. What round of interview are you in?</Question>
             <Input type= "text"
             placeholder=""
+=======
+          <input
+            type="text"
+            placeholder="Interview Round"
+>>>>>>> 6a4ea321dc609ec479f77b7a721c0445603aaa4f
             onChange={this.handleChange}
             name="round"
             required
@@ -273,6 +284,7 @@ class InterviewsEntry extends Component {
 const linkStyle = {
   color: "blue",
 };
+<<<<<<< HEAD
 
 const h1Style = {
   margin: "0",
@@ -295,3 +307,6 @@ const h1Style = {
 
 export default InterviewsEntry;
 
+=======
+export default InterviewsEntry;
+>>>>>>> 6a4ea321dc609ec479f77b7a721c0445603aaa4f

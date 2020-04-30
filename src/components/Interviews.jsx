@@ -7,7 +7,7 @@ class UserInterviews extends Component {
   };
 
   async getData() {
-    const response = await fetch("http://localhost:2000/interviews");
+    const response = await fetch("http://localhost:2000/apps");
     const data = await response.json();
     return data;
   }
