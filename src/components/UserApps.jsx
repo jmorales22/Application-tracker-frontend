@@ -5,6 +5,12 @@ import NoData from "./NoData";
 import UserAppsHeader from "./UserAppsHeader";
 import Interviews from "./Interviews";
 import plus from "../images/plus.png";
+import LoginContext, { LoginConsumer } from "../context/LoginContext";
+import UserInterviews from "./Interviews";
+
+function showInterviews(component) {
+  return component;
+}
 
 class UserApps extends Component {
   static contextType = LoginContext;
@@ -14,7 +20,7 @@ class UserApps extends Component {
     user_id: this.context.user.user_id,
   };
 
-  async getData() {
+  async getApps() {
     let user_id = this.state.user_id;
     console.log("user_id", user_id);
 
@@ -26,7 +32,7 @@ class UserApps extends Component {
   }
 
   async componentDidMount() {
-    const apps = await this.getData();
+    const apps = await this.getApps();
 
     this.setState({
       apps: apps,
@@ -51,6 +57,8 @@ class UserApps extends Component {
           {appsArray.length > 0 ? (
             appsArray.map((app) => (
               <li>
+                {app.company_name}
+                <br />
                 City: {app.city}
                 <br />
                 Position: {app.position}
@@ -61,6 +69,7 @@ class UserApps extends Component {
                 <br />
                 Offer Extended? {app.offer_extended}
                 <br />
+                <UserInterviews appData={app}></UserInterviews>
                 <Link
                   style={linkStyle}
                   to={`/interviewentry/${app.id}/${app.company_id}`}
@@ -77,9 +86,8 @@ class UserApps extends Component {
             </li>
           )}
         </ul>
-
         <br />
-        <Interviews />
+        <PublicApps />
       </>
     );
   }

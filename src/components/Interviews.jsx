@@ -1,45 +1,53 @@
 import React, { Component } from "react";
 
 class UserInterviews extends Component {
+
   state = {
-    apps: [],
+    interviews: [],
+    app_id: this.props.appData.id
   };
 
-  async getData() {
-    const response = await fetch("http://localhost:2000/apps");
+  async getInterviews() {
+
+    const response = await fetch(
+      `http://localhost:2000/interviews/${this.state.app_id}`
+    );
     const data = await response.json();
     return data;
   }
 
   async componentDidMount() {
-    const apps = await this.getData();
+    const interviews = await this.getInterviews();
+    console.log(interviews)
 
     this.setState({
-      apps: apps,
+      interviews: interviews
     });
   }
 
   render() {
-    let appsArray = this.state.apps;
+    let interviewArray = this.state.interviews;
 
     return (
-      <>
-        <h3>All user interview and application history:</h3>
-        <ul className="UserInterviews">
-          {appsArray.length > 0 ? (
-            appsArray.map((app) => (
+        <div>
+            {interviewArray.map((interview, index) => (
               <li>
-                {app.first_name} applied for: {app.position}
                 <br />
-                <br />
+                <strong>{interviewArray[index].round}</strong><br />
+                Type: {interviewArray[index].interview_type}<br />
+                Date: {interviewArray[index].interview_date}<br />
+                Rating: {interviewArray[index].interview_rating}<br />
+                Interviewer: {interviewArray[index].intervier}<br />
+                Contact: {interviewArray[index].follow_up_person}<br />
+                Contact Email: {interviewArray[index].follow_up_email}<br />
+                Whiteboarding: {interviewArray[index].whiteboarding}<br />
+                Coding Challenge: {interviewArray[index].code_challenge}<br />
+                Comments: {interviewArray[index].comments}<br />
               </li>
-            ))
-          ) : (
-            <li>No Data</li>
-          )}
-        </ul>
-      </>
+            ))}
+        </div>
     );
   }
 }
+
 export default UserInterviews;
