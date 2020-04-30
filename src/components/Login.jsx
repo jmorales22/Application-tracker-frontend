@@ -49,7 +49,7 @@ class Login extends Component {
           admin: false
         };
         setUser(newUser);
-        this.props.history.push('/applications');
+        this.props.history.push('/companies');
       } else {
         alert('Incorrect email and/or password');
       }
