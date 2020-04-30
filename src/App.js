@@ -9,7 +9,7 @@ import UserApps from "./components/UserApps";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Intro from "./components/Intro";
 import Footer from "./components/Footer";
-import Interviews from "./components/Interviews";
+import PublicApps from "./components/PublicApps";
 import ApplicationForm from "./components/ApplicationForm";
 import InterviewEntry from "./components/InterviewsEntry";
 import ApplicationList from "./components/ApplicationList";
