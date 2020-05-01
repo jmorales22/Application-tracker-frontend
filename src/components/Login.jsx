@@ -3,7 +3,7 @@ import LoginContext from "../context/LoginContext";
 import { withRouter } from "react-router-dom";
 import LoginHeader from "./LoginHeader";
 import Footer from "./Footer";
-import {Main, Button, Wrapper, Input, Label} from "./styled";
+import {Main, Hstyle, Button, Wrapper, Input, Label} from "./styled";
 
 class Login extends Component {
   static contextType = LoginContext;
@@ -68,7 +68,8 @@ class Login extends Component {
       <div>
         <LoginHeader />
         <Main>Login</Main>
-        <Wrapper onSubmit={(e) => this.handleSubmit(e)}>
+        <Wrapper>
+        <form onSubmit={(e) => this.handleSubmit(e)}>
           <Label>
             Email&nbsp;  
             <Input
@@ -80,7 +81,7 @@ class Login extends Component {
             />
           </Label>
           <Label>
-            &nbsp;&nbsp;&nbsp;Password&nbsp;
+            Password&nbsp;
             <Input
               type="password"
               onChange={(e) => this.handleChange(e)}
@@ -91,6 +92,7 @@ class Login extends Component {
           </Label>
           <br />
           <Button type="submit">Submit</Button>
+        </form>
         </Wrapper>
         <Footer />
       </div>
