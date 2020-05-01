@@ -35,12 +35,8 @@ class Companies extends Component {
               <img src={plus} height="20" width="20" alt="add" />
               Application Form
             </Link>
-            <br />
-            <Link style={linkStyle} to={`/interviewEntry`}>
-              <img src={plus} height="20" width="20" alt="add" />
-              Interview Form
-            </Link>
           </p>
+          <br />
           <h3> Companies that other students have applied to:</h3>
           <ul style={userApp}>
             {companyArray.length > 0 ? (

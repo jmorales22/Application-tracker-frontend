@@ -120,6 +120,7 @@ class InterviewsEntry extends Component {
             Application Form
           </Link>
         </p>
+        <br />
         <h2>Complete your interview information.</h2>
         <form onSubmit={(e) => this.handleSubmit(e)}>
           <Main>

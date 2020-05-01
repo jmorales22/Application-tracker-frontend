@@ -92,14 +92,9 @@ class ApplicationForm extends Component {
     return (
       <div>
         <ApplicationFormHeader />
-        <p>
-          <Link style={linkStyle} to={`/interviewEntry`}>
-            <img src={plus} height="20" width="20" alt="add" />
-            Interview Form
-          </Link>
-        </p>
+        <br />
         <h1>Complete your application information.</h1>
-
+        <br />
         <form onSubmit={(e) => this.handleSubmit(e)}>
           <input
             type="text"

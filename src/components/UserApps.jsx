@@ -46,6 +46,12 @@ class UserApps extends Component {
     return (
       <>
         <UserAppsHeader />
+        <br />
+        <p>
+          <Link style={linkStyle} to={`/companies`}>
+            See a List of All User Application Companies
+          </Link>
+        </p>
         <h3> Your submitted application data:</h3>
         <p>
           <Link style={linkStyle} to={`/applicationform`}>
@@ -86,10 +92,6 @@ class UserApps extends Component {
             </li>
           )}
         </ul>
-        <br />
-        <Link style={linkStyle} to={`/companies`}>
-          See a List of All User Application Companies
-        </Link>
         <br />
         <PublicApps />
       </>
