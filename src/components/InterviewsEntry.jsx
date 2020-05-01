@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import InterviewsEntryHeader from "./InterviewsEntryHeader";
 import plus from "../images/plus.png";
 import "../App.css";
@@ -397,4 +397,4 @@ const linkStyle = {
   color: "blue",
   textDecoration: "none",
 };
-export default InterviewsEntry;
+export default withRouter(InterviewsEntry);

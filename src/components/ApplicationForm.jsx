@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../App.css";
 import ApplicationFormHeader from "./ApplicationFormHeader";
-import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import plus from "../images/plus.png";
 
 const postAPI = async (url, data) => {
@@ -213,4 +213,4 @@ const linkStyle = {
   color: "blue",
 };
 
-export default ApplicationForm;
+export default withRouter(ApplicationForm);
