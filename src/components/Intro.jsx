@@ -1,12 +1,10 @@
 import React, { Component } from "react";
-import papers from "../images/papers.png";
 
 class Intro extends Component {
   render() {
     return (
       <div>
         <div style={header1}>Keep track of your applications</div>
-        <div>{/* <img style={image1} src={papers}></img> */}</div>
       </div>
     );
   }

@@ -95,8 +95,6 @@ class InterviewsEntry extends Component {
   };
 
   render() {
-    console.log("this is the state", this.state);
-    console.log("these are the props", this.props);
     const {
       round,
       interview_type,
@@ -110,7 +108,6 @@ class InterviewsEntry extends Component {
       code_challenge,
       comments,
     } = this.state;
-    console.log(this.state);
     return (
       <div>
         <InterviewsEntryHeader />
