@@ -4,12 +4,12 @@ Once a user is signed up to use the service, they can review the history of othe
 
 
 In our app you can find:<br/>
-[Node.js (back-end)](https://nodejs.org/en/)br/>
-Express (back-end)<br/>
-ElephantSQL (back-end)<br/>
-React (front-end)<br/>
-styled components (front-end)<br/>
-Favicon (front-end)<br/>
+[Node.js (back-end)](https://nodejs.org/en/)<br/>
+[Express (back-end)](https://expressjs.com/)<br/>
+[ElephantSQL (back-end)](https://www.elephantsql.com/)<br/>
+[React (front-end)](https://reactjs.org/)<br/>
+[styled components (front-end)](https://styled-components.com/)<br/>
+[Favicon (front-end)](https://favicon.io/)<br/>
 
 
 <insert images of app>
