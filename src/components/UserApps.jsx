@@ -7,6 +7,12 @@ import plus from "../images/plus.png";
 
 import SingleApp from "./SingleApp"
 import PublicApps from "./PublicApps";
+import Companies from "./Companies";
+import {Wrapper} from "./styled";
+
+function showInterviews(component) {
+  return component;
+}
 
 class UserApps extends Component {
   static contextType = LoginContext;
@@ -40,6 +46,13 @@ class UserApps extends Component {
     return (
       <>
         <UserAppsHeader />
+        <br />
+        <Wrapper>
+        <p>
+          <Link style={linkStyle} to={`/companies`}>
+            See a List of All User Application Companies
+          </Link>
+        </p>
         <h3> Your submitted application data:</h3>
         <p>
           <Link style={linkStyle} to={`/applicationform`}>
@@ -63,6 +76,7 @@ class UserApps extends Component {
                     Enter interview information{" "}
                   </Link>
                   <br />
+                  
                   <br />
                 </li>
               );
@@ -74,11 +88,8 @@ class UserApps extends Component {
           )}
         </ul>
         <br />
-        <Link style={linkStyle} to={`/companies`}>
-          See a List of All User Application Companies
-        </Link>
-        <br />
         <PublicApps />
+        </Wrapper>
       </>
     );
   }

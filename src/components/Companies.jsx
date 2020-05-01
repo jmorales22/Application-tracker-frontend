@@ -36,6 +36,7 @@ class Companies extends Component {
               Application Form
             </Link>
           </p>
+          <br />
           <h3> Companies that other students have applied to:</h3>
           <ul style={userApp}>
             {companyArray.length > 0 ? (
