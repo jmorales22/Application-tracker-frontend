@@ -8,9 +8,9 @@ function UserAppsHeader() {
       <div>
         <div style={h1Style}>App Track</div>
         <div style={links}>
-          <Link style={signOut}>
-            <Logout style={signOut} />
-          </Link>
+          <div style={signOut}>
+            <Logout />
+          </div>
         </div>
       </div>
     </header>

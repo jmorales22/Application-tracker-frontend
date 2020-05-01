@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-
+import logo_transparent from "../images/logo_transparent.png";
+import { Logo } from "./styled";
 class Intro extends Component {
   render() {
     return (
-      <div>
-        <div>Keep track of your applications</div>
-      </div>
+      <Logo>
+        <img src={logo_transparent} alt="App Track" />
+      </Logo>
     );
   }
 }

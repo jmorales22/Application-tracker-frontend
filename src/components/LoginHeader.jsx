@@ -6,7 +6,7 @@ function Header() {
   return (
     <header style={headerStyle}>
       <div>
-        <div style={h1Style}>App Track</div>
+        <div style={h1Style}>AppTrack</div>
         <div style={links}>
           <Link style={home} to="/">
             Home

@@ -14,7 +14,7 @@ function Header() {
   return (
     <header style={headerStyle}>
       <div>
-        <div style={h1Style}>App Track</div>
+        <div style={h1Style}>AppTrack</div>
         <div style={links}>
           <Link style={login} onClick={handleClick} type="submit">
             Login
@@ -76,9 +76,6 @@ const signUp = {
   height: "20px",
   color: "white",
   backgroundColor: "#1c53df",
-  borderRadius: "10px",
-  fontFamily: "Lato, sans-serif",
-  fontSize: "14px",
   border: "solid 2px #1c53df",
   textDecoration: "none",
   padding: "0px 8px",
