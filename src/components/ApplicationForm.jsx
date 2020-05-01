@@ -3,6 +3,7 @@ import "../App.css";
 import ApplicationFormHeader from "./ApplicationFormHeader";
 import { withRouter } from "react-router-dom";
 import plus from "../images/plus.png";
+import {Wrapper, Main, Hstyle, Input} from "./styled"
 
 const postAPI = async (url, data) => {
   const response = await fetch(url, {
@@ -94,10 +95,11 @@ class ApplicationForm extends Component {
       <div>
         <ApplicationFormHeader />
         <br />
-        <h1>Complete your application information.</h1>
+        <Wrapper>
+        <Hstyle>Complete your application information.</Hstyle>
         <br />
         <form onSubmit={(e) => this.handleSubmit(e)}>
-          <input
+          <Input
             type="text"
             placeholder="company"
             onChange={this.handleChange}
@@ -106,7 +108,7 @@ class ApplicationForm extends Component {
             required
           />
           <br />
-          <input
+          <Input
             type="text"
             placeholder="city"
             onChange={this.handleChange}
@@ -115,7 +117,7 @@ class ApplicationForm extends Component {
             required
           />
           <br />
-          <input
+          <Input
             type="text"
             placeholder="position"
             onChange={this.handleChange}
@@ -124,7 +126,7 @@ class ApplicationForm extends Component {
             required
           />
           <br />
-          <input
+          <Input
             type="text"
             placeholder="job description"
             onChange={this.handleChange}
@@ -203,6 +205,7 @@ class ApplicationForm extends Component {
             Submit
           </button>
         </form>
+        </Wrapper>
       </div>
     );
   }
