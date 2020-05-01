@@ -11,14 +11,13 @@ export const Wrapper = styled.form`
   padding: 0px;
 `;
 export const Button = styled.button`
-background: blue;
-border-radius: 20px;
-color: white;
-height: 30px;
-width: 80px;
-font: bold;
+  background: blue;
+  border-radius: 20px;
+  color: white;
+  height: 30px;
+  width: 80px;
+  font: bold;
 `;
-
 
 export const Input = styled.input`
   background-color: rgb(241, 236, 228);
@@ -26,19 +25,20 @@ export const Input = styled.input`
   border: 1.5px solid #a9bcf5;
   box-sizing: medium;
   font-size: 1.2rem;
-  &:focus {
+  /* &:focus {
     online: none;
-  } 
+  }  */
 `;
 export const InputBox = styled.input`
-background-color: rgb(241, 236, 228);
-border: solid;
-border: 1.5px solid #a9bcf5;
-height 3rem: width 3rem;
-font-size: 1.2rem;
-&:focus {
+  background-color: rgb(241, 236, 228);
+  border: solid;
+  border: 1.5px solid #a9bcf5;
+  height: 3rem;
+  width: 3rem;
+  font-size: 1.2rem;
+  /* &:focus {
   online: none;
-} 
+}  */
 `;
 
 export const Pstyle = styled.p`
@@ -51,15 +51,12 @@ export const Label = styled.label`
 `;
 
 export const Hstyle = styled.h2`
-// //   display: flex;
-// //   flex-direction: row;
-// //   flex-grow: "0";
-// //   align-items: "center";
-//   margin "3em";
-//   font-size: "30px";
-//   font-family: "Comfortaa, cursive";
-//   color: "black";
-// `;
-
-
-
+  display: flex;
+  flex-direction: row;
+  flex-grow: "0";
+  align-items: "center";
+  margin: "3em";
+  font-size: "30px";
+  font-family: "Comfortaa, cursive";
+  color: "black";
+`;

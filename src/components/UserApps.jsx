@@ -7,7 +7,6 @@ import plus from "../images/plus.png";
 
 import UserInterviews from "./Interviews";
 import PublicApps from "./PublicApps";
-import Companies from "./Companies";
 
 function showInterviews(component) {
   return component;

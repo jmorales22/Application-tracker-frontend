@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import LoginContext from "../context/LoginContext";
-import { Link, withRouter } from "react-router-dom";
-
+import { withRouter } from "react-router-dom";
 class Logout extends Component {
   static contextType = LoginContext;
 
   state = {};
 
-  logout = () => {
+  logout = (e) => {
+    e.preventDefault();
     const { setUser } = this.context;
     const logoutUser = {
       status: false,
@@ -17,15 +17,18 @@ class Logout extends Component {
     setUser(logoutUser);
     this.props.history.push("/");
   };
+
   render() {
     return (
-      <Link style={linkStyle} onClick={this.logout}>
+      <a type="button" style={linkStyle} onClick={this.logout}>
         Log out
-      </Link>
+      </a>
     );
   }
 }
+
 const linkStyle = {
+  cursor: "pointer",
   color: "blue",
   textDecoration: "none",
 };

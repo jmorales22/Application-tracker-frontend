@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import "../App.css";
 import ApplicationFormHeader from "./ApplicationFormHeader";
-import { Link } from "react-router-dom";
-import plus from "../images/plus.png";
+import { withRouter } from "react-router-dom";
 
 const postAPI = async (url, data) => {
   const response = await fetch(url, {
@@ -36,8 +35,7 @@ class ApplicationForm extends Component {
   };
 
   handleSubmit = async (e) => {
-    e.preventDefault();
-    this.props.history.push("/applications");
+    // e.preventDefault();
 
     try {
       const {
@@ -45,18 +43,18 @@ class ApplicationForm extends Component {
         company_name,
         city,
         position,
-        description,
+        position_description,
         date,
         offer,
         makePublic,
       } = this.state;
 
       const data = {
-        user_id: user_id,
-        company_name: company_name,
-        city: city,
-        position: position,
-        position_description: description,
+        user_id,
+        company_name,
+        city,
+        position,
+        position_description,
         application_date: date,
         offer_extended: offer,
         make_public: makePublic,
@@ -67,6 +65,7 @@ class ApplicationForm extends Component {
 
       if (response.status === 200) {
         alert("application data submitted");
+        this.props.history.push("/applications");
       }
       if (response.status !== 200) {
         alert("Unable to submit application data.");
@@ -81,7 +80,7 @@ class ApplicationForm extends Component {
       company,
       city,
       position,
-      description,
+      position_description,
       date,
       offer,
       makePublic,
@@ -128,8 +127,8 @@ class ApplicationForm extends Component {
             type="text"
             placeholder="job description"
             onChange={this.handleChange}
-            name="description"
-            value={description}
+            name="position_description"
+            value={position_description}
             required
           />
           <br />
@@ -199,18 +198,11 @@ class ApplicationForm extends Component {
               No
             </label>
           </div>
-          <button type="submit" data-testid="submitButton">
-            Submit
-          </button>
+          <button type="submit">Submit</button>
         </form>
       </div>
     );
   }
 }
 
-const linkStyle = {
-  textDecoration: "none",
-  color: "blue",
-};
-
-export default ApplicationForm;
+export default withRouter(ApplicationForm);
