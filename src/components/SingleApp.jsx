@@ -3,27 +3,25 @@ import UserInterviews from './Interviews';
 
 class SingleApp extends Component {
     state = {
-        view: false,
-        app: this.props.appData
+        view: false
     }
 
-    async setView() {
-        const newView = !!this.state.view;
+    setView = (e) => {
+        e.preventDefault();
 
-        this.setState({
-          view: newView
-        });
+        this.setState(prevState => ({
+            view: !prevState.view
+          }));
       }
 
     render() {
-        const { app } = this.state;
-
-        const date = new Date(this.state.app.application_date);
+        const { app } = this.props;
+        
+        const date = new Date(app.application_date);
         const newDate = date.getDate();
         let month = date.getMonth() + 1;
         let year = date.getFullYear();
         let dateStr = month + "/" + newDate + "/" + year;
-        console.log(this.state.view)
 
         if (this.state.view === true) {
         return (

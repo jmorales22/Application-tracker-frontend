@@ -53,7 +53,7 @@ class UserApps extends Component {
 
               return (
                 <li key={app.id}>
-                  <SingleApp appData={this.state.apps[index]}></SingleApp>
+                  <SingleApp app={this.state.apps[index]}></SingleApp>
                   <div>
                   </div>
                   <Link
