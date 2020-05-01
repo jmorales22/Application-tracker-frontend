@@ -60,3 +60,8 @@ export const Hstyle = styled.h2`
   font-family: "Comfortaa, cursive";
   color: "black";
 `;
+
+export const Logo = styled.div`
+  margin-left: "auto";
+  margin-right: "auto";
+`;
