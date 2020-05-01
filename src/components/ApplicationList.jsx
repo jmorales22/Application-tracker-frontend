@@ -30,7 +30,7 @@
 //     return (
 //       <div>
 //         <>
-//           <h3 style={h3Style}> Your submitted application data:</h3>
+//           <div style={h3Style}>Your submitted application data:</div>
 //           <ul style={userApp}>
 //             {appsArray.length > 0 ? (
 //               appsArray.map((app) => (
@@ -64,6 +64,20 @@
 // }
 
 // const userApp = {
-//   listStyle: "none",
+//   listStyle: "none"
 // };
+
+// const h3Style = {
+//     margin: "1.3rem",
+//     display: "flex",
+//     flexDirection: "row",
+//     flexGrow: "0",
+//     alignItems: "center",
+//     height: "50px",
+//     marginLeft: "30px",
+//     fontSize: "36px",
+//     fontFamily: "Comfortaa, cursive",
+//     color: "#68696b",
+//   }
+
 // export default UserApps;

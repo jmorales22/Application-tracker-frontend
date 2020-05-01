@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 class PublicInterviews extends Component {
   state = {
-    interviews: [],
+    interviews: []
   };
 
   async getData() {
@@ -37,13 +37,21 @@ class PublicInterviews extends Component {
           <h3> Interview Information</h3>
           <ul style={userApp}>
             {interviewsArray.length > 0 ? (
-              interviewsArray.map((interview) => (
+              interviewsArray.map((interview) => {
+                const date = new Date(interview.interview_date);
+                const newDate = date.getDate();
+                let month = date.getMonth() + 1;
+                let year = date.getFullYear();
+                let dateStr = month + "/" + newDate + "/" + year;
+                return(
                 <li>
+                  {interview.company_name}
+                  <br/>
                   Interview Round: {interview.round}
                   <br />
                   Interview Type: {interview.interview_type}
                   <br />
-                  Date of Interview: {interview.interview_date}
+                  Date of Interview: {dateStr}
                   <br />
                   Rating: {interview.interview_rating}
                   <br />
@@ -55,7 +63,8 @@ class PublicInterviews extends Component {
                   <br />
                   <br />
                 </li>
-              ))
+                );
+              })
             ) : (
               <li>
                 <NoInterviewData />

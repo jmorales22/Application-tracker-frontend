@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "../App.css";
 import ApplicationFormHeader from "./ApplicationFormHeader";
 import { withRouter } from "react-router-dom";
+import plus from "../images/plus.png";
+import { Wrapper, Main, Hstyle, Input } from "./styled";
 
 const postAPI = async (url, data) => {
   const response = await fetch(url, {
@@ -93,113 +95,115 @@ class ApplicationForm extends Component {
       <div>
         <ApplicationFormHeader />
         <br />
-        <h1>Complete your application information.</h1>
-        <br />
-        <form onSubmit={(e) => this.handleSubmit(e)}>
-          <input
-            type="text"
-            placeholder="company"
-            onChange={this.handleChange}
-            name="company_name"
-            value={company}
-            required
-          />
+        <Wrapper>
+          <Hstyle>Complete your application information.</Hstyle>
           <br />
-          <input
-            type="text"
-            placeholder="city"
-            onChange={this.handleChange}
-            name="city"
-            value={city}
-            required
-          />
-          <br />
-          <input
-            type="text"
-            placeholder="position"
-            onChange={this.handleChange}
-            name="position"
-            value={position}
-            required
-          />
-          <br />
-          <input
-            type="text"
-            placeholder="job description"
-            onChange={this.handleChange}
-            name="position_description"
-            value={position_description}
-            required
-          />
-          <br />
-          <input
-            type="text"
-            placeholder="applied date"
-            onChange={this.handleChange}
-            name="date"
-            value={date}
-            required
-          />
-          <br />
-          <label>
-            Job Offer?
-            <input
-              type="radio"
-              placeholder="job offer?"
+          <form onSubmit={(e) => this.handleSubmit(e)}>
+            <Input
+              type="text"
+              placeholder="company"
               onChange={this.handleChange}
-              name="offer"
-              value="Yes"
-              checked={offer === "Yes"}
+              name="company_name"
+              value={company}
+              required
             />
-            Yes
-          </label>
-          <label>
-            <input
-              type="radio"
-              placeholder="job offer?"
+            <br />
+            <Input
+              type="text"
+              placeholder="city"
               onChange={this.handleChange}
-              name="offer"
-              value="No"
-              checked={offer === "No"}
+              name="city"
+              value={city}
+              required
             />
-            No
-          </label>
-          <label>
-            <input
-              type="radio"
-              placeholder="job offer?"
+            <br />
+            <Input
+              type="text"
+              placeholder="position"
               onChange={this.handleChange}
-              name="offer"
-              value="Nothing yet"
-              checked={offer === "Nothing yet"}
+              name="position"
+              value={position}
+              required
             />
-            Nothing Yet
-          </label>
-          <div>
+            <br />
+            <Input
+              type="text"
+              placeholder="job description"
+              onChange={this.handleChange}
+              name="position_description"
+              value={position_description}
+              required
+            />
+            <br />
+            <input
+              type="date"
+              placeholder="applied date"
+              onChange={this.handleChange}
+              name="date"
+              value={date}
+              required
+            />
+            <br />
             <label>
-              Make Info Public?
+              Job Offer?
               <input
                 type="radio"
-                name="makePublic"
-                value="Yes"
-                checked={makePublic === "Yes"}
+                placeholder="job offer?"
                 onChange={this.handleChange}
+                name="offer"
+                value="Yes"
+                checked={offer === "Yes"}
               />
               Yes
             </label>
             <label>
               <input
                 type="radio"
-                name="makePublic"
-                value="No"
-                checked={makePublic === "No"}
+                placeholder="job offer?"
                 onChange={this.handleChange}
+                name="offer"
+                value="No"
+                checked={offer === "No"}
               />
               No
             </label>
-          </div>
-          <button type="submit">Submit</button>
-        </form>
+            <label>
+              <input
+                type="radio"
+                placeholder="job offer?"
+                onChange={this.handleChange}
+                name="offer"
+                value="Nothing yet"
+                checked={offer === "Nothing yet"}
+              />
+              Nothing Yet
+            </label>
+            <div>
+              <label>
+                Make Info Public?
+                <input
+                  type="radio"
+                  name="makePublic"
+                  value="Yes"
+                  checked={makePublic === "Yes"}
+                  onChange={this.handleChange}
+                />
+                Yes
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="makePublic"
+                  value="No"
+                  checked={makePublic === "No"}
+                  onChange={this.handleChange}
+                />
+                No
+              </label>
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+        </Wrapper>
       </div>
     );
   }

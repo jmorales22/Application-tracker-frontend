@@ -18,7 +18,6 @@ class UserInterviews extends Component {
 
   async componentDidMount() {
     const interviews = await this.getInterviews();
-    console.log(interviews)
 
     this.setState({
       interviews: interviews
