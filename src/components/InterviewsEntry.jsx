@@ -117,9 +117,11 @@ class InterviewsEntry extends Component {
             Application Form
           </Link>
         </p>
+        <br />
         <Main>Complete your interview information.</Main>
         <Wrapper onSubmit={(e) => this.handleSubmit(e)}>
-            <Pstyle>1. What round of interview are you in?
+          <Pstyle>
+            1. What round of interview are you in?
             <div className="form-check">
               {" "}
               <label>
@@ -129,8 +131,9 @@ class InterviewsEntry extends Component {
                   name="round"
                   value="Round1"
                   checked={round === "Round1"}
-                  className="form-check-input" 
-                  /> Round 1
+                  className="form-check-input"
+                />{" "}
+                Round 1
               </label>
             </div>
             <div className="form-check">
@@ -142,8 +145,9 @@ class InterviewsEntry extends Component {
                   name="round"
                   value="round2"
                   checked={round === "round2"}
-                  className="form-check-input" 
-                  /> Round 2
+                  className="form-check-input"
+                />{" "}
+                Round 2
               </label>
             </div>
             <div className="form-check">
@@ -155,12 +159,14 @@ class InterviewsEntry extends Component {
                   name="round"
                   value="round3"
                   checked={round === "round3"}
-                  className="form-check-input" 
-                  /> Round3
+                  className="form-check-input"
+                />{" "}
+                Round3
               </label>
             </div>
-            </Pstyle>
-            <Pstyle>2. What type of interview did you have?
+          </Pstyle>
+          <Pstyle>
+            2. What type of interview did you have?
             <div className="form-check">
               {" "}
               <label>
@@ -170,8 +176,9 @@ class InterviewsEntry extends Component {
                   name="interview_type"
                   value="In Person"
                   checked={interview_type === "In Person"}
-                  className="form-check-input" 
-                  /> In Person
+                  className="form-check-input"
+                />{" "}
+                In Person
               </label>
             </div>
             <div className="form-check">
@@ -183,8 +190,9 @@ class InterviewsEntry extends Component {
                   name="interview_type"
                   value="Phone"
                   checked={interview_type === "Phone"}
-                  className="form-check-input" 
-                  /> Phone
+                  className="form-check-input"
+                />{" "}
+                Phone
               </label>
             </div>
             <div className="form-check">
@@ -196,8 +204,9 @@ class InterviewsEntry extends Component {
                   name="interview_type"
                   value="Video"
                   checked={interview_type === "Video"}
-                  className="form-check-input" 
-                  /> Video
+                  className="form-check-input"
+                />{" "}
+                Video
               </label>
             </div>
             <div className="form-check">
@@ -209,22 +218,25 @@ class InterviewsEntry extends Component {
                   name="interview_type"
                   value="Other"
                   checked={interview_type === "Other"}
-                  className="form-check-input" 
-                  /> Other
+                  className="form-check-input"
+                />{" "}
+                Other
               </label>
             </div>
-            </Pstyle>
-            <Pstyle>3. What was the date of the interview?&nbsp;&nbsp;
-              <Input
-                type="date"
-                placeholder=""
-                onChange={this.handleChange}
-                name="interview_date"
-                value={interview_date}
-                required
-              />
-            </Pstyle>
-            <Pstyle>4. How would you rate the interview process?&nbsp;&nbsp;
+          </Pstyle>
+          <Pstyle>
+            3. What was the date of the interview?&nbsp;&nbsp;
+            <Input
+              type="date"
+              placeholder=""
+              onChange={this.handleChange}
+              name="interview_date"
+              value={interview_date}
+              required
+            />
+          </Pstyle>
+          <Pstyle>
+            4. How would you rate the interview process?&nbsp;&nbsp;
             <div className="form-check">
               {" "}
               <label>
@@ -234,8 +246,9 @@ class InterviewsEntry extends Component {
                   name="interview_rating"
                   value="Easy"
                   checked={interview_rating === "Easy"}
-                  className="form-check-input" 
-                  /> Easy
+                  className="form-check-input"
+                />{" "}
+                Easy
               </label>
             </div>
             <div className="form-check">
@@ -247,8 +260,9 @@ class InterviewsEntry extends Component {
                   name="interview_rating"
                   value="Moderate"
                   checked={interview_rating === "Moderate"}
-                  className="form-check-input" 
-                  /> Moderate
+                  className="form-check-input"
+                />{" "}
+                Moderate
               </label>
             </div>
             <div className="form-check">
@@ -261,51 +275,59 @@ class InterviewsEntry extends Component {
                   value="Difficult"
                   checked={interview_rating === "Difficult"}
                   className="form-check-input"
-                  /> Difficult
+                />{" "}
+                Difficult
               </label>
             </div>
-            </Pstyle>
-            <Pstyle>5. What is the interviewer's name?&nbsp;&nbsp;
-              <Input
-                type="text"
-                placeholder=""
-                onChange={this.handleChange}
-                name="interviewer"
-                value={interviewer}
-                required
-              />
-              </Pstyle>
-            <Pstyle>6. What is the name of the person to follow-up with?&nbsp;&nbsp;
-              <Input
-                type="text"
-                placeholder=""
-                onChange={this.handleChange}
-                name="follow_up_person"
-                value={follow_up_person}
-                required
-              />
-              </Pstyle>
-            <Pstyle>7. What is the phone number of the person to follow up with?&nbsp;&nbsp;
-              <Input
-                type="text"
-                placeholder=""
-                onChange={this.handleChange}
-                name="follow_up_phone"
-                value={follow_up_phone}
-                required
-              />
-              </Pstyle>
-            <Pstyle>8. What is the email address of the person to follow-up with?&nbsp;&nbsp;
-              <Input
-                type="text"
-                placeholder=""
-                onChange={this.handleChange}
-                name="follow_up_email"
-                value={follow_up_email}
-                required
-              />
-              </Pstyle>
-            <Pstyle>9. Were you required to do whiteboarding for the interview?
+          </Pstyle>
+          <Pstyle>
+            5. What is the interviewer's name?&nbsp;&nbsp;
+            <Input
+              type="text"
+              placeholder=""
+              onChange={this.handleChange}
+              name="interviewer"
+              value={interviewer}
+              required
+            />
+          </Pstyle>
+          <Pstyle>
+            6. What is the name of the person to follow-up with?&nbsp;&nbsp;
+            <Input
+              type="text"
+              placeholder=""
+              onChange={this.handleChange}
+              name="follow_up_person"
+              value={follow_up_person}
+              required
+            />
+          </Pstyle>
+          <Pstyle>
+            7. What is the phone number of the person to follow up
+            with?&nbsp;&nbsp;
+            <Input
+              type="text"
+              placeholder=""
+              onChange={this.handleChange}
+              name="follow_up_phone"
+              value={follow_up_phone}
+              required
+            />
+          </Pstyle>
+          <Pstyle>
+            8. What is the email address of the person to follow-up
+            with?&nbsp;&nbsp;
+            <Input
+              type="text"
+              placeholder=""
+              onChange={this.handleChange}
+              name="follow_up_email"
+              value={follow_up_email}
+              required
+            />
+          </Pstyle>
+          <Pstyle>
+            9. Were you required to do whiteboarding for the interview?
             <div className="form-check">
               {" "}
               <label>
@@ -315,8 +337,9 @@ class InterviewsEntry extends Component {
                   name="whiteboarding"
                   value="Yes"
                   checked={whiteboarding === "Yes"}
-                  className="form-check-input" 
-                  /> Yes
+                  className="form-check-input"
+                />{" "}
+                Yes
               </label>
             </div>
             <div className="form-check">
@@ -328,12 +351,14 @@ class InterviewsEntry extends Component {
                   name="whiteboarding"
                   value="No"
                   checked={whiteboarding === "No"}
-                  className="form-check-input" 
-                  /> No
+                  className="form-check-input"
+                />{" "}
+                No
               </label>
             </div>
-            </Pstyle>
-            <Pstyle>10. Were you required to complete a code challenge?
+          </Pstyle>
+          <Pstyle>
+            10. Were you required to complete a code challenge?
             <div className="form-check">
               {" "}
               <label>
@@ -343,8 +368,9 @@ class InterviewsEntry extends Component {
                   name="code_challenge"
                   value="Yes"
                   checked={code_challenge === "Yes"}
-                  className="form-check-input" 
-                  /> Yes
+                  className="form-check-input"
+                />{" "}
+                Yes
               </label>
             </div>
             <div className="form-check">
@@ -356,21 +382,23 @@ class InterviewsEntry extends Component {
                   name="code_challenge"
                   value="No"
                   checked={code_challenge === "No"}
-                  className="form-check-input" 
-                  /> No
+                  className="form-check-input"
+                />{" "}
+                No
               </label>
             </div>
-            </Pstyle>
-            <Pstyle>11. Please provide additional comments here:&nbsp;&nbsp;
-              <InputBox
-                type="text"
-                placeholder=""
-                onChange={this.handleChange}
-                name="comments"
-                value={comments}
-                required
-              />
-              </Pstyle>
+          </Pstyle>
+          <Pstyle>
+            11. Please provide additional comments here:&nbsp;&nbsp;
+            <InputBox
+              type="text"
+              placeholder=""
+              onChange={this.handleChange}
+              name="comments"
+              value={comments}
+              required
+            />
+          </Pstyle>
           <Button type="submit" data-testid="submitButton">
             Submit
           </Button>

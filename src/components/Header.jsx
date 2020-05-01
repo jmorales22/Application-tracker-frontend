@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Header() {
   const handleClick = (e) => {
@@ -14,13 +15,13 @@ function Header() {
     <header style={headerStyle}>
       <div>
         <div style={h1Style}>App Track</div>
-        <div style={buttons}>
-          <button style={login} onClick={handleClick} type="submit">
+        <div style={links}>
+          <Link style={login} onClick={handleClick} type="submit">
             Login
-          </button>
-          <button style={signUp} onClick={handleClick2} type="submit">
+          </Link>
+          <Link style={signUp} onClick={handleClick2} type="submit">
             Sign Up for Free
-          </button>
+          </Link>
         </div>
       </div>
     </header>
@@ -45,7 +46,7 @@ const h1Style = {
   color: "#68696b",
 };
 
-const buttons = {
+const links = {
   display: "flex",
   flexDirection: "row",
   justifyContent: "flex-end",
@@ -57,18 +58,31 @@ const login = {
   borderRadius: "10px",
   fontFamily: "Lato, sans-serif",
   fontSize: "14px",
-  height: "30px",
+  height: "20px",
   background: "none",
   border: "solid 2px #1c53df",
   color: "#1c53df",
+  textDecoration: "none",
+  padding: "0px 8px",
+  paddingTop: "4px",
+  position: "relative",
+  marginRight: "5px",
 };
 
 const signUp = {
   fontFamily: "Lato, sans-serif",
   fontSize: "14px",
   borderRadius: "10px",
-  height: "30px",
-  background: "#1c53df",
+  height: "20px",
   color: "white",
+  backgroundColor: "#1c53df",
+  borderRadius: "10px",
+  fontFamily: "Lato, sans-serif",
+  fontSize: "14px",
+  border: "solid 2px #1c53df",
+  textDecoration: "none",
+  padding: "0px 8px",
+  paddingTop: "4px",
+  position: "relative",
 };
 export default Header;

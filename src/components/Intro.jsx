@@ -10,15 +10,10 @@ class Intro extends Component {
   }
 }
 
-const header1 = {
-  marginTop: "40px",
+const paragraph = {
+  fontSize: "40px",
   fontFamily: "Roboto, sans-serif",
   textAlign: "center",
-};
-
-const image1 = {
-  display: "block",
-  marginLeft: "auto",
-  marginRight: "auto",
+  marginTop: "0",
 };
 export default Intro;
