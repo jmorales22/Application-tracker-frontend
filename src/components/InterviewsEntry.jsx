@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import InterviewsEntryHeader from "./InterviewsEntryHeader";
 import plus from "../images/plus.png";
 import "../App.css";
-import { Main, Input, Pstyle } from "./styled";
+import { Main, Input, Pstyle, InputBox, Wrapper, Button } from "./styled";
 
 const postAPI = async (url, data) => {
   const response = await fetch(url, {
@@ -120,13 +120,11 @@ class InterviewsEntry extends Component {
             Application Form
           </Link>
         </p>
-        <h2>Complete your interview information.</h2>
-        <form onSubmit={(e) => this.handleSubmit(e)}>
-          <Main>
-            <p>1. What round of interview are you in?</p>
+        <Main>Complete your interview information.</Main>
+        <Wrapper onSubmit={(e) => this.handleSubmit(e)}>
+            <Pstyle>1. What round of interview are you in?
             <div className="form-check">
               {" "}
-              Round 1
               <label>
                 <input
                   type="radio"
@@ -134,13 +132,12 @@ class InterviewsEntry extends Component {
                   name="round"
                   value="Round1"
                   checked={round === "Round1"}
-                  className="form-check-input"
-                />
+                  className="form-check-input" 
+                  /> Round 1
               </label>
             </div>
             <div className="form-check">
               {" "}
-              Round 2
               <label>
                 <input
                   type="radio"
@@ -148,13 +145,12 @@ class InterviewsEntry extends Component {
                   name="round"
                   value="round2"
                   checked={round === "round2"}
-                  className="form-check-input"
-                />
+                  className="form-check-input" 
+                  /> Round 2
               </label>
             </div>
             <div className="form-check">
               {" "}
-              Round 3
               <label>
                 <input
                   type="radio"
@@ -162,14 +158,14 @@ class InterviewsEntry extends Component {
                   name="round"
                   value="round3"
                   checked={round === "round3"}
-                  className="form-check-input"
-                />
+                  className="form-check-input" 
+                  /> Round3
               </label>
             </div>
-            <p>2. What type of interview did you have?</p>
+            </Pstyle>
+            <Pstyle>2. What type of interview did you have?
             <div className="form-check">
               {" "}
-              In Person
               <label>
                 <input
                   type="radio"
@@ -177,13 +173,12 @@ class InterviewsEntry extends Component {
                   name="interview_type"
                   value="In Person"
                   checked={interview_type === "In Person"}
-                  className="form-check-input"
-                />
+                  className="form-check-input" 
+                  /> In Person
               </label>
             </div>
             <div className="form-check">
               {" "}
-              Phone
               <label>
                 <input
                   type="radio"
@@ -191,14 +186,12 @@ class InterviewsEntry extends Component {
                   name="interview_type"
                   value="Phone"
                   checked={interview_type === "Phone"}
-                  className="form-check-input"
-                />
+                  className="form-check-input" 
+                  /> Phone
               </label>
             </div>
-
             <div className="form-check">
               {" "}
-              Video
               <label>
                 <input
                   type="radio"
@@ -206,13 +199,12 @@ class InterviewsEntry extends Component {
                   name="interview_type"
                   value="Video"
                   checked={interview_type === "Video"}
-                  className="form-check-input"
-                />
+                  className="form-check-input" 
+                  /> Video
               </label>
             </div>
             <div className="form-check">
               {" "}
-              Other
               <label>
                 <input
                   type="radio"
@@ -220,12 +212,12 @@ class InterviewsEntry extends Component {
                   name="interview_type"
                   value="Other"
                   checked={interview_type === "Other"}
-                  className="form-check-input"
-                />
+                  className="form-check-input" 
+                  /> Other
               </label>
             </div>
-            <Pstyle>
-              3. What was the date of the interview?
+            </Pstyle>
+            <Pstyle>3. What was the date of the interview?&nbsp;&nbsp;
               <Input
                 type="date"
                 placeholder=""
@@ -235,10 +227,9 @@ class InterviewsEntry extends Component {
                 required
               />
             </Pstyle>
-            <p>4. How would you rate the interview process?</p>
+            <Pstyle>4. How would you rate the interview process?&nbsp;&nbsp;
             <div className="form-check">
               {" "}
-              Easy
               <label>
                 <input
                   type="radio"
@@ -246,13 +237,12 @@ class InterviewsEntry extends Component {
                   name="interview_rating"
                   value="Easy"
                   checked={interview_rating === "Easy"}
-                  className="form-check-input"
-                />
+                  className="form-check-input" 
+                  /> Easy
               </label>
             </div>
             <div className="form-check">
               {" "}
-              Moderate
               <label>
                 <input
                   type="radio"
@@ -260,13 +250,12 @@ class InterviewsEntry extends Component {
                   name="interview_rating"
                   value="Moderate"
                   checked={interview_rating === "Moderate"}
-                  className="form-check-input"
-                />
+                  className="form-check-input" 
+                  /> Moderate
               </label>
             </div>
             <div className="form-check">
               {" "}
-              Difficult
               <label>
                 <input
                   type="radio"
@@ -275,11 +264,11 @@ class InterviewsEntry extends Component {
                   value="Difficult"
                   checked={interview_rating === "Difficult"}
                   className="form-check-input"
-                />
+                  /> Difficult
               </label>
             </div>
-            <Pstyle>
-              5. What is the interviewer's name?
+            </Pstyle>
+            <Pstyle>5. What is the interviewer's name?&nbsp;&nbsp;
               <Input
                 type="text"
                 placeholder=""
@@ -288,9 +277,8 @@ class InterviewsEntry extends Component {
                 value={interviewer}
                 required
               />
-            </Pstyle>
-            <Pstyle>
-              6. What is the name of the person to follow-up with?
+              </Pstyle>
+            <Pstyle>6. What is the name of the person to follow-up with?&nbsp;&nbsp;
               <Input
                 type="text"
                 placeholder=""
@@ -299,9 +287,8 @@ class InterviewsEntry extends Component {
                 value={follow_up_person}
                 required
               />
-            </Pstyle>
-            <Pstyle>
-              7. What is the phone number of the person to follow up with?
+              </Pstyle>
+            <Pstyle>7. What is the phone number of the person to follow up with?&nbsp;&nbsp;
               <Input
                 type="text"
                 placeholder=""
@@ -310,9 +297,8 @@ class InterviewsEntry extends Component {
                 value={follow_up_phone}
                 required
               />
-            </Pstyle>
-            <Pstyle>
-              8. What is the email address of the person to follow-up with?
+              </Pstyle>
+            <Pstyle>8. What is the email address of the person to follow-up with?&nbsp;&nbsp;
               <Input
                 type="text"
                 placeholder=""
@@ -321,11 +307,10 @@ class InterviewsEntry extends Component {
                 value={follow_up_email}
                 required
               />
-            </Pstyle>
-            <p>9. Were you required to do whiteboarding for the interview?</p>
+              </Pstyle>
+            <Pstyle>9. Were you required to do whiteboarding for the interview?
             <div className="form-check">
               {" "}
-              Yes
               <label>
                 <input
                   type="radio"
@@ -333,13 +318,12 @@ class InterviewsEntry extends Component {
                   name="whiteboarding"
                   value="Yes"
                   checked={whiteboarding === "Yes"}
-                  className="form-check-input"
-                />
+                  className="form-check-input" 
+                  /> Yes
               </label>
             </div>
             <div className="form-check">
               {" "}
-              No
               <label>
                 <input
                   type="radio"
@@ -347,14 +331,14 @@ class InterviewsEntry extends Component {
                   name="whiteboarding"
                   value="No"
                   checked={whiteboarding === "No"}
-                  className="form-check-input"
-                />
+                  className="form-check-input" 
+                  /> No
               </label>
             </div>
-            <p>10. Were you required to complete a code challenge?</p>
+            </Pstyle>
+            <Pstyle>10. Were you required to complete a code challenge?
             <div className="form-check">
               {" "}
-              Yes
               <label>
                 <input
                   type="radio"
@@ -362,13 +346,12 @@ class InterviewsEntry extends Component {
                   name="code_challenge"
                   value="Yes"
                   checked={code_challenge === "Yes"}
-                  className="form-check-input"
-                />
+                  className="form-check-input" 
+                  /> Yes
               </label>
             </div>
             <div className="form-check">
               {" "}
-              No
               <label>
                 <input
                   type="radio"
@@ -376,14 +359,13 @@ class InterviewsEntry extends Component {
                   name="code_challenge"
                   value="No"
                   checked={code_challenge === "No"}
-                  className="form-check-input"
-                />
+                  className="form-check-input" 
+                  /> No
               </label>
             </div>
-
-            <Pstyle>
-              11. Please provide additional comments here:
-              <Input
+            </Pstyle>
+            <Pstyle>11. Please provide additional comments here:&nbsp;&nbsp;
+              <InputBox
                 type="text"
                 placeholder=""
                 onChange={this.handleChange}
@@ -391,14 +373,11 @@ class InterviewsEntry extends Component {
                 value={comments}
                 required
               />
-            </Pstyle>
-          </Main>
-          <button type="submit" data-testid="submitButton">
+              </Pstyle>
+          <Button type="submit" data-testid="submitButton">
             Submit
-          </button>
-        </form>
-
-        <br />
+          </Button>
+        </Wrapper>
       </div>
     );
   }
