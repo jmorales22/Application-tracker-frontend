@@ -27,7 +27,7 @@ class UserInterviews extends Component {
   render() {
     let interviewArray = this.state.interviews;
 
-    if (interviewArray.length === 0) {
+    if (interviewArray.length > 0) {
         return (
             <div>
                 {interviewArray.map((interview, index) => (
