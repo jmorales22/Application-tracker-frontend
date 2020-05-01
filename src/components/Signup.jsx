@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 import SignUpHeader from "./SignupHeader";
 import Footer from "./Footer";
 import { Main, Input, Pstyle, InputBox, Wrapper, Button } from "./styled"; 
+
 const postAPI = async (url, data) => {
   const response = await fetch(url, {
     method: "POST",
