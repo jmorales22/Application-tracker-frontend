@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import LoginContext, { LoginConsumer } from "../context/LoginContext";
 import NoData from "./NoData";
 import UserAppsHeader from "./UserAppsHeader";
-import Interviews from "./Interviews";
 import plus from "../images/plus.png";
-// import LoginContext, { LoginConsumer } from "../context/LoginContext";
+
 import UserInterviews from "./Interviews";
 import PublicApps from "./PublicApps";
+import Companies from "./Companies";
 
 function showInterviews(component) {
   return component;
@@ -87,6 +87,10 @@ class UserApps extends Component {
             </li>
           )}
         </ul>
+        <br />
+        <Link style={linkStyle} to={`/companies`}>
+          See a List of All User Application Companies
+        </Link>
         <br />
         <PublicApps />
       </>
