@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "../App.css";
 import ApplicationFormHeader from "./ApplicationFormHeader";
 import { withRouter } from "react-router-dom";
-import plus from "../images/plus.png";
 import { Wrapper, Main, Hstyle, Input } from "./styled";
 
 const postAPI = async (url, data) => {

@@ -7,12 +7,8 @@ import plus from "../images/plus.png";
 
 import SingleApp from "./SingleApp";
 import PublicApps from "./PublicApps";
-import Companies from "./Companies";
 import { Wrapper } from "./styled";
 
-function showInterviews(component) {
-  return component;
-}
 
 class UserApps extends Component {
   static contextType = LoginContext;
