@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import NoInterviewData from "./NoInterviewData";
 import PublicInterviewsHeader from "./PublicInterviewsHeader";
+
 class PublicInterviews extends Component {
   state = {
     interviews: [],
@@ -23,7 +24,6 @@ class PublicInterviews extends Component {
 
   render() {
     let interviewsArray = this.state.interviews;
-    console.log("data", interviewsArray);
 
     return (
       <div>

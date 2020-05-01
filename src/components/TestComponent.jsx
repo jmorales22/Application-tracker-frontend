@@ -13,9 +13,6 @@ class TestComponent extends Component {
           onClick={() => {
             const newUser = 12
 
-            console.log(this.context)
-            console.log(newUser)
-
             setUser(newUser)
 
           }}
