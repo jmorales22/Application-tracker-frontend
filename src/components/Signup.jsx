@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import SignUpHeader from "./SignupHeader";
 import Footer from "./Footer";
+import { Main, Input, Pstyle, InputBox, Wrapper, Button } from "./styled"; 
 const postAPI = async (url, data) => {
   const response = await fetch(url, {
     method: "POST",
@@ -65,9 +66,9 @@ class Signup extends Component {
     return (
       <div>
         <SignUpHeader />
-        <h2>Sign Up Here!</h2>
-        <form onSubmit={(e) => this.handleSubmit(e)} action="/login">
-          <input
+        <Main>Sign Up Here!</Main>
+        <Wrapper onSubmit={(e) => this.handleSubmit(e)} action="/login">
+          <Input
             type="text"
             data-testid="messageText"
             placeholder="First Name"
@@ -77,7 +78,7 @@ class Signup extends Component {
             required
           />
           <br />
-          <input
+          <Input
             type="text"
             data-testid="messageText"
             placeholder="Last Name"
@@ -87,7 +88,7 @@ class Signup extends Component {
             required
           />
           <br />
-          <input
+          <Input
             type="text"
             data-testid="messageText"
             placeholder="Email"
@@ -97,7 +98,7 @@ class Signup extends Component {
             required
           />
           <br />
-          <input
+          <Input
             type="text"
             data-testid="messageText"
             placeholder="Password"
@@ -108,8 +109,7 @@ class Signup extends Component {
           />
           <br />
           <div className="form-check">
-            <label>
-              Make Contact Info Public?
+            <Pstyle>Make Contact Info Public?<Pstyle></Pstyle>
               <input
                 type="radio"
                 name="contact"
@@ -118,9 +118,8 @@ class Signup extends Component {
                 onChange={this.handleChange}
                 className="form-check-input"
               />
-              Yes
-            </label>
-            <label>
+              Yes</Pstyle>
+            <Pstyle>
               <input
                 type="radio"
                 name="contact"
@@ -129,13 +128,12 @@ class Signup extends Component {
                 onChange={this.handleChange}
                 className="form-check-input"
               />
-              No
-            </label>
+              No</Pstyle>
           </div>
-          <button type="submit">SignUp!</button>
-        </form>
+          <Button type="submit">SignUp!</Button>
+          </Wrapper>
         <Footer />
-      </div>
+        </div>
     );
   }
 }
