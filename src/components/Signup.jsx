@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import SignUpHeader from "./SignupHeader";
 import Footer from "./Footer";
-
+import { Main, Input, Pstyle, InputBox, Wrapper, Button } from "./styled"; 
 const postAPI = async (url, data) => {
   const response = await fetch(url, {
     method: "POST",
@@ -63,9 +63,10 @@ class Signup extends Component {
     return (
       <div>
         <SignUpHeader />
-        <h2>Sign Up Here!</h2>
+        <Main>Sign Up Here!</Main>
+        <Wrapper>
         <form onSubmit={(e) => this.handleSubmit(e)} action="/login">
-          <input
+          <Input
             type="text"
             data-testid="messageText"
             placeholder="First Name"
@@ -75,7 +76,7 @@ class Signup extends Component {
             required
           />
           <br />
-          <input
+          <Input
             type="text"
             data-testid="messageText"
             placeholder="Last Name"
@@ -85,7 +86,7 @@ class Signup extends Component {
             required
           />
           <br />
-          <input
+          <Input
             type="text"
             data-testid="messageText"
             placeholder="Email"
@@ -95,7 +96,7 @@ class Signup extends Component {
             required
           />
           <br />
-          <input
+          <Input
             type="text"
             data-testid="messageText"
             placeholder="Password"
@@ -107,8 +108,9 @@ class Signup extends Component {
           <br />
           <button type="submit">SignUp!</button>
         </form>
+        </Wrapper>
         <Footer />
-      </div>
+        </div>
     );
   }
 }
