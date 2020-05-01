@@ -6,14 +6,14 @@ function Header() {
   return (
     <header style={headerStyle}>
       <div>
-        <div style={h1Style}>App Track</div>
+        <div style={h1Style}>AppTrack</div>
         <div style={links}>
           <Link style={HomePage} to={`/applications`}>
             Home Page
           </Link>
-          <Link style={signOut}>
-            <Logout style={signOut} />
-          </Link>
+          <div style={signOut}>
+            <Logout />
+          </div>
         </div>
       </div>
     </header>

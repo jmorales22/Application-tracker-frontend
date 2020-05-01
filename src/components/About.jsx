@@ -15,6 +15,7 @@ class About extends Component {
         <a
           href="https://github.com/jmorales22/Application-tracker-frontend"
           target="_blank"
+          rel="noopener noreferrer"
           style={linkStyle}
         >
           Front-End of AppTrack
@@ -23,6 +24,7 @@ class About extends Component {
         <a
           href="https://github.com/jmorales22/Application-tracker-backend"
           target="_blank"
+          rel="noopener noreferrer"
           style={linkStyle}
         >
           Back-End of AppTrack
