@@ -129,11 +129,10 @@ class InterviewsEntry extends Component {
                   type="radio"
                   onChange={this.handleChange}
                   name="round"
-                  value="Round1"
-                  checked={round === "Round1"}
+                  value="Round 1"
+                  checked={round === "Round 1"}
                   className="form-check-input"
-                />{" "}
-                Round 1
+                />Round 1
               </label>
             </div>
             <div className="form-check">
@@ -143,11 +142,10 @@ class InterviewsEntry extends Component {
                   type="radio"
                   onChange={this.handleChange}
                   name="round"
-                  value="round2"
-                  checked={round === "round2"}
+                  value="Round 2"
+                  checked={round === "Round 2"}
                   className="form-check-input"
-                />{" "}
-                Round 2
+                />Round 2
               </label>
             </div>
             <div className="form-check">
@@ -157,11 +155,10 @@ class InterviewsEntry extends Component {
                   type="radio"
                   onChange={this.handleChange}
                   name="round"
-                  value="round3"
-                  checked={round === "round3"}
+                  value="Round 3"
+                  checked={round === "Round 3"}
                   className="form-check-input"
-                />{" "}
-                Round3
+                />Round3
               </label>
             </div>
           </Pstyle>
@@ -175,10 +172,9 @@ class InterviewsEntry extends Component {
                   onChange={this.handleChange}
                   name="interview_type"
                   value="In Person"
-                  checked={interview_type === "In Person"}
+                  checked={interview_type === "In-Person"}
                   className="form-check-input"
-                />{" "}
-                In Person
+                />In Person
               </label>
             </div>
             <div className="form-check">
@@ -191,8 +187,7 @@ class InterviewsEntry extends Component {
                   value="Phone"
                   checked={interview_type === "Phone"}
                   className="form-check-input"
-                />{" "}
-                Phone
+                />Phone
               </label>
             </div>
             <div className="form-check">
@@ -205,8 +200,7 @@ class InterviewsEntry extends Component {
                   value="Video"
                   checked={interview_type === "Video"}
                   className="form-check-input"
-                />{" "}
-                Video
+                />Video
               </label>
             </div>
             <div className="form-check">
@@ -219,8 +213,7 @@ class InterviewsEntry extends Component {
                   value="Other"
                   checked={interview_type === "Other"}
                   className="form-check-input"
-                />{" "}
-                Other
+                />Other
               </label>
             </div>
           </Pstyle>
@@ -247,8 +240,7 @@ class InterviewsEntry extends Component {
                   value="Easy"
                   checked={interview_rating === "Easy"}
                   className="form-check-input"
-                />{" "}
-                Easy
+                />Easy
               </label>
             </div>
             <div className="form-check">
@@ -261,8 +253,7 @@ class InterviewsEntry extends Component {
                   value="Moderate"
                   checked={interview_rating === "Moderate"}
                   className="form-check-input"
-                />{" "}
-                Moderate
+                />Moderate
               </label>
             </div>
             <div className="form-check">
@@ -275,8 +266,7 @@ class InterviewsEntry extends Component {
                   value="Difficult"
                   checked={interview_rating === "Difficult"}
                   className="form-check-input"
-                />{" "}
-                Difficult
+                />Difficult
               </label>
             </div>
           </Pstyle>
@@ -338,8 +328,7 @@ class InterviewsEntry extends Component {
                   value="Yes"
                   checked={whiteboarding === "Yes"}
                   className="form-check-input"
-                />{" "}
-                Yes
+                />Yes
               </label>
             </div>
             <div className="form-check">
@@ -352,8 +341,7 @@ class InterviewsEntry extends Component {
                   value="No"
                   checked={whiteboarding === "No"}
                   className="form-check-input"
-                />{" "}
-                No
+                />No
               </label>
             </div>
           </Pstyle>
@@ -369,8 +357,7 @@ class InterviewsEntry extends Component {
                   value="Yes"
                   checked={code_challenge === "Yes"}
                   className="form-check-input"
-                />{" "}
-                Yes
+                />Yes
               </label>
             </div>
             <div className="form-check">
@@ -383,8 +370,7 @@ class InterviewsEntry extends Component {
                   value="No"
                   checked={code_challenge === "No"}
                   className="form-check-input"
-                />{" "}
-                No
+                />No
               </label>
             </div>
           </Pstyle>
