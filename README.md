@@ -12,7 +12,7 @@ In our app you can find:<br/>
 [Favicon (front-end)](https://favicon.io/)<br/>
 
 
-<insert images of app>
+insert images of app once complete
 
 ## Get started with the app
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
