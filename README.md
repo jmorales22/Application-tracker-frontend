@@ -3,15 +3,13 @@ AppTrack is the way for you to keep up with the jobs you have applied for.  In a
 Once a user is signed up to use the service, they can review the history of other users job applications and interviews as well as input their own applications and interviews. Not only does this make keeping up with where you have applied easier, it also gives you access to information from others. It is a great way to manage your applications and interviews and keep track of whom to contact with the companies you have interviewed with.  
 
 
-In our app you can find:
-Node.js (back-end)
-Express (back-end)
-ElephantSQL (back-end)
-React (front-end)
-styled components (front-end)
-Favicon (front-end)
-
-
+In our app you can find:<br/>
+Node.js (back-end)<br/>
+Express (back-end)<br/>
+ElephantSQL (back-end)<br/>
+React (front-end)<br/>
+styled components (front-end)<br/>
+Favicon (front-end)<br/>
 
 
 <insert images of app>
