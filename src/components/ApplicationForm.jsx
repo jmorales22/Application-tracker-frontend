@@ -134,7 +134,7 @@ class ApplicationForm extends Component {
           />
           <br />
           <input
-            type="text"
+            type="date"
             placeholder="applied date"
             onChange={this.handleChange}
             name="date"

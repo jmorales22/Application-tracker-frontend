@@ -5,13 +5,8 @@ import NoData from "./NoData";
 import UserAppsHeader from "./UserAppsHeader";
 import plus from "../images/plus.png";
 
-import UserInterviews from "./Interviews";
+import SingleApp from "./SingleApp"
 import PublicApps from "./PublicApps";
-import Companies from "./Companies";
-
-function showInterviews(component) {
-  return component;
-}
 
 class UserApps extends Component {
   static contextType = LoginContext;
@@ -60,27 +55,13 @@ class UserApps extends Component {
         </p>
         <ul style={userApp}>
           {appsArray.length > 0 ? (
-            appsArray.map((app) => {
-              const date = new Date(app.application_date);
-              const newDate = date.getDate();
-              let month = date.getMonth() + 1;
-              let year = date.getFullYear();
-              let dateStr = month + "/" + newDate + "/" + year;
+            appsArray.map((app, index) => {
+
               return (
                 <li key={app.id}>
-                  {app.company_name}
-                  <br />
-                  City: {app.city}
-                  <br />
-                  Position: {app.position}
-                  <br />
-                  Postion description: {app.position_description}
-                  <br />
-                  Application Date: {dateStr}
-                  <br />
-                  Offer Extended? {app.offer_extended}
-                  <br />
-                  <UserInterviews appData={app}></UserInterviews>
+                  <SingleApp app={this.state.apps[index]}></SingleApp>
+                  <div>
+                  </div>
                   <Link
                     style={linkStyle}
                     to={`/interviewentry/${app.id}/${app.company_id}`}
