@@ -13,7 +13,7 @@ const postAPI = async (url, data) => {
     },
     body: JSON.stringify(data),
   }).then((response) => response.json());
-  console.log(response);
+
   return response;
 };
 
@@ -36,7 +36,8 @@ class ApplicationForm extends Component {
   };
 
   handleSubmit = async (e) => {
-    //e.preventDefault();
+    e.preventDefault();
+    this.props.history.push("/applications");
 
     try {
       const {

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import SignUpHeader from "./SignupHeader";
 import Footer from "./Footer";
+import { Main, Input, Pstyle, InputBox, Wrapper, Button } from "./styled"; 
 const postAPI = async (url, data) => {
   const response = await fetch(url, {
     method: "POST",
@@ -11,7 +12,6 @@ const postAPI = async (url, data) => {
     },
     body: JSON.stringify(data),
   }).then((response) => response.json());
-  console.log(response);
   return response;
 };
 
@@ -21,7 +21,6 @@ class Signup extends Component {
     lastName: "",
     email: "",
     password: "",
-    contact: "",
   };
 
   handleChange = (e) => {
@@ -35,7 +34,7 @@ class Signup extends Component {
     this.props.history.push("./login");
 
     try {
-      const { firstName, lastName, email, password, contact } = this.state;
+      const { firstName, lastName, email, password } = this.state;
 
       const data = {
         first_name: firstName,
@@ -43,7 +42,6 @@ class Signup extends Component {
         email: email,
         user_password: password,
         is_admin: "no",
-        contact_me: contact,
       };
       const url = "http://localhost:2000/adduser";
       const response = await postAPI(url, data);
@@ -60,14 +58,15 @@ class Signup extends Component {
   };
 
   render() {
-    const { firstName, lastName, email, password, contact } = this.state;
+    const { firstName, lastName, email, password } = this.state;
 
     return (
       <div>
         <SignUpHeader />
-        <h2>Sign Up Here!</h2>
+        <Main>Sign Up Here!</Main>
+        <Wrapper>
         <form onSubmit={(e) => this.handleSubmit(e)} action="/login">
-          <input
+          <Input
             type="text"
             data-testid="messageText"
             placeholder="First Name"
@@ -77,7 +76,7 @@ class Signup extends Component {
             required
           />
           <br />
-          <input
+          <Input
             type="text"
             data-testid="messageText"
             placeholder="Last Name"
@@ -87,7 +86,7 @@ class Signup extends Component {
             required
           />
           <br />
-          <input
+          <Input
             type="text"
             data-testid="messageText"
             placeholder="Email"
@@ -97,7 +96,7 @@ class Signup extends Component {
             required
           />
           <br />
-          <input
+          <Input
             type="text"
             data-testid="messageText"
             placeholder="Password"
@@ -107,35 +106,11 @@ class Signup extends Component {
             required
           />
           <br />
-          <div className="form-check">
-            <label>
-              Make Contact Info Public?
-              <input
-                type="radio"
-                name="contact"
-                value="Yes"
-                checked={contact === "Yes"}
-                onChange={this.handleChange}
-                className="form-check-input"
-              />
-              Yes
-            </label>
-            <label>
-              <input
-                type="radio"
-                name="contact"
-                value="No"
-                checked={contact === "No"}
-                onChange={this.handleChange}
-                className="form-check-input"
-              />
-              No
-            </label>
-          </div>
           <button type="submit">SignUp!</button>
         </form>
+        </Wrapper>
         <Footer />
-      </div>
+        </div>
     );
   }
 }

@@ -25,7 +25,6 @@ class PublicInterviews extends Component {
 
   render() {
     let interviewsArray = this.state.interviews;
-    console.log("data", interviewsArray);
 
     return (
       <div>
