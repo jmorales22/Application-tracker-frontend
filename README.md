@@ -4,7 +4,7 @@ Once a user is signed up to use the service, they can review the history of othe
 
 
 In our app you can find:<br/>
-Node.js (back-end)<br/>
+[Node.js (back-end)](https://nodejs.org/en/)br/>
 Express (back-end)<br/>
 ElephantSQL (back-end)<br/>
 React (front-end)<br/>
