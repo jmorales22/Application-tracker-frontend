@@ -11,11 +11,13 @@ export const Wrapper = styled.form`
   padding: 0px;
 `;
 export const Button = styled.button`
-  background: blue;
+  background: #00adb5;
   border-radius: 20px;
   color: white;
   height: 30px;
   width: 80px;
+  font-size: 14px;
+  font-family: Lato, sans-serif;
 `;
 
 export const Input = styled.input`
