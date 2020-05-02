@@ -37,7 +37,7 @@ class UserInterviews extends Component {
                     Type: {interviewArray[index].interview_type}<br />
                     Date: {interviewArray[index].interview_date}<br />
                     Rating: {interviewArray[index].interview_rating}<br />
-                    Interviewer: {interviewArray[index].intervier}<br />
+                    Interviewer: {interviewArray[index].interviewer}<br />
                     Contact: {interviewArray[index].follow_up_person}<br />
                     Contact Email: {interviewArray[index].follow_up_email}<br />
                     Whiteboarding: {interviewArray[index].whiteboarding}<br />
