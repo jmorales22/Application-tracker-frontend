@@ -43,7 +43,7 @@ const h1Style = {
   marginLeft: "30px",
   fontSize: "36px",
   fontFamily: "Comfortaa, cursive",
-  color: "#68696b",
+  color: "#00adb5",
 };
 
 const links = {
@@ -60,8 +60,8 @@ const login = {
   fontSize: "14px",
   height: "20px",
   background: "none",
-  border: "solid 2px #1c53df",
-  color: "#1c53df",
+  border: "solid 2px #00adb5",
+  color: "#00adb5",
   textDecoration: "none",
   padding: "0px 8px",
   paddingTop: "4px",
@@ -75,8 +75,8 @@ const signUp = {
   borderRadius: "10px",
   height: "20px",
   color: "white",
-  backgroundColor: "#1c53df",
-  border: "solid 2px #1c53df",
+  backgroundColor: "#00adb5",
+  border: "solid 2px #00adb5",
   textDecoration: "none",
   padding: "0px 8px",
   paddingTop: "4px",

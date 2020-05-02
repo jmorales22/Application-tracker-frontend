@@ -29,7 +29,7 @@ class Logout extends Component {
 
 const linkStyle = {
   cursor: "pointer",
-  color: "blue",
+  color: "#00adb5",
   textDecoration: "none",
 };
 export default withRouter(Logout);

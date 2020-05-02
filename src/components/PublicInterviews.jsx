@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 class PublicInterviews extends Component {
   state = {
-    interviews: []
+    interviews: [],
   };
 
   async getData() {
@@ -43,26 +43,26 @@ class PublicInterviews extends Component {
                 let month = date.getMonth() + 1;
                 let year = date.getFullYear();
                 let dateStr = month + "/" + newDate + "/" + year;
-                return(
-                <li>
-                  {interview.company_name}
-                  <br/>
-                  Interview Round: {interview.round}
-                  <br />
-                  Interview Type: {interview.interview_type}
-                  <br />
-                  Date of Interview: {dateStr}
-                  <br />
-                  Rating: {interview.interview_rating}
-                  <br />
-                  Whiteboarding?: {interview.whiteboarding}
-                  <br />
-                  Code Challenge? {interview.code_challenge}
-                  <br />
-                  Comments: {interview.comments}
-                  <br />
-                  <br />
-                </li>
+                return (
+                  <li>
+                    {interview.company_name}
+                    <br />
+                    Interview Round: {interview.round}
+                    <br />
+                    Interview Type: {interview.interview_type}
+                    <br />
+                    Date of Interview: {dateStr}
+                    <br />
+                    Rating: {interview.interview_rating}
+                    <br />
+                    Whiteboarding?: {interview.whiteboarding}
+                    <br />
+                    Code Challenge? {interview.code_challenge}
+                    <br />
+                    Comments: {interview.comments}
+                    <br />
+                    <br />
+                  </li>
                 );
               })
             ) : (
@@ -82,8 +82,9 @@ const back = {
   fontFamily: "Lato, sans-serif",
   fontSize: "14px",
   height: "20px",
-  background: "#1c53df",
-  border: "solid 2px #1c53df",
+  color: "#00adb5",
+  background: "#00adb5",
+  border: "solid 2px #00adb5",
   color: "#FFFFFF",
   textDecoration: "none",
   padding: "0px 8px",
