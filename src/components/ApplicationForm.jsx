@@ -36,7 +36,7 @@ class ApplicationForm extends Component {
   };
 
   handleSubmit = async (e) => {
-    // e.preventDefault();
+    e.preventDefault();
 
     try {
       const {
@@ -64,11 +64,10 @@ class ApplicationForm extends Component {
       const url = "http://localhost:2000/userapplications";
       const response = await postAPI(url, data);
 
-      if (response.status === 200) {
-        alert("application data submitted");
+      if (response === 200) {
         this.props.history.push("/applications");
       }
-      if (response.status !== 200) {
+      if (response !== 200) {
         alert("Unable to submit application data.");
       }
     } catch (err) {
@@ -86,9 +85,6 @@ class ApplicationForm extends Component {
       offer,
       makePublic,
     } = this.state;
-
-    console.log("this is props", this.props);
-    console.log("context", this.context);
 
     return (
       <div>
@@ -134,7 +130,7 @@ class ApplicationForm extends Component {
               required
             />
             <br />
-            <input
+            <Input
               type="date"
               placeholder="applied date"
               onChange={this.handleChange}
@@ -145,7 +141,7 @@ class ApplicationForm extends Component {
             <br />
             <label>
               Job Offer?
-              <input
+              <Input
                 type="radio"
                 placeholder="job offer?"
                 onChange={this.handleChange}
@@ -156,7 +152,7 @@ class ApplicationForm extends Component {
               Yes
             </label>
             <label>
-              <input
+              <Input
                 type="radio"
                 placeholder="job offer?"
                 onChange={this.handleChange}
@@ -167,7 +163,7 @@ class ApplicationForm extends Component {
               No
             </label>
             <label>
-              <input
+              <Input
                 type="radio"
                 placeholder="job offer?"
                 onChange={this.handleChange}
@@ -180,7 +176,7 @@ class ApplicationForm extends Component {
             <div>
               <label>
                 Make Info Public?
-                <input
+                <Input
                   type="radio"
                   name="makePublic"
                   value="Yes"
@@ -190,7 +186,7 @@ class ApplicationForm extends Component {
                 Yes
               </label>
               <label>
-                <input
+                <Input
                   type="radio"
                   name="makePublic"
                   value="No"
