@@ -9,7 +9,6 @@ import SingleApp from "./SingleApp";
 import PublicApps from "./PublicApps";
 import { Wrapper } from "./styled";
 
-
 class UserApps extends Component {
   static contextType = LoginContext;
 

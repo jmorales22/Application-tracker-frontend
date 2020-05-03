@@ -3,7 +3,7 @@ import LoginContext from "../context/LoginContext";
 import { withRouter } from "react-router-dom";
 import LoginHeader from "./LoginHeader";
 import Footer from "./Footer";
-import {Main, Hstyle, Button, Wrapper, Input, Label} from "./styled";
+import { Main, Button, Wrapper, Input, Label } from "./styled";
 
 class Login extends Component {
   static contextType = LoginContext;
@@ -69,30 +69,30 @@ class Login extends Component {
         <LoginHeader />
         <Main>Login</Main>
         <Wrapper>
-        <form onSubmit={(e) => this.handleSubmit(e)}>
-          <Label>
-            Email&nbsp;  
-            <Input
-              type="text"
-              onChange={(e) => this.handleChange(e)}
-              name="email"
-              value={email}
-              placeholder="username"
-            />
-          </Label>
-          <Label>
-            Password&nbsp;
-            <Input
-              type="password"
-              onChange={(e) => this.handleChange(e)}
-              name="password"
-              value={password}
-              placeholder="password"
-            />
-          </Label>
-          <br />
-          <Button type="submit">Submit</Button>
-        </form>
+          <form onSubmit={(e) => this.handleSubmit(e)}>
+            <Label>
+              Email&nbsp;
+              <Input
+                type="text"
+                onChange={(e) => this.handleChange(e)}
+                name="email"
+                value={email}
+                placeholder="username"
+              />
+            </Label>
+            <Label>
+              Password&nbsp;
+              <Input
+                type="password"
+                onChange={(e) => this.handleChange(e)}
+                name="password"
+                value={password}
+                placeholder="password"
+              />
+            </Label>
+            <br />
+            <Button type="submit">Submit</Button>
+          </form>
         </Wrapper>
         <Footer />
       </div>

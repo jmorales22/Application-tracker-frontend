@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 
 class UserInterviews extends Component {
-
   state = {
     interviews: [],
-    app_id: this.props.appData.id
+    app_id: this.props.appData.id,
   };
 
   async getInterviews() {
-
     const response = await fetch(
       `http://localhost:2000/interviews/${this.state.app_id}`
     );
@@ -20,7 +18,7 @@ class UserInterviews extends Component {
     const interviews = await this.getInterviews();
 
     this.setState({
-      interviews: interviews
+      interviews: interviews,
     });
   }
 
@@ -28,33 +26,44 @@ class UserInterviews extends Component {
     let interviewArray = this.state.interviews;
 
     if (interviewArray.length > 0) {
-        return (
-            <div>
-                {interviewArray.map((interview, index) => (
-                <li>
-                    <br />
-                    <strong>{interviewArray[index].round}</strong><br />
-                    Type: {interviewArray[index].interview_type}<br />
-                    Date: {interviewArray[index].interview_date}<br />
-                    Rating: {interviewArray[index].interview_rating}<br />
-                    Interviewer: {interviewArray[index].intervier}<br />
-                    Contact: {interviewArray[index].follow_up_person}<br />
-                    Contact Email: {interviewArray[index].follow_up_email}<br />
-                    Whiteboarding: {interviewArray[index].whiteboarding}<br />
-                    Coding Challenge: {interviewArray[index].code_challenge}<br />
-                    Comments: {interviewArray[index].comments}<br />
-                </li>
-                ))}
-            </div>
-        );
+      return (
+        <div>
+          {interviewArray.map((interview, index) => (
+            <ul style={list}>
+              <li>
+                <br />
+                <strong>{interviewArray[index].round}</strong>
+                <br />
+                Type: {interviewArray[index].interview_type}
+                <br />
+                Date: {interviewArray[index].interview_date}
+                <br />
+                Rating: {interviewArray[index].interview_rating}
+                <br />
+                Interviewer: {interviewArray[index].intervier}
+                <br />
+                Contact: {interviewArray[index].follow_up_person}
+                <br />
+                Contact Email: {interviewArray[index].follow_up_email}
+                <br />
+                Whiteboarding: {interviewArray[index].whiteboarding}
+                <br />
+                Coding Challenge: {interviewArray[index].code_challenge}
+                <br />
+                Comments: {interviewArray[index].comments}
+                <br />
+              </li>
+            </ul>
+          ))}
+        </div>
+      );
     } else {
-        return (
-            <div>
-                No interviews added yet.
-            </div>
-        )
+      return <div>No interviews added yet.</div>;
     }
   }
 }
 
+const list = {
+  listStyleType: "none",
+};
 export default UserInterviews;

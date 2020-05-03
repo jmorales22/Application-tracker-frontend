@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import SignUpHeader from "./SignupHeader";
 import Footer from "./Footer";
-import { Main, Input, Pstyle, InputBox, Wrapper, Button } from "./styled"; 
+import { Main, Input, Wrapper } from "./styled";
 
 const postAPI = async (url, data) => {
   const response = await fetch(url, {
@@ -66,52 +66,52 @@ class Signup extends Component {
         <SignUpHeader />
         <Main>Sign Up Here!</Main>
         <Wrapper>
-        <form onSubmit={(e) => this.handleSubmit(e)} action="/login">
-          <Input
-            type="text"
-            data-testid="messageText"
-            placeholder="First Name"
-            onChange={this.handleChange}
-            name="firstName"
-            value={firstName}
-            required
-          />
-          <br />
-          <Input
-            type="text"
-            data-testid="messageText"
-            placeholder="Last Name"
-            onChange={this.handleChange}
-            name="lastName"
-            value={lastName}
-            required
-          />
-          <br />
-          <Input
-            type="text"
-            data-testid="messageText"
-            placeholder="Email"
-            onChange={this.handleChange}
-            name="email"
-            value={email}
-            required
-          />
-          <br />
-          <Input
-            type="text"
-            data-testid="messageText"
-            placeholder="Password"
-            onChange={this.handleChange}
-            name="password"
-            value={password}
-            required
-          />
-          <br />
-          <button type="submit">SignUp!</button>
-        </form>
+          <form onSubmit={(e) => this.handleSubmit(e)} action="/login">
+            <Input
+              type="text"
+              data-testid="messageText"
+              placeholder="First Name"
+              onChange={this.handleChange}
+              name="firstName"
+              value={firstName}
+              required
+            />
+            <br />
+            <Input
+              type="text"
+              data-testid="messageText"
+              placeholder="Last Name"
+              onChange={this.handleChange}
+              name="lastName"
+              value={lastName}
+              required
+            />
+            <br />
+            <Input
+              type="text"
+              data-testid="messageText"
+              placeholder="Email"
+              onChange={this.handleChange}
+              name="email"
+              value={email}
+              required
+            />
+            <br />
+            <Input
+              type="text"
+              data-testid="messageText"
+              placeholder="Password"
+              onChange={this.handleChange}
+              name="password"
+              value={password}
+              required
+            />
+            <br />
+            <button type="submit">SignUp!</button>
+          </form>
         </Wrapper>
         <Footer />
-        </div>
+      </div>
     );
   }
 }
