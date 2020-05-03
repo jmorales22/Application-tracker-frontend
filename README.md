@@ -13,11 +13,12 @@ In our app you can find:<br/>
 [styled components (front-end)](https://styled-components.com/)<br/>
 [Favicon (front-end)](https://favicon.io/)<br/>
 
-#The builders:<br/>
+# The builders:<br/>
 [Jennifer Morales](https://github.com/jmorales22)<br/>
 [Fred Major](https://github.com/sgtfredmajor)<br/>
 [Frank Sundstedt](https://github.com/fsundstedt)<br/>
 [Ally Brannon](https://github.com/allybrannon)<br/>
+
 insert images of app once complete
 
 ## Get started with the app
