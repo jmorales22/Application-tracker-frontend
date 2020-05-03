@@ -66,49 +66,47 @@ class Signup extends Component {
         <SignUpHeader />
         <Main>Sign Up Here!</Main>
         <Wrapper>
-          <form onSubmit={(e) => this.handleSubmit(e)} action="/login">
-            <Input
-              type="text"
-              data-testid="messageText"
-              placeholder="First Name"
-              onChange={this.handleChange}
-              name="firstName"
-              value={firstName}
-              required
-            />
-            <br />
-            <Input
-              type="text"
-              data-testid="messageText"
-              placeholder="Last Name"
-              onChange={this.handleChange}
-              name="lastName"
-              value={lastName}
-              required
-            />
-            <br />
-            <Input
-              type="text"
-              data-testid="messageText"
-              placeholder="Email"
-              onChange={this.handleChange}
-              name="email"
-              value={email}
-              required
-            />
-            <br />
-            <Input
-              type="text"
-              data-testid="messageText"
-              placeholder="Password"
-              onChange={this.handleChange}
-              name="password"
-              value={password}
-              required
-            />
-            <br />
-            <button type="submit">SignUp!</button>
-          </form>
+          <div>
+            <form onSubmit={(e) => this.handleSubmit(e)} action="/login">
+              <Input
+                type="text"
+                placeholder="First Name"
+                onChange={this.handleChange}
+                name="firstName"
+                value={firstName}
+                required
+              />
+              <br />
+              <Input
+                type="text"
+                placeholder="Last Name"
+                onChange={this.handleChange}
+                name="lastName"
+                value={lastName}
+                required
+              />
+              <br />
+              <Input
+                type="text"
+                placeholder="Email"
+                onChange={this.handleChange}
+                name="email"
+                value={email}
+                required
+              />
+              <br />
+              <Input
+                type="text"
+                placeholder="Password"
+                onChange={this.handleChange}
+                name="password"
+                value={password}
+                required
+              />
+              <br />
+              <button type="submit">SignUp!</button>
+            </form>
+          </div>
         </Wrapper>
         <Footer />
       </div>

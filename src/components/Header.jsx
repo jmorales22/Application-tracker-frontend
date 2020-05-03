@@ -2,24 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Header() {
-  const handleClick = (e) => {
-    e.preventDefault();
-    window.location.href = "http://localhost:3000/login";
-  };
-  const handleClick2 = (e) => {
-    e.preventDefault();
-    window.location.href = "http://localhost:3000/signup";
-  };
-
+  
   return (
     <header style={headerStyle}>
       <div>
         <div style={h1Style}>AppTrack</div>
         <div style={links}>
-          <Link style={login} onClick={handleClick} type="submit">
+          <Link style={login} to="/login">
             Login
           </Link>
-          <Link style={signUp} onClick={handleClick2} type="submit">
+          <Link style={signUp} to="/signup">
             Sign Up for Free
           </Link>
         </div>

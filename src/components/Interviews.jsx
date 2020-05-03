@@ -28,19 +28,24 @@ class UserInterviews extends Component {
     if (interviewArray.length > 0) {
       return (
         <div>
-          {interviewArray.map((interview, index) => (
-            <ul style={list}>
+          {interviewArray.map((interview, index) => {
+            const date = new Date(interviewArray[index].interview_date);
+            const newDate = date.getDate();
+            let month = date.getMonth() + 1;
+            let year = date.getFullYear();
+            let dateStr = month + "/" + newDate + "/" + year;
+            return (
               <li>
                 <br />
                 <strong>{interviewArray[index].round}</strong>
                 <br />
                 Type: {interviewArray[index].interview_type}
                 <br />
-                Date: {interviewArray[index].interview_date}
+                Date: {dateStr}
                 <br />
                 Rating: {interviewArray[index].interview_rating}
                 <br />
-                Interviewer: {interviewArray[index].intervier}
+                Interviewer: {interviewArray[index].interviewer}
                 <br />
                 Contact: {interviewArray[index].follow_up_person}
                 <br />
@@ -53,8 +58,8 @@ class UserInterviews extends Component {
                 Comments: {interviewArray[index].comments}
                 <br />
               </li>
-            </ul>
-          ))}
+            );
+          })}
         </div>
       );
     } else {
@@ -63,7 +68,4 @@ class UserInterviews extends Component {
   }
 }
 
-const list = {
-  listStyleType: "none",
-};
 export default UserInterviews;

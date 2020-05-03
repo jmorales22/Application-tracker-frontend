@@ -59,7 +59,7 @@ class UserApps extends Component {
             {appsArray.length > 0 ? (
               appsArray.map((app, index) => {
                 return (
-                  <li key={app.id}>
+                  <li>
                     <SingleApp app={this.state.apps[index]}></SingleApp>
                     <div></div>
                     <Link

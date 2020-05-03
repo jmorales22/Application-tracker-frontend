@@ -162,7 +162,7 @@ class InterviewsEntry extends Component {
                     checked={round === "Round 3"}
                     className="form-check-input"
                   />
-                  Round3
+                  Round 3
                 </label>
               </div>
             </Pstyle>
@@ -179,7 +179,7 @@ class InterviewsEntry extends Component {
                     checked={interview_type === "In-Person"}
                     className="form-check-input"
                   />
-                  In Person
+                  In-Person
                 </label>
               </div>
               <div className="form-check">
