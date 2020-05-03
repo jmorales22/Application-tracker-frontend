@@ -7,7 +7,14 @@ import plus from "../images/plus.png";
 
 import SingleApp from "./SingleApp";
 import PublicApps from "./PublicApps";
-import { Wrapper } from "./styled";
+import {
+  OuterWrapper,
+  LinkStyle,
+  Wrapper,
+  AppIntWrapper,
+  AppIntTitle,
+  MainList,
+  DividingLine } from "./styled";
 
 
 class UserApps extends Component {
@@ -42,48 +49,57 @@ class UserApps extends Component {
     return (
       <>
         <UserAppsHeader />
-        <br />
-        <Wrapper>
-          <p>
-            <Link style={linkStyle} to={`/companies`}>
-              See a List of All User Application Companies
-            </Link>
-          </p>
-          <h3> Your submitted application data:</h3>
-          <p>
-            <Link style={linkStyle} to={`/applicationform`}>
-              <img src={plus} height="20" width="20" alt="add" />
-              Application Form
-            </Link>
-          </p>
-          <ul style={userApp}>
-            {appsArray.length > 0 ? (
-              appsArray.map((app, index) => {
-                return (
-                  <li key={app.id}>
-                    <SingleApp app={this.state.apps[index]}></SingleApp>
-                    <div></div>
-                    <Link
-                      style={linkStyle}
-                      to={`/interviewentry/${app.id}/${app.company_id}`}
-                    >
-                      Enter interview information{" "}
-                    </Link>
-                    <br />
-
-                    <br />
-                  </li>
-                );
-              })
-            ) : (
-              <li>
-                <NoData />
-              </li>
-            )}
-          </ul>
-          <br />
-          <PublicApps />
-        </Wrapper>
+        <OuterWrapper>
+          <Wrapper>
+            <p>
+              <Link style={linkStyle} to={`/companies`}>
+                <LinkStyle>
+                  See a List of All User Application Companies
+                </LinkStyle>
+              </Link>
+            </p>
+            <AppIntWrapper>
+            <AppIntTitle>
+              <div>
+                Your applications:
+              </div>
+              </AppIntTitle>
+            <p>
+              <Link style={linkStyle} to={`/applicationform`}>
+                <img src={plus} height="20" width="20" alt="add" />
+                Application Form
+              </Link>
+            </p>
+            <MainList style={userApp}>
+              {appsArray.length > 0 ? (
+                appsArray.map((app, index) => {
+                  return (
+                    <div key={app.id}>
+                      <SingleApp app={this.state.apps[index]}></SingleApp>
+                      <Link
+                        style={linkStyle}
+                        to={`/interviewentry/${app.id}/${app.company_id}`}
+                      >
+                        <LinkStyle>
+                          Enter a New Interview{" "}
+                        </LinkStyle>
+                      </Link>
+                  <DividingLine></DividingLine>
+                    </div>
+                  );
+                })
+              ) : (
+                <li>
+                  <NoData />
+                </li>
+              )}
+            </MainList>
+            </AppIntWrapper>
+            <AppIntWrapper>
+              <PublicApps />
+            </AppIntWrapper>
+          </Wrapper>
+        </OuterWrapper>
       </>
     );
   }

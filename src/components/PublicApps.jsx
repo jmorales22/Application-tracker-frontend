@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { AppIntBox } from './styled'
 
 class PublicApps extends Component {
   state = {
@@ -23,7 +24,7 @@ class PublicApps extends Component {
     let appsArray = this.state.apps;
 
     return (
-      <>
+      <AppIntBox>
         <h3>All user interview and application history:</h3>
         <ul className="PublicApplications">
           {appsArray.length > 0 ? (
@@ -38,7 +39,7 @@ class PublicApps extends Component {
             <li>No Data</li>
           )}
         </ul>
-      </>
+      </AppIntBox>
     );
   }
 }
