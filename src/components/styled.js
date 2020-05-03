@@ -16,6 +16,7 @@ export const Main = styled.div`
   padding: 0px;
 `;
 
+
 export const OuterWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -27,8 +28,6 @@ export const Wrapper = styled.div`
   width: 95%;
   margin: 2.5%;
   margin-top: 0%;
-  font-size: 1.5em;
-  padding: 0px;
 `;
 
 export const Button = styled.button`
@@ -96,7 +95,7 @@ export const InputBox = styled.input`
 }  */
 `;
 
-export const Pstyle = styled.p`
+export const Pstyle = styled.div`
   font-size: 1.3rem;
   padding: 0px;
 `;
@@ -117,9 +116,17 @@ export const Hstyle = styled.h2`
   margin: "3em";
 `;
 
-export const Logo = styled.div`
-  margin-left: "auto";
-  margin-right: "auto";
+export const LogoImage = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 80px;
+  @media only screen and (min-device-width: 1025px) {
+    width: 45%;
+    display: block;
+    margin: 0 auto;
+  }
 `;
 
 export const AppForm = styled.div`

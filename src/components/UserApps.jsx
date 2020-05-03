@@ -17,7 +17,6 @@ import {
   MainList,
   DividingLine } from "./styled";
 
-
 class UserApps extends Component {
   static contextType = LoginContext;
 
