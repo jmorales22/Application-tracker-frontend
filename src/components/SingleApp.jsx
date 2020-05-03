@@ -61,7 +61,7 @@ class SingleApp extends Component {
                                     </ListItem>
                                     <ListItem>
                                         <ListCategory>
-                                            Postion description:
+                                            Position Description:
                                         </ListCategory>
                                         <div>
                                             {app.position_description}
@@ -123,7 +123,7 @@ class SingleApp extends Component {
                                     </ListItem>
                                     <ListItem>
                                         <ListCategory>
-                                            Postion description:
+                                            Position Description:
                                         </ListCategory>
                                         <div>
                                             {app.position_description}

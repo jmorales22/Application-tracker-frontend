@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ListItem, ListCategory } from './styled'
+import { ListItem, ListCategory, IntListItems, Comments } from './styled'
 
 class UserInterviews extends Component {
   state = {
@@ -40,79 +40,80 @@ class UserInterviews extends Component {
                 <div>
                     <strong>- {interviewArray[index].round}</strong>
                 </div>
-                <ListItem>
-                    <ListCategory>
-                        Type:
-                    </ListCategory>
-                    <div>
-                        {interviewArray[index].interview_type}
-                    </div>
-                </ListItem>
-                <ListItem>
-                    <ListCategory>
-                        Date:
-                    </ListCategory>
-                    <div>
-                        {dateStr}
-                    </div>
-                </ListItem>
-                <ListItem>
-                    <ListCategory>
-                        Rating:
-                    </ListCategory>
-                    <div>
-                        {interviewArray[index].interview_rating}
-                    </div>
-                <ListItem>
-                </ListItem>
-                    <ListCategory>
-                        Interviewer:
-                    </ListCategory>
-                    <div>
-                        {interviewArray[index].interviewer}
-                    </div>
-                </ListItem>
-                <ListItem>
-                    <ListCategory>
-                        Contact:
-                    </ListCategory>
-                    <div>
-                        {interviewArray[index].follow_up_person}
-                    </div>
-                </ListItem>
-                <ListItem>
-                    <ListCategory>
-                        Contact Email:
-                    </ListCategory>
-                    <div>
-                        {interviewArray[index].follow_up_email}
-                    </div>
-                </ListItem>
-                <ListItem>
-                    <ListCategory>
-                        Whiteboarding:
-                    </ListCategory>
-                    <div>
-                        {interviewArray[index].whiteboarding}
-                    </div>
-                </ListItem>
-                <ListItem>
-                    <ListCategory>
-                        Coding Challenge:
-                    </ListCategory>
-                    <div>
-                        {interviewArray[index].code_challenge}
-                    </div>
-                </ListItem>
-                <ListItem>
-                    <ListCategory>
-                        Comments:
-                    </ListCategory>
-                </ListItem>
-                <div>
-                {interviewArray[index].comments}
-                </div>
-                <br />
+                <IntListItems>
+                    <ListItem>
+                        <ListCategory>
+                            Type:
+                        </ListCategory>
+                        <div>
+                            {interviewArray[index].interview_type}
+                        </div>
+                    </ListItem>
+                    <ListItem>
+                        <ListCategory>
+                            Date:
+                        </ListCategory>
+                        <div>
+                            {dateStr}
+                        </div>
+                    </ListItem>
+                    <ListItem>
+                        <ListCategory>
+                            Rating:
+                        </ListCategory>
+                        <div>
+                            {interviewArray[index].interview_rating}
+                        </div>
+                    <ListItem>
+                    </ListItem>
+                        <ListCategory>
+                            Interviewer:
+                        </ListCategory>
+                        <div>
+                            {interviewArray[index].interviewer}
+                        </div>
+                    </ListItem>
+                    <ListItem>
+                        <ListCategory>
+                            Contact:
+                        </ListCategory>
+                        <div>
+                            {interviewArray[index].follow_up_person}
+                        </div>
+                    </ListItem>
+                    <ListItem>
+                        <ListCategory>
+                            Contact Email:
+                        </ListCategory>
+                        <div>
+                            {interviewArray[index].follow_up_email}
+                        </div>
+                    </ListItem>
+                    <ListItem>
+                        <ListCategory>
+                            Whiteboarding:
+                        </ListCategory>
+                        <div>
+                            {interviewArray[index].whiteboarding}
+                        </div>
+                    </ListItem>
+                    <ListItem>
+                        <ListCategory>
+                            Coding Challenge:
+                        </ListCategory>
+                        <div>
+                            {interviewArray[index].code_challenge}
+                        </div>
+                    </ListItem>
+                    <ListItem>
+                        <ListCategory>
+                            Comments:
+                        </ListCategory>
+                    </ListItem>
+                    <Comments>
+                        {interviewArray[index].comments}
+                    </Comments>
+                </IntListItems>
               </li>
             );
           })}

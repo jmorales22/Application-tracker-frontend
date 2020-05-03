@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 import LoginContext from "../context/LoginContext";
 import NoData from "./NoData";
 import UserAppsHeader from "./UserAppsHeader";
-import plus from "../images/plus.png";
 
 import SingleApp from "./SingleApp";
 import PublicApps from "./PublicApps";
 import {
+  Centered,
+  AppForm,
   OuterWrapper,
   LinkStyle,
   Wrapper,
@@ -49,57 +50,61 @@ class UserApps extends Component {
     return (
       <>
         <UserAppsHeader />
-        <OuterWrapper>
-          <Wrapper>
-            <p>
-              <Link style={linkStyle} to={`/companies`}>
-                <LinkStyle>
-                  See a List of All User Application Companies
-                </LinkStyle>
-              </Link>
-            </p>
-            <AppIntWrapper>
-            <AppIntTitle>
+        <Centered>
+          <OuterWrapper>
+            <Wrapper>
               <div>
-                Your applications:
+                <Link style={linkStyle} to={`/companies`}>
+                  <LinkStyle>
+                    See Companies Others Have Applied To
+                  </LinkStyle>
+                </Link>
               </div>
+              <AppIntWrapper>
+              <AppIntTitle>
+                <div>
+                  Your Applications:
+                </div>
               </AppIntTitle>
-            <p>
-              <Link style={linkStyle} to={`/applicationform`}>
-                <img src={plus} height="20" width="20" alt="add" />
-                Application Form
-              </Link>
-            </p>
-            <MainList style={userApp}>
-              {appsArray.length > 0 ? (
-                appsArray.map((app, index) => {
-                  return (
-                    <div key={app.id}>
-                      <SingleApp app={this.state.apps[index]}></SingleApp>
-                      <Link
-                        style={linkStyle}
-                        to={`/interviewentry/${app.id}/${app.company_id}`}
-                      >
-                        <LinkStyle>
-                          Enter a New Interview{" "}
-                        </LinkStyle>
-                      </Link>
-                  <DividingLine></DividingLine>
-                    </div>
-                  );
-                })
-              ) : (
-                <li>
-                  <NoData />
-                </li>
-              )}
-            </MainList>
-            </AppIntWrapper>
-            <AppIntWrapper>
-              <PublicApps />
-            </AppIntWrapper>
-          </Wrapper>
-        </OuterWrapper>
+              <Centered>
+                <AppForm>
+                  <Link style={linkStyle} to={`/applicationform`}>
+                    +app
+                  </Link>
+                </AppForm>
+              </Centered>
+              <DividingLine></DividingLine>
+              <MainList style={userApp}>
+                {appsArray.length > 0 ? (
+                  appsArray.map((app, index) => {
+                    return (
+                      <div key={app.id}>
+                        <SingleApp app={this.state.apps[index]}></SingleApp>
+                        <Link
+                          style={linkStyle}
+                          to={`/interviewentry/${app.id}/${app.company_id}`}
+                        >
+                          <LinkStyle>
+                            Add a New Interview{" "}
+                          </LinkStyle>
+                        </Link>
+                    <DividingLine></DividingLine>
+                      </div>
+                    );
+                  })
+                ) : (
+                  <li>
+                    <NoData />
+                  </li>
+                )}
+              </MainList>
+              </AppIntWrapper>
+              <AppIntWrapper>
+                <PublicApps />
+              </AppIntWrapper>
+            </Wrapper>
+          </OuterWrapper>
+        </Centered>
       </>
     );
   }
@@ -108,7 +113,7 @@ const userApp = {
   listStyle: "none",
 };
 const linkStyle = {
-  color: "blue",
+  color: "#00adb5",
   textDecoration: "none",
 };
 export default UserApps;

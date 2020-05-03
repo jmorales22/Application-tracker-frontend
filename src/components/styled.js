@@ -6,6 +6,7 @@ export const Application = styled.div`
 
 export const Centered = styled.div`
   display: flex;
+  justify-content: center;
   align-items: center;
 `;
 
@@ -17,12 +18,15 @@ export const Main = styled.div`
 
 export const OuterWrapper = styled.div`
   display: flex;
+  justify-content: center;
   align-items: center;
+  max-width: 768px;
 `;
 
 export const Wrapper = styled.div`
   width: 95%;
   margin: 2.5%;
+  margin-top: 0%;
   font-size: 1.5em;
   padding: 0px;
 `;
@@ -49,7 +53,6 @@ export const IntButton = styled.button`
   margin-bottom: 3%;
   height: 40px;
   width: 100%;
-  max-width: 535px;
   font-size: 14px;
   font-family: Lato, sans-serif;
 `;
@@ -61,6 +64,8 @@ export const LinkStyle = styled.div`
   background: #00adb5;
   border: 0px;
   border-radius: 5px;
+  margin-top: 2%;
+  margin-bottom: 4%;
   color: white;
   outline: none;
   height: 40px;
@@ -117,6 +122,24 @@ export const Logo = styled.div`
   margin-right: "auto";
 `;
 
+export const AppForm = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #00adb5;
+  width: 50px;
+  height: 30px;
+  background: #ffffff;
+  border: 3px solid;
+  border-radius: 10px;
+  outline: none;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  font-size: 14px;
+  font-family: Lato, sans-serif;
+`;
+
+
 export const AppIntWrapper = styled.div`
   padding: 2%;
   min-width: 342px;
@@ -127,15 +150,22 @@ export const AppIntWrapper = styled.div`
 `;
 
 export const AppIntTitle = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 1%;
-  margin-bottom: 1%;
   font-weight: bold;
   text-align: center;
   color: black;
 `;
 
+export const YourApps = styled.div`
+  color: black;
+`;
+
 export const MainList = styled.ul`
   padding: 1%;
+  margin-top: 0%;
 
 `;
 
@@ -149,9 +179,13 @@ export const AppBox = styled.div`
 export const AppTitle = styled.div`
   margin-top: 1%;
   margin-bottom: 1%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  border-radius: 5px;
   font-weight: bold;
   text-align: center;
-  color: black;
+  background-color: #e6e8ed;
+  color: #00adb5;
 `;
 
 export const IntBox = styled.div`
@@ -163,17 +197,25 @@ export const ListItem = styled.div`
   margin-bottom: 3%;
 `;
 
+export const IntListItems = styled.div`
+  margin-left: 5%;
+`;
+
 export const ListCategory = styled.div`
   font-size: 0.75em;
   font-weight: bold;
-`;  
+`;
+
+export const Comments = styled.p`
+  font-size: 0.75em;
+  margin-top: 0%;
+`; 
 
 export const DividingLine = styled.span`
   display:block;
   border:none;
   color:white;
-  margin-top: 20px;
-  height:1px;
-  background:black;
+  height: 2px;
+  background: black;
   background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(#adadad), to(#fff));
 `;
