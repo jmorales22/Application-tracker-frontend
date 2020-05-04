@@ -18,7 +18,7 @@ From the Home Page, you can find all of your applications, track them, and add a
 <img width="600" alt="AppTrack 2020MainPage" src="https://user-images.githubusercontent.com/58038239/81020848-c2c11280-8e37-11ea-938d-56b21bdf4b55.png">
 <br/>
 From the Add Application Page, you can document the jobs you have applied for.<br/>
-<img width="600" alt="AppTrack 2020ApplicationInfo" src="https://user-images.githubusercontent.com/58038239/81020856-c9e82080-8e37-11ea-9ea1-15b19384feb6.png">
+<img width="600" alt="AppTrack ApplicationData" src="https://user-images.githubusercontent.com/58038239/81021894-454ad180-8e3a-11ea-9d57-a44e97c38859.png">
 <br/>
 If you click on the "See Companies Others Have Applied To" link from your home page, you can review any feedback regarding interviewing with the company.<br/>
 <img width="600" alt="AppTrack 2020CompanyList" src="https://user-images.githubusercontent.com/58038239/81020872-d3718880-8e37-11ea-92c8-0ea0abc2a923.png">
