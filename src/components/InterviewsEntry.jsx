@@ -7,15 +7,16 @@ import {
   Centered,
   AppForm,
   CommentInput,
-  Pstyle,
+  AppTitle,
   Input,
   Button,
   AppIntBox,
   OuterWrapper,
   LinkStyle,
   Wrapper,
-  AppIntWrapper,
+  IntEntryWrapper,
   DividingLine,
+  IntInput
 } from "./styled";
 
 const postAPI = async (url, data) => {
@@ -124,10 +125,10 @@ class InterviewsEntry extends Component {
     return (
       <div>
         <InterviewsEntryHeader />
+        <br/>
         <Centered>
           <OuterWrapper>
             <Wrapper>
-              <div>
                 <Centered>
                   <AppForm>
                     <Link style={linkStyle} to={`/applicationform`}>
@@ -135,15 +136,11 @@ class InterviewsEntry extends Component {
                     </Link>
                   </AppForm>
                 </Centered>
-              </div>
               <br />
-              <Centered>
-                <LinkStyle>Add an Interview to Your Application</LinkStyle>
-              </Centered>
-              <AppIntWrapper>
+              <AppTitle>Add an Interview to Your Application</AppTitle>
+              <IntEntryWrapper>
                 <AppIntBox>
                   <form onSubmit={(e) => this.handleSubmit(e)}>
-                    <Pstyle>
                       What round of interview are you in?
                       <div className="form-check">
                         <label>
@@ -184,10 +181,9 @@ class InterviewsEntry extends Component {
                           Round 3
                         </label>
                       </div>
-                    </Pstyle>
                     <br />
                     <DividingLine></DividingLine>
-                    <Pstyle>
+                    <br/>
                       What type of interview did you have?
                       <div className="form-check">
                         <label>
@@ -244,13 +240,12 @@ class InterviewsEntry extends Component {
                           Other
                         </label>
                       </div>
-                    </Pstyle>
                     <br />
                     <DividingLine></DividingLine>
-                    <Pstyle>
+                    <br/>
                       What was the date of the interview?&nbsp;&nbsp;
                       <br />
-                      <Input
+                      <IntInput
                         type="date"
                         placeholder=""
                         onChange={this.handleChange}
@@ -258,10 +253,10 @@ class InterviewsEntry extends Component {
                         value={interview_date}
                         required
                       />
-                    </Pstyle>
                     <br />
+                    <br/>
                     <DividingLine></DividingLine>
-                    <Pstyle>
+                    <br/>
                       How would you rate the interview process?&nbsp;&nbsp;
                       <div className="form-check">
                         <label>
@@ -303,13 +298,12 @@ class InterviewsEntry extends Component {
                           Difficult
                         </label>
                       </div>
-                    </Pstyle>
                     <br />
                     <DividingLine></DividingLine>
-                    <Pstyle>
+                    <br/>
                       What is the interviewer's name?&nbsp;&nbsp;
                       <br />
-                      <Input
+                      <IntInput
                         type="text"
                         placeholder=""
                         onChange={this.handleChange}
@@ -317,14 +311,14 @@ class InterviewsEntry extends Component {
                         value={interviewer}
                         required
                       />
-                    </Pstyle>
+                      <br/>
                     <br />
                     <DividingLine></DividingLine>
-                    <Pstyle>
+                    <br/>
                       What is the name of the person to follow-up
                       with?&nbsp;&nbsp;
                       <br />
-                      <Input
+                      <IntInput
                         type="text"
                         placeholder=""
                         onChange={this.handleChange}
@@ -332,14 +326,14 @@ class InterviewsEntry extends Component {
                         value={follow_up_person}
                         required
                       />
-                    </Pstyle>
+                      <br/>
                     <br />
                     <DividingLine></DividingLine>
-                    <Pstyle>
+                    <br/>
                       What is the phone number of the person to follow up
                       with?&nbsp;&nbsp;
                       <br />
-                      <Input
+                      <IntInput
                         type="text"
                         placeholder=""
                         onChange={this.handleChange}
@@ -347,14 +341,14 @@ class InterviewsEntry extends Component {
                         value={follow_up_phone}
                         required
                       />
-                    </Pstyle>
+                      <br/>
                     <br />
                     <DividingLine></DividingLine>
-                    <Pstyle>
+                    <br/>
                       What is the email address of the person to follow-up
                       with?&nbsp;&nbsp;
                       <br />
-                      <Input
+                      <IntInput
                         type="text"
                         placeholder=""
                         onChange={this.handleChange}
@@ -362,10 +356,10 @@ class InterviewsEntry extends Component {
                         value={follow_up_email}
                         required
                       />
-                    </Pstyle>
+                      <br/>
                     <br />
                     <DividingLine></DividingLine>
-                    <Pstyle>
+                    <br/>
                       Were you required to do whiteboarding for the interview?
                       <div className="form-check">
                         <label>
@@ -393,10 +387,9 @@ class InterviewsEntry extends Component {
                           No
                         </label>
                       </div>
-                    </Pstyle>
                     <br />
                     <DividingLine></DividingLine>
-                    <Pstyle>
+                    <br/>
                       Were you required to complete a code challenge?
                       <div className="form-check">
                         <label>
@@ -424,10 +417,9 @@ class InterviewsEntry extends Component {
                           No
                         </label>
                       </div>
-                    </Pstyle>
                     <br />
                     <DividingLine></DividingLine>
-                    <Pstyle>
+                    <br/>
                       Please provide additional comments here:&nbsp;&nbsp;
                       <br />
                       <CommentInput
@@ -438,11 +430,10 @@ class InterviewsEntry extends Component {
                         value={comments}
                         required
                       />
-                    </Pstyle>
                       <Button type="submit">Submit</Button>
                   </form>
                 </AppIntBox>
-              </AppIntWrapper>
+              </IntEntryWrapper>
             </Wrapper>
           </OuterWrapper>
         </Centered>

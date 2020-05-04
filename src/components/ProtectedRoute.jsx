@@ -3,7 +3,7 @@ import { Route, Link } from "react-router-dom";
 import { LoginConsumer } from "../context/LoginContext";
 import { LogoImage, DefaultMain, Centered } from '../components/styled';
 import logo_transparent from '../images/logo_transparent.png';
-import {  LogoImageLogin } from './styled';
+import {  LogoImageProtected } from './styled';
 
 const ProtectedRoute = ({ component: Component, ...rest }) => (
   <LoginConsumer>

@@ -200,6 +200,7 @@ export const Input = styled.input`
 `;
 
 export const CommentInput = styled.textarea`
+  flex: display;
   background-color: rgb(241, 236, 228);
   border: solid;
   margin-top: 4px;
@@ -209,13 +210,13 @@ export const CommentInput = styled.textarea`
   font-size: 1.3rem;
   font-family: Lato, sans-serif;
   padding: 10px;
-  min-width: 30rem;
-  min-height: 5rem;
-  max-width: 30rem;
+  min-width: 20rem;
   max-height: 20rem;
+  resize: vertical;
+  width: auto;
   &:focus {
     outline: none;
-  }
+  } 
 `;
 
 export const AppLinkStyle = styled.div`
@@ -465,4 +466,29 @@ export const LogoImageProtected = styled.div`
     width: 45%;
     display: block;
   }
+`;
+
+export const IntEntryWrapper = styled.div`
+  padding: 2%;
+  min-width: 342px;
+  max-width: 400px;
+  margin-bottom: 3%;
+  color: #00adb5;
+  border-radius: 5px;
+  box-shadow: -0.1px 0.1px 3px;
+`;
+
+export const IntInput = styled.input`
+background-color: rgb(241, 236, 228);
+border: solid;
+margin-top: 4px;
+border-radius: 5px;
+border: 1.5px solid #00adb5;
+box-sizing: medium;
+font-size: 1rem;
+font-family: Lato, sans-serif;
+padding: 5px;
+&:focus {
+  outline: none;
+}
 `;
