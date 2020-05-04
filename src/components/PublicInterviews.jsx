@@ -7,18 +7,17 @@ import {
   Wrapper,
   CompaniesWrapper,
   IntTitle,
-  DividingLineCompany,
   InterviewsList,
   ListItem,
   ListCategory,
   IntListItems,
   Comments,
-  InterviewsBody
- } from "./styled";
+  InterviewsBody,
+} from "./styled";
 
 class PublicInterviews extends Component {
   state = {
-    interviews: [{company_name: 'Loading'}],
+    interviews: [{ company_name: "Loading" }],
     hasData: false,
   };
 
@@ -34,7 +33,7 @@ class PublicInterviews extends Component {
 
     this.setState({
       interviews: interviews,
-      hasData: true
+      hasData: true,
     });
   }
 
@@ -50,116 +49,96 @@ class PublicInterviews extends Component {
             <div>
               <Centered>
                 <IntTitle>
-                  {interviews.length === 0 ?
-                  (<NoInterviewData />)
-                  :
-                  (`Interviews at ${interviews[0].company_name}`)}
+                  {interviews.length === 0 ? (
+                    <NoInterviewData />
+                  ) : (
+                    `Interviews at ${interviews[0].company_name}`
+                  )}
                 </IntTitle>
               </Centered>
-            <Wrapper>
-              <Centered>
-                <InterviewsBody style={userApp}>
-                  {!!interviews !== 0 ? (
-                    interviews.map((interview, index) => {
-                      const date = new Date(interview.interview_date);
-                      const newDate = date.getDate();
-                      let month = date.getMonth() + 1;
-                      let year = date.getFullYear();
-                      let dateStr = month + "/" + newDate + "/" + year;
-                      return (
-                        <InterviewsList>
-                          <Centered>
-                            <CompaniesWrapper>
-                              <IntListItems>
+              <Wrapper>
+                <Centered>
+                  <InterviewsBody style={userApp}>
+                    {!!interviews !== 0 ? (
+                      interviews.map((interview, index) => {
+                        const date = new Date(interview.interview_date);
+                        const newDate = date.getDate();
+                        let month = date.getMonth() + 1;
+                        let year = date.getFullYear();
+                        let dateStr = month + "/" + newDate + "/" + year;
+                        return (
+                          <InterviewsList>
+                            <Centered>
+                              <CompaniesWrapper>
+                                <IntListItems>
                                   <div>
                                     <strong>{dateStr}</strong>
                                   </div>
                                   <ListItem>
-                                      <ListCategory>
-                                          Interview Round:
-                                      </ListCategory>
-                                      <div>
-                                          {interviews[index].round}
-                                      </div>
+                                    <ListCategory>
+                                      Interview Round:
+                                    </ListCategory>
+                                    <div>{interviews[index].round}</div>
                                   </ListItem>
                                   <ListItem>
-                                      <ListCategory>
-                                          Type:
-                                      </ListCategory>
-                                      <div>
-                                          {interviews[index].interview_type}
-                                      </div>
+                                    <ListCategory>Type:</ListCategory>
+                                    <div>
+                                      {interviews[index].interview_type}
+                                    </div>
                                   </ListItem>
                                   <ListItem>
-                                      <ListCategory>
-                                          Rating:
-                                      </ListCategory>
-                                      <div>
-                                          {interviews[index].interview_rating}
-                                      </div>
-                                  <ListItem>
-                                  </ListItem>
-                                      <ListCategory>
-                                          Interviewer:
-                                      </ListCategory>
-                                      <div>
-                                          {interviews[index].interviewer}
-                                      </div>
+                                    <ListCategory>Rating:</ListCategory>
+                                    <div>
+                                      {interviews[index].interview_rating}
+                                    </div>
+                                    <ListItem></ListItem>
+                                    <ListCategory>Interviewer:</ListCategory>
+                                    <div>{interviews[index].interviewer}</div>
                                   </ListItem>
                                   <ListItem>
-                                      <ListCategory>
-                                          Contact:
-                                      </ListCategory>
-                                      <div>
-                                          {interviews[index].follow_up_person}
-                                      </div>
+                                    <ListCategory>Contact:</ListCategory>
+                                    <div>
+                                      {interviews[index].follow_up_person}
+                                    </div>
                                   </ListItem>
                                   <ListItem>
-                                      <ListCategory>
-                                          Contact Email:
-                                      </ListCategory>
-                                      <div>
-                                          {interviews[index].follow_up_email}
-                                      </div>
+                                    <ListCategory>Contact Email:</ListCategory>
+                                    <div>
+                                      {interviews[index].follow_up_email}
+                                    </div>
                                   </ListItem>
                                   <ListItem>
-                                      <ListCategory>
-                                          Whiteboarding:
-                                      </ListCategory>
-                                      <div>
-                                          {interviews[index].whiteboarding}
-                                      </div>
+                                    <ListCategory>Whiteboarding:</ListCategory>
+                                    <div>{interviews[index].whiteboarding}</div>
                                   </ListItem>
                                   <ListItem>
-                                      <ListCategory>
-                                          Coding Challenge:
-                                      </ListCategory>
-                                      <div>
-                                          {interviews[index].code_challenge}
-                                      </div>
+                                    <ListCategory>
+                                      Coding Challenge:
+                                    </ListCategory>
+                                    <div>
+                                      {interviews[index].code_challenge}
+                                    </div>
                                   </ListItem>
                                   <ListItem>
-                                      <ListCategory>
-                                          Comments:
-                                      </ListCategory>
+                                    <ListCategory>Comments:</ListCategory>
                                   </ListItem>
                                   <Comments>
-                                      {interviews[index].comments}
+                                    {interviews[index].comments}
                                   </Comments>
-                              </IntListItems>
-                            </CompaniesWrapper>
-                          </Centered>
-                        </InterviewsList>
-                      );
-                    })
-                  ) : (
-                    <li>
-                      <NoInterviewData />
-                    </li>
-                  )}
-                </InterviewsBody>
-              </Centered>
-            </Wrapper>
+                                </IntListItems>
+                              </CompaniesWrapper>
+                            </Centered>
+                          </InterviewsList>
+                        );
+                      })
+                    ) : (
+                      <li>
+                        <NoInterviewData />
+                      </li>
+                    )}
+                  </InterviewsBody>
+                </Centered>
+              </Wrapper>
             </div>
           </OuterIntWrapper>
         </Centered>
@@ -167,7 +146,6 @@ class PublicInterviews extends Component {
     );
   }
 }
-
 
 const userApp = {
   listStyle: "none",

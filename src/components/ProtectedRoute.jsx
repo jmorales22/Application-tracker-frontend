@@ -1,43 +1,45 @@
 import React from "react";
 import { Route, Link } from "react-router-dom";
 import { LoginConsumer } from "../context/LoginContext";
-import { LogoImage, DefaultMain, Centered } from '../components/styled';
-import logo_transparent from '../images/logo_transparent.png';
-import {  LogoImageProtected } from './styled';
+import { DefaultMain, Centered } from "../components/styled";
+import logo_transparent from "../images/logo_transparent.png";
+import { LogoImageProtected } from "./styled";
 
 const ProtectedRoute = ({ component: Component, ...rest }) => (
   <LoginConsumer>
     {({ user }) => {
       return (
-      
         <Route
           render={(props) => {
             return user.status ? (
               <Component {...props} {...user} />
             ) : (
               <>
-              <header style={headerStyle}>
-                <div style={h1Style}>AppTrack</div>
-                
-              </header>
-              <Centered>
-              <DefaultMain>
-                <div>
-                  <div>
-                <Link to="/login" style={linkStyle}>
-                <p style ={altpstyle}>Click Here: Return To Login</p>
-                </Link>
-                </div>
-                <div style={centerDiv}>
-                <p>Logged out!</p>
-                </div>
-                <div>
-                <LogoImageProtected>
-                 <img style={img} src={logo_transparent} alt="App Track"></img>
-                </LogoImageProtected>
-                </div>
-                </div>
-                </DefaultMain>
+                <header style={headerStyle}>
+                  <div style={h1Style}>AppTrack</div>
+                </header>
+                <Centered>
+                  <DefaultMain>
+                    <div>
+                      <div>
+                        <Link to="/login" style={linkStyle}>
+                          <p style={altpstyle}>Click Here: Return To Login</p>
+                        </Link>
+                      </div>
+                      <div style={centerDiv}>
+                        <p>Logged out!</p>
+                      </div>
+                      <div>
+                        <LogoImageProtected>
+                          <img
+                            style={img}
+                            src={logo_transparent}
+                            alt="App Track"
+                          ></img>
+                        </LogoImageProtected>
+                      </div>
+                    </div>
+                  </DefaultMain>
                 </Centered>
               </>
             );
@@ -70,16 +72,16 @@ const headerStyle = {
 };
 const altpstyle = {
   marginLeft: "28%",
-}
+};
 const img = {
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  width: '100%',
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  width: "100%",
 };
 const centerDiv = {
-  marginLeft: '33%',
-  marginRight: 'auto',
+  marginLeft: "33%",
+  marginRight: "auto",
   fontSize: "25px",
   fontFamily: "Comfortaa, cursive",
   color: "#00adb5",
@@ -87,6 +89,6 @@ const centerDiv = {
   flexDirection: "row",
   flexGrow: "0",
   textAlign: "center",
-  };
-  
+};
+
 export default ProtectedRoute;
