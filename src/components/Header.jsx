@@ -2,24 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Header() {
-  const handleClick = (e) => {
-    e.preventDefault();
-    window.location.href = "http://localhost:3000/login";
-  };
-  const handleClick2 = (e) => {
-    e.preventDefault();
-    window.location.href = "http://localhost:3000/signup";
-  };
-
+  
   return (
     <header style={headerStyle}>
       <div>
-        <div style={h1Style}>App Track</div>
+        <div style={h1Style}>AppTrack</div>
         <div style={links}>
-          <Link style={login} onClick={handleClick} type="submit">
+          <Link style={login} to="/login">
             Login
           </Link>
-          <Link style={signUp} onClick={handleClick2} type="submit">
+          <Link style={signUp} to="/signup">
             Sign Up for Free
           </Link>
         </div>
@@ -43,7 +35,7 @@ const h1Style = {
   marginLeft: "30px",
   fontSize: "36px",
   fontFamily: "Comfortaa, cursive",
-  color: "#68696b",
+  color: "#00adb5",
 };
 
 const links = {
@@ -60,8 +52,8 @@ const login = {
   fontSize: "14px",
   height: "20px",
   background: "none",
-  border: "solid 2px #1c53df",
-  color: "#1c53df",
+  border: "solid 2px #00adb5",
+  color: "#00adb5",
   textDecoration: "none",
   padding: "0px 8px",
   paddingTop: "4px",
@@ -75,11 +67,8 @@ const signUp = {
   borderRadius: "10px",
   height: "20px",
   color: "white",
-  backgroundColor: "#1c53df",
-  borderRadius: "10px",
-  fontFamily: "Lato, sans-serif",
-  fontSize: "14px",
-  border: "solid 2px #1c53df",
+  backgroundColor: "#00adb5",
+  border: "solid 2px #00adb5",
   textDecoration: "none",
   padding: "0px 8px",
   paddingTop: "4px",

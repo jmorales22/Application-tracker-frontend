@@ -3,16 +3,19 @@ import { Link } from "react-router-dom";
 import LoginContext from "../context/LoginContext";
 import NoData from "./NoData";
 import UserAppsHeader from "./UserAppsHeader";
-import plus from "../images/plus.png";
 
-import UserInterviews from "./Interviews";
+import SingleApp from "./SingleApp";
 import PublicApps from "./PublicApps";
-import Companies from "./Companies";
-import {Wrapper} from "./styled";
-
-function showInterviews(component) {
-  return component;
-}
+import {
+  Centered,
+  AppForm,
+  OuterWrapper,
+  LinkStyle,
+  Wrapper,
+  AppIntWrapper,
+  AppIntTitle,
+  MainList,
+  DividingLine } from "./styled";
 
 class UserApps extends Component {
   static contextType = LoginContext;
@@ -46,64 +49,61 @@ class UserApps extends Component {
     return (
       <>
         <UserAppsHeader />
-        <br />
-        <Wrapper>
-        <p>
-          <Link style={linkStyle} to={`/companies`}>
-            See a List of All User Application Companies
-          </Link>
-        </p>
-        <h3> Your submitted application data:</h3>
-        <p>
-          <Link style={linkStyle} to={`/applicationform`}>
-            <img src={plus} height="20" width="20" alt="add" />
-            Application Form
-          </Link>
-        </p>
-        <ul style={userApp}>
-          {appsArray.length > 0 ? (
-            appsArray.map((app) => {
-              const date = new Date(app.application_date);
-              const newDate = date.getDate();
-              let month = date.getMonth() + 1;
-              let year = date.getFullYear();
-              let dateStr = month + "/" + newDate + "/" + year;
-              return (
-                <li key={app.id}>
-                  {app.company_name}
-                  <br />
-                  City: {app.city}
-                  <br />
-                  Position: {app.position}
-                  <br />
-                  Postion description: {app.position_description}
-                  <br />
-                  Application Date: {dateStr}
-                  <br />
-                  Offer Extended? {app.offer_extended}
-                  <br />
-                  <UserInterviews appData={app}></UserInterviews>
-                  <Link
-                    style={linkStyle}
-                    to={`/interviewentry/${app.id}/${app.company_id}`}
-                  >
-                    Enter interview information{" "}
+        <Centered>
+          <OuterWrapper>
+            <Wrapper>
+              <div>
+                <Link style={linkStyle} to={`/companies`}>
+                  <LinkStyle>
+                    See Companies Others Have Applied To
+                  </LinkStyle>
+                </Link>
+              </div>
+              <AppIntWrapper>
+              <AppIntTitle>
+                <div>
+                  Your Applications:
+                </div>
+              </AppIntTitle>
+              <Centered>
+                <AppForm>
+                  <Link style={linkStyle} to={`/applicationform`}>
+                    +app
                   </Link>
-                  <br />
-                  
-                  <br />
-                </li>
-              );
-            })
-          ) : (
-            <li>
-              <NoData />
-            </li>
-          )}
-        </ul>
-        <br />
-        <PublicApps />
-        </Wrapper>
+                </AppForm>
+              </Centered>
+              <DividingLine></DividingLine>
+              <MainList style={userApp}>
+                {appsArray.length > 0 ? (
+                  appsArray.map((app, index) => {
+                    return (
+                      <div key={app.id}>
+                        <SingleApp app={this.state.apps[index]}></SingleApp>
+                        <Link
+                          style={linkStyle}
+                          to={`/interviewentry/${app.id}/${app.company_id}`}
+                        >
+                          <LinkStyle>
+                            Add a New Interview{" "}
+                          </LinkStyle>
+                        </Link>
+                    <DividingLine></DividingLine>
+                      </div>
+                    );
+                  })
+                ) : (
+                  <li>
+                    <NoData />
+                  </li>
+                )}
+              </MainList>
+              </AppIntWrapper>
+              <AppIntWrapper>
+                <PublicApps />
+              </AppIntWrapper>
+            </Wrapper>
+          </OuterWrapper>
+        </Centered>
       </>
     );
   }
@@ -112,7 +112,7 @@ const userApp = {
   listStyle: "none",
 };
 const linkStyle = {
-  color: "blue",
+  color: "#00adb5",
   textDecoration: "none",
 };
 export default UserApps;

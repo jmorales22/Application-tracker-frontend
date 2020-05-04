@@ -2,24 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Header() {
-  const handleClick1 = (e) => {
-    e.preventDefault();
-    window.location.href = "http://localhost:3000";
-  };
-  const handleClick2 = (e) => {
-    e.preventDefault();
-    window.location.href = "http://localhost:3000/login";
-  };
-
   return (
     <header style={headerStyle}>
       <div>
-        <div style={h1Style}>App Track</div>
+        <div style={h1Style}>AppTrack</div>
         <div style={buttons}>
-          <Link style={home} onClick={handleClick1} type="submit">
+          <Link style={home} to="/">
             Home
           </Link>
-          <Link style={login} onClick={handleClick2} type="submit">
+          <Link style={login} to="/login">
             Login
           </Link>
         </div>
@@ -43,7 +34,7 @@ const h1Style = {
   marginLeft: "30px",
   fontSize: "36px",
   fontFamily: "Comfortaa, cursive",
-  color: "#68696b",
+  color: "#00adb5",
 };
 
 const buttons = {
@@ -52,6 +43,7 @@ const buttons = {
   justifyContent: "flex-end",
   marginRight: "10px",
   paddingBottom: "10px",
+  color: "#00adb5",
 };
 
 const home = {
@@ -59,9 +51,9 @@ const home = {
   fontFamily: "Lato, sans-serif",
   fontSize: "14px",
   height: "20px",
-  background: "none",
-  border: "solid 2px #1c53df",
-  color: "#1c53df",
+  background: "#00adb5f",
+  border: "solid 2px #00adb5",
+  color: "#00adb5",
   textDecoration: "none",
   padding: "0px 8px",
   paddingTop: "4px",
@@ -74,9 +66,9 @@ const login = {
   fontSize: "14px",
   borderRadius: "10px",
   height: "20px",
-  color: "white",
-  backgroundColor: "#1c53df",
-  border: "solid 2px #1c53df",
+  color: "#00adb5",
+  background: "none",
+  border: "solid 2px #00adb5",
   textDecoration: "none",
   padding: "0px 8px",
   paddingTop: "4px",

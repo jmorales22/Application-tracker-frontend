@@ -1,6 +1,5 @@
 import React from "react";
 import Logout from "./Logout";
-import { Link } from "react-router-dom";
 
 function UserAppsHeader() {
   return (
@@ -8,9 +7,9 @@ function UserAppsHeader() {
       <div>
         <div style={h1Style}>App Track</div>
         <div style={links}>
-          <Link style={signOut}>
-            <Logout style={signOut} />
-          </Link>
+          <div style={signOut}>
+            <Logout />
+          </div>
         </div>
       </div>
     </header>
@@ -32,7 +31,7 @@ const h1Style = {
   marginLeft: "30px",
   fontSize: "36px",
   fontFamily: "Comfortaa, cursive",
-  color: "#68696b",
+  color: "#00adb5",
 };
 
 const links = {
@@ -41,6 +40,7 @@ const links = {
   justifyContent: "flex-end",
   marginRight: "10px",
   paddingBottom: "10px",
+  color: "#00adb5",
 };
 
 const signOut = {
@@ -48,13 +48,12 @@ const signOut = {
   fontSize: "14px",
   borderRadius: "10px",
   height: "20px",
-  color: "#1c53df",
+  color: "#00adb5",
   background: "none",
-  border: "solid 2px #1c53df",
+  border: "solid 2px #00adb5",
   textDecoration: "none",
   padding: "0px 8px",
   paddingTop: "4px",
   position: "relative",
 };
-
 export default UserAppsHeader;

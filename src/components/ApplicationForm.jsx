@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import "../App.css";
 import ApplicationFormHeader from "./ApplicationFormHeader";
-import { Link } from "react-router-dom";
-import plus from "../images/plus.png";
-import {Wrapper, Main, Hstyle, Input} from "./styled"
+import { withRouter } from "react-router-dom";
+import { Wrapper, Hstyle, Input } from "./styled";
 
 const postAPI = async (url, data) => {
   const response = await fetch(url, {
@@ -38,7 +37,6 @@ class ApplicationForm extends Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    this.props.history.push("/applications");
 
     try {
       const {
@@ -46,18 +44,18 @@ class ApplicationForm extends Component {
         company_name,
         city,
         position,
-        description,
+        position_description,
         date,
         offer,
         makePublic,
       } = this.state;
 
       const data = {
-        user_id: user_id,
-        company_name: company_name,
-        city: city,
-        position: position,
-        position_description: description,
+        user_id,
+        company_name,
+        city,
+        position,
+        position_description,
         application_date: date,
         offer_extended: offer,
         make_public: makePublic,
@@ -66,10 +64,10 @@ class ApplicationForm extends Component {
       const url = "http://localhost:2000/userapplications";
       const response = await postAPI(url, data);
 
-      if (response.status === 200) {
-        alert("application data submitted");
+      if (response === 200) {
+        this.props.history.push("/applications");
       }
-      if (response.status !== 200) {
+      if (response !== 200) {
         alert("Unable to submit application data.");
       }
     } catch (err) {
@@ -82,138 +80,128 @@ class ApplicationForm extends Component {
       company,
       city,
       position,
-      description,
+      position_description,
       date,
       offer,
       makePublic,
     } = this.state;
-
-    console.log("this is props", this.props);
-    console.log("context", this.context);
 
     return (
       <div>
         <ApplicationFormHeader />
         <br />
         <Wrapper>
-        <Hstyle>Complete your application information.</Hstyle>
-        <br />
-        <form onSubmit={(e) => this.handleSubmit(e)}>
-          <Input
-            type="text"
-            placeholder="company"
-            onChange={this.handleChange}
-            name="company_name"
-            value={company}
-            required
-          />
+          <Hstyle>Complete your application information.</Hstyle>
           <br />
-          <Input
-            type="text"
-            placeholder="city"
-            onChange={this.handleChange}
-            name="city"
-            value={city}
-            required
-          />
-          <br />
-          <Input
-            type="text"
-            placeholder="position"
-            onChange={this.handleChange}
-            name="position"
-            value={position}
-            required
-          />
-          <br />
-          <Input
-            type="text"
-            placeholder="job description"
-            onChange={this.handleChange}
-            name="description"
-            value={description}
-            required
-          />
-          <br />
-          <Input
-            type="text"
-            placeholder="applied date"
-            onChange={this.handleChange}
-            name="date"
-            value={date}
-            required
-          />
-          <br />
-          <label>
-            Job Offer?
-            <input
-              type="radio"
-              placeholder="job offer?"
+          <form onSubmit={(e) => this.handleSubmit(e)}>
+            <Input
+              type="text"
+              placeholder="company"
               onChange={this.handleChange}
-              name="offer"
-              value="Yes"
-              checked={offer === "Yes"}
+              name="company_name"
+              value={company}
+              required
             />
-            Yes
-          </label>
-          <label>
-            <input
-              type="radio"
-              placeholder="job offer?"
+            <br />
+            <Input
+              type="text"
+              placeholder="city"
               onChange={this.handleChange}
-              name="offer"
-              value="No"
-              checked={offer === "No"}
+              name="city"
+              value={city}
+              required
             />
-            No
-          </label>
-          <label>
-            <input
-              type="radio"
-              placeholder="job offer?"
+            <br />
+            <Input
+              type="text"
+              placeholder="position"
               onChange={this.handleChange}
-              name="offer"
-              value="Nothing yet"
-              checked={offer === "Nothing yet"}
+              name="position"
+              value={position}
+              required
             />
-            Nothing Yet
-          </label>
-          <div>
+            <br />
+            <Input
+              type="text"
+              placeholder="job description"
+              onChange={this.handleChange}
+              name="position_description"
+              value={position_description}
+              required
+            />
+            <br />
+            <Input
+              type="date"
+              placeholder="applied date"
+              onChange={this.handleChange}
+              name="date"
+              value={date}
+              required
+            />
+            <br />
             <label>
-              Make Info Public?
-              <input
+              Job Offer?
+              <Input
                 type="radio"
-                name="makePublic"
-                value="Yes"
-                checked={makePublic === "Yes"}
+                placeholder="job offer?"
                 onChange={this.handleChange}
+                name="offer"
+                value="Yes"
+                checked={offer === "Yes"}
               />
               Yes
             </label>
             <label>
-              <input
+              <Input
                 type="radio"
-                name="makePublic"
-                value="No"
-                checked={makePublic === "No"}
+                placeholder="job offer?"
                 onChange={this.handleChange}
+                name="offer"
+                value="No"
+                checked={offer === "No"}
               />
               No
             </label>
-          </div>
-          <button type="submit" data-testid="submitButton">
-            Submit
-          </button>
-        </form>
+            <label>
+              <Input
+                type="radio"
+                placeholder="job offer?"
+                onChange={this.handleChange}
+                name="offer"
+                value="Nothing yet"
+                checked={offer === "Nothing yet"}
+              />
+              Nothing Yet
+            </label>
+            <div>
+              <label>
+                Make Info Public?
+                <Input
+                  type="radio"
+                  name="makePublic"
+                  value="Yes"
+                  checked={makePublic === "Yes"}
+                  onChange={this.handleChange}
+                />
+                Yes
+              </label>
+              <label>
+                <Input
+                  type="radio"
+                  name="makePublic"
+                  value="No"
+                  checked={makePublic === "No"}
+                  onChange={this.handleChange}
+                />
+                No
+              </label>
+            </div>
+            <button type="submit">Submit</button>
+          </form>
         </Wrapper>
       </div>
     );
   }
 }
 
-const linkStyle = {
-  textDecoration: "none",
-  color: "blue",
-};
-
-export default ApplicationForm;
+export default withRouter(ApplicationForm);

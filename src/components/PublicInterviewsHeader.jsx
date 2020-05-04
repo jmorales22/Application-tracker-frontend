@@ -6,14 +6,14 @@ function Header() {
   return (
     <header style={headerStyle}>
       <div>
-        <div style={h1Style}>App Track</div>
+        <div style={h1Style}>AppTrack</div>
         <div style={links}>
           <Link style={HomePage} to={`/applications`}>
             Home Page
           </Link>
-          <Link style={signOut}>
-            <Logout style={signOut} />
-          </Link>
+          <div style={signOut}>
+            <Logout />
+          </div>
         </div>
       </div>
     </header>
@@ -35,7 +35,7 @@ const h1Style = {
   marginLeft: "30px",
   fontSize: "36px",
   fontFamily: "Comfortaa, cursive",
-  color: "#68696b",
+  color: "#00adb5",
 };
 
 const links = {
@@ -44,6 +44,7 @@ const links = {
   justifyContent: "flex-end",
   marginRight: "10px",
   paddingBottom: "10px",
+  color: "#00adb5",
 };
 
 const HomePage = {
@@ -51,9 +52,9 @@ const HomePage = {
   fontFamily: "Lato, sans-serif",
   fontSize: "14px",
   height: "20px",
-  background: "#1c53df",
-  border: "solid 2px #1c53df",
-  color: "#FFFFFF",
+  background: "#00adb5f",
+  border: "solid 2px #00adb5",
+  color: "#00adb5",
   textDecoration: "none",
   padding: "0px 8px",
   paddingTop: "4px",
@@ -66,9 +67,9 @@ const signOut = {
   fontSize: "14px",
   borderRadius: "10px",
   height: "20px",
-  color: "#1c53df",
+  color: "#00adb5",
   background: "none",
-  border: "solid 2px #1c53df",
+  border: "solid 2px #00adb5",
   textDecoration: "none",
   padding: "0px 8px",
   paddingTop: "4px",

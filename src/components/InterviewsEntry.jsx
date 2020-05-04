@@ -1,19 +1,19 @@
-import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
-import InterviewsEntryHeader from './InterviewsEntryHeader';
-import plus from '../images/plus.png';
-import '../App.css';
-import {Main, Input, Pstyle, InputBox, Wrapper, Button} from './styled';
+import React, { Component } from "react";
+import { Link, withRouter } from "react-router-dom";
+import InterviewsEntryHeader from "./InterviewsEntryHeader";
+import plus from "../images/plus.png";
+import "../App.css";
+import { Main, Input, Pstyle, InputBox, Wrapper, Button } from "./styled";
 
 const postAPI = async (url, data) => {
-  const response = await fetch (url, {
-    method: 'POST',
+  const response = await fetch(url, {
+    method: "POST",
     headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
+      Accept: "application/json",
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify (data),
-  }).then (response => response.json ());
+    body: JSON.stringify(data),
+  }).then((response) => response.json());
   return response;
 };
 
@@ -22,28 +22,28 @@ class InterviewsEntry extends Component {
     user_id: this.props.user_id,
     application_id: this.props.match.params.app_id,
     company_id: this.props.match.params.company_id,
-    round: '',
-    interview_type: '',
-    interview_date: '',
-    interview_rating: '',
-    interviewer: '',
-    follow_up_person: '',
-    follow_up_phone: '',
-    follow_up_email: '',
-    whiteboarding: '',
-    code_challenge: '',
-    comments: '',
+    round: "",
+    interview_type: "",
+    interview_date: "",
+    interview_rating: "",
+    interviewer: "",
+    follow_up_person: "",
+    follow_up_phone: "",
+    follow_up_email: "",
+    whiteboarding: "",
+    code_challenge: "",
+    comments: "",
   };
 
-  handleChange = e => {
-    this.setState ({
+  handleChange = (e) => {
+    this.setState({
       [e.target.name]: e.target.value,
     });
   };
 
-  handleSubmit = async e => {
-    e.preventDefault ();
-    this.props.history.push ('/applications');
+  handleSubmit = async (e) => {
+    e.preventDefault();
+    this.props.history.push("/applications");
 
     try {
       const {
@@ -80,21 +80,21 @@ class InterviewsEntry extends Component {
         comments: comments,
       };
 
-      const url = 'http://localhost:2000/interviewsEntry';
-      const response = await postAPI (url, data);
+      const url = "http://localhost:2000/interviewsEntry";
+      const response = await postAPI(url, data);
 
       if (response.status === 200) {
-        alert ('Entry Created');
+        alert("Entry Created");
       }
       if (response.status !== 200) {
-        alert ('Unable to input entry. Please try again later.');
+        alert("Unable to input entry. Please try again later.");
       }
     } catch (err) {
       return err;
     }
   };
 
-  render () {
+  render() {
     const {
       round,
       interview_type,
@@ -120,105 +120,105 @@ class InterviewsEntry extends Component {
         <br />
         <Main>Complete your interview information.</Main>
         <Wrapper>
-          <form onSubmit={e => this.handleSubmit (e)}>
+          <form onSubmit={(e) => this.handleSubmit(e)}>
             <Pstyle>
               1. What round of interview are you in?
               <div className="form-check">
-                {' '}
+                {" "}
                 <label>
                   <input
                     type="radio"
                     onChange={this.handleChange}
                     name="round"
                     value="Round 1"
-                    checked={round === 'Round 1'}
+                    checked={round === "Round 1"}
                     className="form-check-input"
                   />
                   Round 1
                 </label>
               </div>
               <div className="form-check">
-                {' '}
+                {" "}
                 <label>
                   <input
                     type="radio"
                     onChange={this.handleChange}
                     name="round"
                     value="Round 2"
-                    checked={round === 'Round 2'}
+                    checked={round === "Round 2"}
                     className="form-check-input"
                   />
                   Round 2
                 </label>
               </div>
               <div className="form-check">
-                {' '}
+                {" "}
                 <label>
                   <input
                     type="radio"
                     onChange={this.handleChange}
                     name="round"
                     value="Round 3"
-                    checked={round === 'Round 3'}
+                    checked={round === "Round 3"}
                     className="form-check-input"
                   />
-                  Round3
+                  Round 3
                 </label>
               </div>
             </Pstyle>
             <Pstyle>
               2. What type of interview did you have?
               <div className="form-check">
-                {' '}
+                {" "}
                 <label>
                   <input
                     type="radio"
                     onChange={this.handleChange}
                     name="interview_type"
                     value="In Person"
-                    checked={interview_type === 'In-Person'}
+                    checked={interview_type === "In-Person"}
                     className="form-check-input"
                   />
-                  In Person
+                  In-Person
                 </label>
               </div>
               <div className="form-check">
-                {' '}
+                {" "}
                 <label>
                   <input
                     type="radio"
                     onChange={this.handleChange}
                     name="interview_type"
                     value="Phone"
-                    checked={interview_type === 'Phone'}
+                    checked={interview_type === "Phone"}
                     className="form-check-input"
                   />
                   Phone
                 </label>
               </div>
               <div className="form-check">
-                {' '}
+                {" "}
                 <label>
                   <input
                     type="radio"
                     onChange={this.handleChange}
                     name="interview_type"
                     value="Video"
-                    checked={interview_type === 'Video'}
+                    checked={interview_type === "Video"}
                     className="form-check-input"
                   />
                   Video
                 </label>
               </div>
               <div className="form-check">
-                {' '}
+                {" "}
                 <label>
                   <input
                     type="radio"
                     onChange={this.handleChange}
                     name="interview_type"
                     value="Other"
-                    checked={interview_type === 'Other'}
+                    checked={interview_type === "Other"}
                     className="form-check-input"
                   />
                   Other
@@ -239,42 +239,42 @@ class InterviewsEntry extends Component {
             <Pstyle>
               4. How would you rate the interview process?&nbsp;&nbsp;
               <div className="form-check">
-                {' '}
+                {" "}
                 <label>
                   <input
                     type="radio"
                     onChange={this.handleChange}
                     name="interview_rating"
                     value="Easy"
-                    checked={interview_rating === 'Easy'}
+                    checked={interview_rating === "Easy"}
                     className="form-check-input"
                   />
                   Easy
                 </label>
               </div>
               <div className="form-check">
-                {' '}
+                {" "}
                 <label>
                   <input
                     type="radio"
                     onChange={this.handleChange}
                     name="interview_rating"
                     value="Moderate"
-                    checked={interview_rating === 'Moderate'}
+                    checked={interview_rating === "Moderate"}
                     className="form-check-input"
                   />
                   Moderate
                 </label>
               </div>
               <div className="form-check">
-                {' '}
+                {" "}
                 <label>
                   <input
                     type="radio"
                     onChange={this.handleChange}
                     name="interview_rating"
                     value="Difficult"
-                    checked={interview_rating === 'Difficult'}
+                    checked={interview_rating === "Difficult"}
                     className="form-check-input"
                   />
                   Difficult
@@ -330,28 +330,28 @@ class InterviewsEntry extends Component {
             <Pstyle>
               9. Were you required to do whiteboarding for the interview?
               <div className="form-check">
-                {' '}
+                {" "}
                 <label>
                   <input
                     type="radio"
                     onChange={this.handleChange}
                     name="whiteboarding"
                     value="Yes"
-                    checked={whiteboarding === 'Yes'}
+                    checked={whiteboarding === "Yes"}
                     className="form-check-input"
                   />
                   Yes
                 </label>
               </div>
               <div className="form-check">
-                {' '}
+                {" "}
                 <label>
                   <input
                     type="radio"
                     onChange={this.handleChange}
                     name="whiteboarding"
                     value="No"
-                    checked={whiteboarding === 'No'}
+                    checked={whiteboarding === "No"}
                     className="form-check-input"
                   />
                   No
@@ -361,28 +361,28 @@ class InterviewsEntry extends Component {
             <Pstyle>
               10. Were you required to complete a code challenge?
               <div className="form-check">
-                {' '}
+                {" "}
                 <label>
                   <input
                     type="radio"
                     onChange={this.handleChange}
                     name="code_challenge"
                     value="Yes"
-                    checked={code_challenge === 'Yes'}
+                    checked={code_challenge === "Yes"}
                     className="form-check-input"
                   />
                   Yes
                 </label>
               </div>
               <div className="form-check">
-                {' '}
+                {" "}
                 <label>
                   <input
                     type="radio"
                     onChange={this.handleChange}
                     name="code_challenge"
                     value="No"
-                    checked={code_challenge === 'No'}
+                    checked={code_challenge === "No"}
                     className="form-check-input"
                   />
                   No
@@ -410,9 +410,8 @@ class InterviewsEntry extends Component {
   }
 }
 const linkStyle = {
-  color: 'blue',
-  textDecoration: 'none',
-  margin: '1.3em'
-  
+  color: "blue",
+  textDecoration: "none",
+  margin: "1.3em",
 };
-export default InterviewsEntry;
+export default withRouter(InterviewsEntry);
