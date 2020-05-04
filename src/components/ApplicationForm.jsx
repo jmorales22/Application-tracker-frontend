@@ -2,7 +2,18 @@ import React, { Component } from "react";
 import "../App.css";
 import ApplicationFormHeader from "./ApplicationFormHeader";
 import { withRouter } from "react-router-dom";
-import { Wrapper, Hstyle, Input } from "./styled";
+import {
+  LinkStyle,
+  CreateButton,
+  AppIntWrapper,
+  Centered,
+  DividingLine,
+  InputDate,
+  Input,
+  OuterWrapper,
+  Wrapper,
+  AppFormBox,
+} from "./styled";
 
 const postAPI = async (url, data) => {
   const response = await fetch(url, {
@@ -90,115 +101,129 @@ class ApplicationForm extends Component {
       <div>
         <ApplicationFormHeader />
         <br />
-        <Wrapper>
-          <Hstyle>Complete your application information.</Hstyle>
-          <br />
-          <form onSubmit={(e) => this.handleSubmit(e)}>
-            <Input
-              type="text"
-              placeholder="company"
-              onChange={this.handleChange}
-              name="company_name"
-              value={company}
-              required
-            />
-            <br />
-            <Input
-              type="text"
-              placeholder="city"
-              onChange={this.handleChange}
-              name="city"
-              value={city}
-              required
-            />
-            <br />
-            <Input
-              type="text"
-              placeholder="position"
-              onChange={this.handleChange}
-              name="position"
-              value={position}
-              required
-            />
-            <br />
-            <Input
-              type="text"
-              placeholder="job description"
-              onChange={this.handleChange}
-              name="position_description"
-              value={position_description}
-              required
-            />
-            <br />
-            <Input
-              type="date"
-              placeholder="applied date"
-              onChange={this.handleChange}
-              name="date"
-              value={date}
-              required
-            />
-            <br />
-            <label>
-              Job Offer?
-              <Input
-                type="radio"
-                placeholder="job offer?"
-                onChange={this.handleChange}
-                name="offer"
-                value="Yes"
-                checked={offer === "Yes"}
-              />
-              Yes
-            </label>
-            <label>
-              <Input
-                type="radio"
-                placeholder="job offer?"
-                onChange={this.handleChange}
-                name="offer"
-                value="No"
-                checked={offer === "No"}
-              />
-              No
-            </label>
-            <label>
-              <Input
-                type="radio"
-                placeholder="job offer?"
-                onChange={this.handleChange}
-                name="offer"
-                value="Nothing yet"
-                checked={offer === "Nothing yet"}
-              />
-              Nothing Yet
-            </label>
-            <div>
-              <label>
-                Make Info Public?
-                <Input
-                  type="radio"
-                  name="makePublic"
-                  value="Yes"
-                  checked={makePublic === "Yes"}
-                  onChange={this.handleChange}
-                />
-                Yes
-              </label>
-              <label>
-                <Input
-                  type="radio"
-                  name="makePublic"
-                  value="No"
-                  checked={makePublic === "No"}
-                  onChange={this.handleChange}
-                />
-                No
-              </label>
-            </div>
-            <button type="submit">Submit</button>
-          </form>
-        </Wrapper>
+        <Centered>
+          <OuterWrapper>
+            <Wrapper>
+              <Centered>
+                <AppIntWrapper>
+                  <LinkStyle>
+                    <div>Complete your application information.</div>
+                  </LinkStyle>
+                  <DividingLine></DividingLine>
+                  <AppFormBox>
+                    <Centered>
+                      <form onSubmit={(e) => this.handleSubmit(e)}>
+                        <Input
+                          type="text"
+                          placeholder="company"
+                          onChange={this.handleChange}
+                          name="company_name"
+                          value={company}
+                          required
+                        />
+                        <br />
+                        <Input
+                          type="text"
+                          placeholder="city"
+                          onChange={this.handleChange}
+                          name="city"
+                          value={city}
+                          required
+                        />
+                        <br />
+                        <Input
+                          type="text"
+                          placeholder="position"
+                          onChange={this.handleChange}
+                          name="position"
+                          value={position}
+                          required
+                        />
+                        <br />
+                        <Input
+                          type="text"
+                          placeholder="job description"
+                          onChange={this.handleChange}
+                          name="position_description"
+                          value={position_description}
+                          required
+                        />
+                        <br />
+                        <InputDate
+                          type="date"
+                          placeholder="applied date"
+                          onChange={this.handleChange}
+                          name="date"
+                          value={date}
+                          required
+                        />
+                        <br />
+                        <label>
+                          Job Offer?
+                          <Input
+                            type="radio"
+                            placeholder="job offer?"
+                            onChange={this.handleChange}
+                            name="offer"
+                            value="Yes"
+                            checked={offer === "Yes"}
+                          />
+                          Yes
+                        </label>
+                        <label>
+                          <Input
+                            type="radio"
+                            placeholder="job offer?"
+                            onChange={this.handleChange}
+                            name="offer"
+                            value="No"
+                            checked={offer === "No"}
+                          />
+                          No
+                        </label>
+                        <label>
+                          <Input
+                            type="radio"
+                            placeholder="job offer?"
+                            onChange={this.handleChange}
+                            name="offer"
+                            value="Nothing yet"
+                            checked={offer === "Nothing yet"}
+                          />
+                          Nothing Yet
+                        </label>
+                        <div>
+                          <label>
+                            Make Info Public?
+                            <Input
+                              type="radio"
+                              name="makePublic"
+                              value="Yes"
+                              checked={makePublic === "Yes"}
+                              onChange={this.handleChange}
+                            />
+                            Yes
+                          </label>
+                          <label>
+                            <Input
+                              type="radio"
+                              name="makePublic"
+                              value="No"
+                              checked={makePublic === "No"}
+                              onChange={this.handleChange}
+                            />
+                            No
+                          </label>
+                        </div>
+                        <CreateButton type="submit">Submit</CreateButton>
+                      </form>
+                    </Centered>
+                  </AppFormBox>
+                </AppIntWrapper>
+              </Centered>
+            </Wrapper>
+          </OuterWrapper>
+        </Centered>
       </div>
     );
   }
