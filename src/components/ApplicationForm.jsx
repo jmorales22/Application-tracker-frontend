@@ -109,7 +109,6 @@ class ApplicationForm extends Component {
                   <AppTitle>
                     <div>Complete your application information</div>
                   </AppTitle>
-                  <DividingLine></DividingLine>
                   <AppFormBox>
                     <Centered>
                       <form onSubmit={(e) => this.handleSubmit(e)}>

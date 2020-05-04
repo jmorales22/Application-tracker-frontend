@@ -49,8 +49,9 @@ export const LoginTitle = styled.div`
   margin-bottom: 5%;
   font-size: 1.5em;
   font-weight: bold;
+  font-family: Comfortaa, cursive;
   text-align: center;
-  color: black;
+  color: #3b3b3b;
 `;
 
 export const InputDate = styled.input`
@@ -129,6 +130,13 @@ export const LoginButton = styled.button`
   font-family: Lato, sans-serif;
   margin-top: 35px;
   padding: 0px;
+`;
+
+export const DivLikeButton = styled.div`
+  border: 2px solid #00adb5;
+  border-radius: 10px;
+  padding: 6px;
+  margin-bottom: 2%;
 `;
 
 export const CreateButton = styled.button`
