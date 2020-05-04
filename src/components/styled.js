@@ -8,12 +8,16 @@ export const Centered = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 1.3em;
 `;
 
 export const Main = styled.div`
-  font-size: 2em;
+  font-size: 3em;
   margin: 1.3em;
   padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 
@@ -39,6 +43,10 @@ export const Button = styled.button`
   width: 80px;
   font-size: 14px;
   font-family: Lato, sans-serif;
+  margin-left: 43%;
+  margin-top: 35px;
+  padding: 0px;
+  
 `;
 
 export const IntButton = styled.button`
@@ -73,15 +81,20 @@ export const LinkStyle = styled.div`
   font-family: Lato, sans-serif;
 `;
 
+
 export const Input = styled.input`
-  background-color: rgb(241, 236, 228);
-  border: solid;
-  border: 1.5px solid #a9bcf5;
-  box-sizing: medium;
-  font-size: 1.3rem;
-  /* &:focus {
-    online: none;
-  }  */
+background-color: rgb(241, 236, 228);
+border: solid;
+margin-top: 4px;
+border-radius: 10px;
+border: 1.5px solid #00adb5;
+box-sizing: medium;
+font-size: 1.3rem;
+font-family: Lato, sans-serif;
+padding: 10px;
+&:focus {
+  outline: none;
+  } 
 `;
 export const InputBox = styled.input`
   background-color: rgb(241, 236, 228);
@@ -90,9 +103,9 @@ export const InputBox = styled.input`
   height: 3rem;
   width: 3rem;
   font-size: 1.2rem;
-  /* &:focus {
+  &:focus {
   online: none;
-}  */
+} 
 `;
 
 export const Pstyle = styled.div`
