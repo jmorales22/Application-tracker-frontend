@@ -4,6 +4,10 @@ export const Application = styled.div`
   width: 100%;
 `;
 
+export const NoTopMargin = styled.div`
+  margin-top: 100%;
+`;
+
 export const Centered = styled.div`
   display: flex;
   justify-content: center;
@@ -18,6 +22,29 @@ export const Main = styled.div`
   justify-content: center;
   align-items: center;
   font-family: Lato, sans-serif;
+`;
+
+export const LoginMain = styled.div`
+  margin: 1.3em;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Lato, sans-serif;
+`;
+
+export const LoginTitle = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  color: black;
 `;
 
 export const InputDate = styled.input`
@@ -82,7 +109,21 @@ export const Button = styled.button`
   margin-left: 43%;
   margin-top: 35px;
   padding: 0px;
-  
+`;
+
+export const LoginButton = styled.button`
+  background: #00adb5;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  outline: none;
+  height: 30px;
+  width: 120px;
+  font-size: 14px;
+  font-family: Lato, sans-serif;
+  margin-left: 43%;
+  margin-top: 35px;
+  padding: 0px;
 `;
 
 export const CreateButton = styled.button`
@@ -210,7 +251,19 @@ export const LogoImage = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 80px;
+  margin-top: 1%;
+  @media only screen and (min-device-width: 1025px) {
+    width: 45%;
+    display: block;
+    margin: 0 auto;
+  }
+`;
+
+export const LogoImageLogin = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   @media only screen and (min-device-width: 1025px) {
     width: 45%;
     display: block;
