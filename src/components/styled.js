@@ -8,7 +8,6 @@ export const Centered = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.3em;
 `;
 
 export const Main = styled.div`
@@ -312,15 +311,7 @@ export const DividingLine = styled.span`
   color: white;
   height: 2px;
   background: black;
-  background: -webkit-gradient(
-    radial,
-    50% 50%,
-    0,
-    50% 50%,
-    350,
-    from(#adadad),
-    to(#fff)
-  );
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(#adadad), to(#fff));
 `;
 
 export const CompaniesWrapper = styled.div`
