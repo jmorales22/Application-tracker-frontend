@@ -20,7 +20,7 @@ From the Home Page, you can find all of your applications, track them, and add a
 From the Add Application Page, you can document the jobs you have applied for.
 <img width="600" alt="AppTrack 2020ApplicationInfo" src="https://user-images.githubusercontent.com/58038239/81020856-c9e82080-8e37-11ea-9ea1-15b19384feb6.png">
 <br/>
-If you click on the "See Companies Others Have Applied To" link from your home page, you can review any feedback given regarding interviewing with the company.
+If you click on the "See Companies Others Have Applied To" link from your home page, you can review any feedback <br/> regarding interviewing with the company.
 <img width="600" alt="AppTrack 2020CompanyList" src="https://user-images.githubusercontent.com/58038239/81020872-d3718880-8e37-11ea-92c8-0ea0abc2a923.png">
 <br/>
 To add Interview Data, you can submit your interview history after you have logged the application.  The interview asks several questions to help you and others see the types of interviews the company gave.
