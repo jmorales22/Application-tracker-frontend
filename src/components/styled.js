@@ -247,17 +247,21 @@ export const CompanyLink = styled.div`
   margin: 5%;
 `;
 
+export const OuterIntWrapper = styled.div`
+  max-width: 768px;
+`;
+
 export const InterviewsBody = styled.div`
   color: black;
 `;
 
 export const IntTitle = styled.div`
-  margin-top: 1%;
-  margin-bottom: 1%;
+  margin-top: 3%;
+  margin-bottom: 3%;
   padding-top: 1%;
   padding-bottom: 1%;
   width: 95%;
-  max-width: 768px;
+  width: 360px;
   border-radius: 5px;
   font-weight: bold;
   text-align: center;
