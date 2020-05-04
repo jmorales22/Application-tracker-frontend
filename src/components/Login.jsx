@@ -91,9 +91,7 @@ class Login extends Component {
                 />
               </Centered>
               <Centered>
-                <Centered>
                   <LoginButton type="submit">Submit</LoginButton>
-                </Centered>
               </Centered>
             </form>
           </div>

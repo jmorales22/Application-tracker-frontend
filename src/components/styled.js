@@ -121,7 +121,6 @@ export const LoginButton = styled.button`
   width: 120px;
   font-size: 14px;
   font-family: Lato, sans-serif;
-  margin-left: 43%;
   margin-top: 35px;
   padding: 0px;
 `;
