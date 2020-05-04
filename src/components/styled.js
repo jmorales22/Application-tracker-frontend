@@ -151,6 +151,7 @@ font-family: Lato, sans-serif;
 padding: 10px;
 &:focus {
   outline: none;
+}
 `;
 
 export const CommentInput = styled.textarea`
@@ -180,8 +181,8 @@ export const InputBox = styled.input`
   width: 3rem;
   font-size: 1.2rem;
   &:focus {
-  online: none;
-} 
+  outline: none;
+  } 
 `;
 
 export const Pstyle = styled.div`

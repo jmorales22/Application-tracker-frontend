@@ -439,9 +439,7 @@ class InterviewsEntry extends Component {
                         required
                       />
                     </Pstyle>
-                    <Centered>
                       <Button type="submit">Submit</Button>
-                    </Centered>
                   </form>
                 </AppIntBox>
               </AppIntWrapper>
