@@ -23,7 +23,15 @@ const footer = {
 };
 
 const linkStyle = {
-  color: "black",
+  background: "#00adb5",
+  color: "white",
+  border: "3px solid #00adb5",
+  borderRadius: "20px",
+  outline: "none",
+  padding: "6px 6px 6px",
+  height: "40px",
+  fontSize: "14px",
+  fontFamily: "Lato, sans-serif",
   textDecoration: "none",
 };
 
