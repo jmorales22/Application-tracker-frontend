@@ -68,7 +68,7 @@ class UserApps extends Component {
               <Centered>
                 <AppForm>
                   <Link style={linkStyle} to={`/applicationform`}>
-                    +app
+                    +App
                   </Link>
                 </AppForm>
               </Centered>

@@ -2,7 +2,17 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import SignUpHeader from "./SignupHeader";
 import Footer from "./Footer";
-import { Main, Input, Wrapper } from "./styled";
+import {
+  Centered,
+  AppIntWrapper,
+  AppFormBox,
+  Input,
+  OuterWrapper,
+  CreateButton,
+  Wrapper,
+  LinkStyle,
+  DividingLine,
+} from "./styled";
 
 const postAPI = async (url, data) => {
   const response = await fetch(url, {
@@ -64,50 +74,67 @@ class Signup extends Component {
     return (
       <div>
         <SignUpHeader />
-        <Main>Sign Up Here!</Main>
-        <Wrapper>
-          <div>
-            <form onSubmit={(e) => this.handleSubmit(e)} action="/login">
-              <Input
-                type="text"
-                placeholder="First Name"
-                onChange={this.handleChange}
-                name="firstName"
-                value={firstName}
-                required
-              />
-              <br />
-              <Input
-                type="text"
-                placeholder="Last Name"
-                onChange={this.handleChange}
-                name="lastName"
-                value={lastName}
-                required
-              />
-              <br />
-              <Input
-                type="text"
-                placeholder="Email"
-                onChange={this.handleChange}
-                name="email"
-                value={email}
-                required
-              />
-              <br />
-              <Input
-                type="text"
-                placeholder="Password"
-                onChange={this.handleChange}
-                name="password"
-                value={password}
-                required
-              />
-              <br />
-              <button type="submit">SignUp!</button>
-            </form>
-          </div>
-        </Wrapper>
+        <br />
+        <Centered>
+          <OuterWrapper>
+            <Wrapper>
+              <Centered>
+                <AppIntWrapper>
+                  <LinkStyle>
+                    <div> Sign Up Here!</div>
+                  </LinkStyle>
+                  <DividingLine></DividingLine>
+                  <AppFormBox>
+                    <Centered>
+                      <form
+                        onSubmit={(e) => this.handleSubmit(e)}
+                        action="/login"
+                      >
+                        <Input
+                          type="text"
+                          placeholder="First Name"
+                          onChange={this.handleChange}
+                          name="firstName"
+                          value={firstName}
+                          required
+                        />
+                        <br />
+                        <Input
+                          type="text"
+                          placeholder="Last Name"
+                          onChange={this.handleChange}
+                          name="lastName"
+                          value={lastName}
+                          required
+                        />
+                        <br />
+                        <Input
+                          type="text"
+                          placeholder="Email"
+                          onChange={this.handleChange}
+                          name="email"
+                          value={email}
+                          required
+                        />
+                        <br />
+                        <Input
+                          type="text"
+                          placeholder="Password"
+                          onChange={this.handleChange}
+                          name="password"
+                          value={password}
+                          required
+                        />
+                        <br />
+                        <CreateButton type="submit">Sign Up</CreateButton>
+                      </form>
+                    </Centered>
+                  </AppFormBox>
+                </AppIntWrapper>
+              </Centered>
+            </Wrapper>
+          </OuterWrapper>
+        </Centered>
         <Footer />
       </div>
     );
