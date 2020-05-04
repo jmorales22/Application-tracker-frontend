@@ -8,11 +8,9 @@ import {
   AppForm,
   CommentInput,
   AppTitle,
-  Input,
-  Button,
+  SubmitButton,
   AppIntBox,
   OuterWrapper,
-  LinkStyle,
   Wrapper,
   IntEntryWrapper,
   DividingLine,
@@ -430,7 +428,9 @@ class InterviewsEntry extends Component {
                         value={comments}
                         required
                       />
-                      <Button type="submit">Submit</Button>
+                      <Centered>
+                      <SubmitButton type="submit">Submit</SubmitButton>
+                      </Centered>
                   </form>
                 </AppIntBox>
               </IntEntryWrapper>
