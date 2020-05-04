@@ -14,8 +14,45 @@ export const Main = styled.div`
   font-size: 2em;
   margin: 1.3em;
   padding: 0px;
+  font-family: Lato, sans-serif;
 `;
 
+export const InputDate = styled.input`
+  background-color: rgb(241, 236, 228);
+  border: solid;
+  margin-top: 4px;
+  border-radius: 10px;
+  border: 1.5px solid #00adb5;
+  box-sizing: medium;
+  font-size: 20px;
+  font-family: Lato, sans-serif;
+  padding: 10px;
+  &:focus {
+    outline: none;
+  }
+`;
+
+export const AboutH1 = styled.div`
+  font-size: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 40px;
+  color: black;
+`;
+
+export const GithubLinks = styled.div`
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 16px;
+`;
+export const SignUpH1 = styled.div`
+  font-size: 25px;
+  margin-top: 40px;
+  padding: 0px;
+  font-family: Lato, sans-serif;
+  margin-left: 10px;
+`;
 
 export const OuterWrapper = styled.div`
   display: flex;
@@ -41,6 +78,26 @@ export const Button = styled.button`
   font-family: Lato, sans-serif;
 `;
 
+export const CreateButton = styled.button`
+  background: #00adb5;
+  border: 1px;
+  color: white;
+  border: 3px solid #00adb5;
+  border-radius: 20px;
+  outline: none;
+  margin-top: 3%;
+  padding: 0px 4px 0px;
+  height: 30px;
+  font-size: 14px;
+  font-family: Lato, sans-serif;
+`;
+
+export const AppFormBox = styled.div`
+  margin-top: 40px;
+`;
+export const SignUpForm = styled.div`
+  margin-top: 100px;
+`;
 export const IntButton = styled.button`
   background: #ffffff;
   border: 1px;
@@ -80,12 +137,12 @@ export const Input = styled.input`
   border-radius: 10px;
   border: 1.5px solid #00adb5;
   box-sizing: medium;
-  font-size: 1.3rem;
+  font-size: 20px;
   font-family: Lato, sans-serif;
   padding: 10px;
   &:focus {
     outline: none;
-  } 
+  }
 `;
 
 export const CommentInput = styled.textarea`
@@ -114,9 +171,9 @@ export const InputBox = styled.input`
   height: 3rem;
   width: 3rem;
   font-size: 1.2rem;
-  /* &:focus {
-  online: none;
-}  */
+  &:focus {
+    outline: none;
+  }
 `;
 
 export const Pstyle = styled.div`
@@ -170,7 +227,6 @@ export const AppForm = styled.div`
   font-family: Comfortaa, cursive;
 `;
 
-
 export const AppIntWrapper = styled.div`
   padding: 2%;
   min-width: 342px;
@@ -197,15 +253,13 @@ export const YourApps = styled.div`
 export const MainList = styled.ul`
   padding: 1%;
   margin-top: 0%;
-
 `;
 
 export const AppIntBox = styled.div`
   color: black;
 `;
 
-export const AppBox = styled.div`
-`;
+export const AppBox = styled.div``;
 
 export const AppTitle = styled.div`
   margin-top: 1%;
@@ -241,15 +295,23 @@ export const ListCategory = styled.div`
 export const Comments = styled.p`
   font-size: 0.75em;
   margin-top: 0%;
-`; 
+`;
 
 export const DividingLine = styled.span`
-  display:block;
-  border:none;
-  color:white;
+  display: block;
+  border: none;
+  color: white;
   height: 2px;
   background: black;
-  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(#adadad), to(#fff));
+  background: -webkit-gradient(
+    radial,
+    50% 50%,
+    0,
+    50% 50%,
+    350,
+    from(#adadad),
+    to(#fff)
+  );
 `;
 
 export const CompaniesWrapper = styled.div`

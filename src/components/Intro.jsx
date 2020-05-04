@@ -6,7 +6,7 @@ class Intro extends Component {
     return (
       <div>
         <LogoImage>
-          <img style={img} src={logo_transparent}></img>
+          <img style={img} src={logo_transparent} alt="App Track"></img>
         </LogoImage>
       </div>
     );
@@ -18,6 +18,7 @@ const img = {
   justifyContent: "center",
   alignItems: "center",
   width: "100%",
+  marginTop: "70px",
 };
 
 export default Intro;
