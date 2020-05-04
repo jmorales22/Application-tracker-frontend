@@ -40,7 +40,7 @@ class PublicApps extends Component {
           {appsArray.length > 0 ? (
             appsArray.map((app) => (
               <li>
-                {app.first_name} on {appDate(app.application_date)}: {app.position} at {app.company_name}
+                <strong>{app.first_name}</strong> on {appDate(app.application_date)}: {app.position} at {app.company_name}
                 <br />
                 <br />
               </li>
