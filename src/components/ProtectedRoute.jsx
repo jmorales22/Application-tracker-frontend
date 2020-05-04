@@ -1,8 +1,9 @@
 import React from "react";
 import { Route, Link } from "react-router-dom";
 import { LoginConsumer } from "../context/LoginContext";
-import { LogoImage } from '../components/styled';
+import { LogoImage, DefaultMain, Centered } from '../components/styled';
 import logo_transparent from '../images/logo_transparent.png';
+import {  LogoImageProtected } from './styled';
 
 const ProtectedRoute = ({ component: Component, ...rest }) => (
   <LoginConsumer>
@@ -19,17 +20,25 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
                 <div style={h1Style}>AppTrack</div>
                 
               </header>
-              <LogoImage>
+              <Centered>
+              <DefaultMain>
+                <div>
+                  <div>
                 <Link to="/login" style={linkStyle}>
                 <p style ={altpstyle}>Click Here: Return To Login</p>
                 </Link>
+                </div>
                 <div style={centerDiv}>
                 <p>Logged out!</p>
                 </div>
                 <div>
-                <img style={img} src={logo_transparent}/>
+                <LogoImageProtected>
+                 <img style={img} src={logo_transparent} alt="App Track"></img>
+                </LogoImageProtected>
                 </div>
-              </LogoImage>
+                </div>
+                </DefaultMain>
+                </Centered>
               </>
             );
           }}
@@ -79,4 +88,5 @@ const centerDiv = {
   flexGrow: "0",
   textAlign: "center",
   };
+  
 export default ProtectedRoute;

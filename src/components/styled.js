@@ -13,7 +13,13 @@ export const Centered = styled.div`
   justify-content: center;
   align-items: center;
 `;
-
+export const DefaultMain = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3em;
+  max-width: 100%;
+`;
 export const Main = styled.div`
   font-size: 3em;
   margin: 1.3em;
@@ -54,7 +60,7 @@ export const InputDate = styled.input`
   border-radius: 10px;
   border: 1.5px solid #00adb5;
   box-sizing: medium;
-  font-size: 20px;
+  font-size: 1.3rem;
   font-family: Lato, sans-serif;
   padding: 10px;
   &:focus {
@@ -175,25 +181,10 @@ export const LinkStyle = styled.div`
   width: 100%;
   font-size: 14px;
   font-family: Lato, sans-serif;
+  text-decoration: none;
 `;
-
 
 export const Input = styled.input`
-background-color: rgb(241, 236, 228);
-border: solid;
-margin-top: 4px;
-border-radius: 10px;
-border: 1.5px solid #00adb5;
-box-sizing: medium;
-font-size: 1.3rem;
-font-family: Lato, sans-serif;
-padding: 10px;
-&:focus {
-  outline: none;
-}
-`;
-
-export const CommentInput = styled.textarea`
   background-color: rgb(241, 236, 228);
   border: solid;
   margin-top: 4px;
@@ -203,15 +194,44 @@ export const CommentInput = styled.textarea`
   font-size: 1.3rem;
   font-family: Lato, sans-serif;
   padding: 10px;
-  min-width: 30rem;
-  min-height: 5rem;
-  max-width: 30rem;
+  &:focus {
+    outline: none;
+  }
+`;
+
+export const CommentInput = styled.textarea`
+  flex: display;
+  background-color: rgb(241, 236, 228);
+  border: solid;
+  margin-top: 4px;
+  border-radius: 10px;
+  border: 1.5px solid #00adb5;
+  box-sizing: medium;
+  font-size: 1.3rem;
+  font-family: Lato, sans-serif;
+  padding: 10px;
+  min-width: 20rem;
   max-height: 20rem;
+  resize: vertical;
+  width: auto;
   &:focus {
     outline: none;
   } 
 `;
 
+export const AppLinkStyle = styled.div`
+  font-family: Lato, sans-serif;
+  font-size: 14px;
+  border-radius: 10px;
+  height: 20px;
+  color: white;
+  background-color: #00adb5;
+  border: solid 2px #00adb5;
+  text-decoration: none;
+  padding: 0px 8px;
+  padding-top: 4px;
+  position: relative;
+`;
 export const InputBox = styled.input`
   background-color: rgb(241, 236, 228);
   border: solid;
@@ -220,8 +240,8 @@ export const InputBox = styled.input`
   width: 3rem;
   font-size: 1.2rem;
   &:focus {
-  outline: none;
-  } 
+    outline: none;
+  }
 `;
 
 export const Pstyle = styled.div`
@@ -363,7 +383,15 @@ export const DividingLine = styled.span`
   color: white;
   height: 2px;
   background: black;
-  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(#adadad), to(#fff));
+  background: -webkit-gradient(
+    radial,
+    50% 50%,
+    0,
+    50% 50%,
+    350,
+    from(#adadad),
+    to(#fff)
+  );
 `;
 
 export const CompaniesWrapper = styled.div`
@@ -412,11 +440,55 @@ export const InterviewsList = styled.li`
 `;
 
 export const DividingLineCompany = styled.span`
-  display:block;
-  border:none;
-  color:white;
+  display: block;
+  border: none;
+  color: white;
   width: 200px;
   height: 2px;
   background: black;
-  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(#adadad), to(#fff));
+  background: -webkit-gradient(
+    radial,
+    50% 50%,
+    0,
+    50% 50%,
+    350,
+    from(#adadad),
+    to(#fff)
+  );
+`;
+
+export const LogoImageProtected = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  @media only screen and (min-device-width: 1025px) {
+    width: 45%;
+    display: block;
+  }
+`;
+
+export const IntEntryWrapper = styled.div`
+  padding: 2%;
+  min-width: 342px;
+  max-width: 400px;
+  margin-bottom: 3%;
+  color: #00adb5;
+  border-radius: 5px;
+  box-shadow: -0.1px 0.1px 3px;
+`;
+
+export const IntInput = styled.input`
+background-color: rgb(241, 236, 228);
+border: solid;
+margin-top: 4px;
+border-radius: 5px;
+border: 1.5px solid #00adb5;
+box-sizing: medium;
+font-size: 1rem;
+font-family: Lato, sans-serif;
+padding: 5px;
+&:focus {
+  outline: none;
+}
 `;
