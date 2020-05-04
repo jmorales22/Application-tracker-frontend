@@ -426,7 +426,8 @@ export const DividingLineCompany = styled.span`
   background: black;
   background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(#adadad), to(#fff));
 `;
-export const LogoImageLogin = styled.div`
+
+export const LogoImageProtected = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -434,4 +435,5 @@ export const LogoImageLogin = styled.div`
   @media only screen and (min-device-width: 1025px) {
     width: 45%;
     display: block;
+  }
   `;

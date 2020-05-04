@@ -32,9 +32,9 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
                 <p>Logged out!</p>
                 </div>
                 <div>
-                <LogoImageLogin>
+                <LogoImageProtected>
                  <img style={img} src={logo_transparent} alt="App Track"></img>
-                </LogoImageLogin>
+                </LogoImageProtected>
                 </div>
                 </div>
                 </DefaultMain>
