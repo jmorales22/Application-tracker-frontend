@@ -76,13 +76,37 @@ export const LinkStyle = styled.div`
 export const Input = styled.input`
   background-color: rgb(241, 236, 228);
   border: solid;
-  border: 1.5px solid #a9bcf5;
+  margin-top: 4px;
+  border-radius: 10px;
+  border: 1.5px solid #00adb5;
   box-sizing: medium;
   font-size: 1.3rem;
-  /* &:focus {
-    online: none;
-  }  */
+  font-family: Lato, sans-serif;
+  padding: 10px;
+  &:focus {
+    outline: none;
+  } 
 `;
+
+export const CommentInput = styled.textarea`
+  background-color: rgb(241, 236, 228);
+  border: solid;
+  margin-top: 4px;
+  border-radius: 10px;
+  border: 1.5px solid #00adb5;
+  box-sizing: medium;
+  font-size: 1.3rem;
+  font-family: Lato, sans-serif;
+  padding: 10px;
+  min-width: 30rem;
+  min-height: 5rem;
+  max-width: 30rem;
+  max-height: 20rem;
+  &:focus {
+    outline: none;
+  } 
+`;
+
 export const InputBox = styled.input`
   background-color: rgb(241, 236, 228);
   border: solid;
