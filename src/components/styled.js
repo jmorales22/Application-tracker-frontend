@@ -9,7 +9,13 @@ export const Centered = styled.div`
   justify-content: center;
   align-items: center;
 `;
-
+export const DefaultMain = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3em;
+  max-width: 100%;
+`;
 export const Main = styled.div`
   font-size: 3em;
   margin: 1.3em;
@@ -368,3 +374,12 @@ export const DividingLineCompany = styled.span`
   background: black;
   background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(#adadad), to(#fff));
 `;
+export const LogoImageLogin = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  @media only screen and (min-device-width: 1025px) {
+    width: 45%;
+    display: block;
+  `;
