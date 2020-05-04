@@ -4,7 +4,7 @@ class NoInterviewData extends Component {
   render() {
     return (
       <p>
-        There is no interview data for this company.
+        No Interview Data Available
       </p>
     );
   }
