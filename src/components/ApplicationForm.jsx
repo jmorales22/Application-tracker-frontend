@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../App.css";
 import ApplicationFormHeader from "./ApplicationFormHeader";
 import { withRouter } from "react-router-dom";
-import { Wrapper, Main, Hstyle, Input } from "./styled";
+import { Wrapper, Hstyle, Input } from "./styled";
 
 const postAPI = async (url, data) => {
   const response = await fetch(url, {

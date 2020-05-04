@@ -82,7 +82,6 @@ const back = {
   fontFamily: "Lato, sans-serif",
   fontSize: "14px",
   height: "20px",
-  color: "#00adb5",
   background: "#00adb5",
   border: "solid 2px #00adb5",
   color: "#FFFFFF",
