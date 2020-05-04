@@ -3,8 +3,7 @@ import LoginContext from '../context/LoginContext';
 import {withRouter} from 'react-router-dom';
 import LoginHeader from './LoginHeader';
 import Footer from './Footer';
-import {Main, Button, Wrapper, Input, Centered} from './styled';
-import {LogoImage} from '../components/styled';
+import { LoginMain, LoginButton, LogoImageLogin, LoginTitle, Input, Centered} from './styled';
 import logo_transparent from '../images/logo_transparent.png';
 
 class Login extends Component {
@@ -69,9 +68,9 @@ class Login extends Component {
     return (
       <div>
         <LoginHeader />
-        <LogoImage>
-          <Main>Login here!</Main>
+        <LoginMain>
           <div>
+          <LoginTitle>Sign In</LoginTitle>
             <form onSubmit={e => this.handleSubmit (e)}>
               <Centered>
                 <Input
@@ -91,13 +90,15 @@ class Login extends Component {
                   placeholder="password"
                 />
               </Centered>
-              <Button type="submit">Submit</Button>
+              <Centered>
+                  <LoginButton type="submit">Submit</LoginButton>
+              </Centered>
             </form>
           </div>
-          <div>
-            <img style={img} src={logo_transparent} />
-          </div>
-        </LogoImage>
+          </LoginMain>
+          <LogoImageLogin>
+            <img style={img} src={logo_transparent} alt="App Track"></img>
+        </LogoImageLogin>
         <Footer />
       </div>
     );
@@ -109,4 +110,5 @@ const img = {
   alignItems: 'center',
   width: '100%',
 };
+
 export default withRouter (Login);

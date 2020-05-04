@@ -19,7 +19,8 @@ import {
 
 class PublicInterviews extends Component {
   state = {
-    interviews: []
+    interviews: [{company_name: 'Loading'}],
+    hasData: false,
   };
 
   async getData() {
@@ -34,11 +35,13 @@ class PublicInterviews extends Component {
 
     this.setState({
       interviews: interviews,
+      hasData: true
     });
   }
 
   render() {
-    let interviewsArray = this.state.interviews;
+    //let interviewsArray = this.state.interviews;
+    const { interviews, hasData } = this.state;
 
     return (
       <div>
@@ -48,14 +51,17 @@ class PublicInterviews extends Component {
             <div>
               <Centered>
                 <IntTitle>
-                  Interviews at <strong>{interviewsArray.company_name}</strong>
+                  {interviews !== [] ?
+                  (`Interviews at ${interviews[0].company_name}`)
+                  :
+                  (`Getting Company Name`)}
                 </IntTitle>
               </Centered>
             <Wrapper>
               <Centered>
                 <InterviewsBody style={userApp}>
-                  {interviewsArray.length > 0 ? (
-                    interviewsArray.map((interview, index) => {
+                  {!!hasData > 0 ? (
+                    interviews.map((interview, index) => {
                       const date = new Date(interview.interview_date);
                       const newDate = date.getDate();
                       let month = date.getMonth() + 1;
@@ -74,7 +80,7 @@ class PublicInterviews extends Component {
                                           Interview Round:
                                       </ListCategory>
                                       <div>
-                                          {interviewsArray[index].round}
+                                          {interviews[index].round}
                                       </div>
                                   </ListItem>
                                   <ListItem>
@@ -82,7 +88,7 @@ class PublicInterviews extends Component {
                                           Type:
                                       </ListCategory>
                                       <div>
-                                          {interviewsArray[index].interview_type}
+                                          {interviews[index].interview_type}
                                       </div>
                                   </ListItem>
                                   <ListItem>
@@ -90,7 +96,7 @@ class PublicInterviews extends Component {
                                           Rating:
                                       </ListCategory>
                                       <div>
-                                          {interviewsArray[index].interview_rating}
+                                          {interviews[index].interview_rating}
                                       </div>
                                   <ListItem>
                                   </ListItem>
@@ -98,7 +104,7 @@ class PublicInterviews extends Component {
                                           Interviewer:
                                       </ListCategory>
                                       <div>
-                                          {interviewsArray[index].interviewer}
+                                          {interviews[index].interviewer}
                                       </div>
                                   </ListItem>
                                   <ListItem>
@@ -106,7 +112,7 @@ class PublicInterviews extends Component {
                                           Contact:
                                       </ListCategory>
                                       <div>
-                                          {interviewsArray[index].follow_up_person}
+                                          {interviews[index].follow_up_person}
                                       </div>
                                   </ListItem>
                                   <ListItem>
@@ -114,7 +120,7 @@ class PublicInterviews extends Component {
                                           Contact Email:
                                       </ListCategory>
                                       <div>
-                                          {interviewsArray[index].follow_up_email}
+                                          {interviews[index].follow_up_email}
                                       </div>
                                   </ListItem>
                                   <ListItem>
@@ -122,7 +128,7 @@ class PublicInterviews extends Component {
                                           Whiteboarding:
                                       </ListCategory>
                                       <div>
-                                          {interviewsArray[index].whiteboarding}
+                                          {interviews[index].whiteboarding}
                                       </div>
                                   </ListItem>
                                   <ListItem>
@@ -130,7 +136,7 @@ class PublicInterviews extends Component {
                                           Coding Challenge:
                                       </ListCategory>
                                       <div>
-                                          {interviewsArray[index].code_challenge}
+                                          {interviews[index].code_challenge}
                                       </div>
                                   </ListItem>
                                   <ListItem>
@@ -139,7 +145,7 @@ class PublicInterviews extends Component {
                                       </ListCategory>
                                   </ListItem>
                                   <Comments>
-                                      {interviewsArray[index].comments}
+                                      {interviews[index].comments}
                                   </Comments>
                               </IntListItems>
                             </CompaniesWrapper>
