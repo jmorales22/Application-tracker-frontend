@@ -3,7 +3,7 @@ import "../App.css";
 import ApplicationFormHeader from "./ApplicationFormHeader";
 import { withRouter } from "react-router-dom";
 import {
-  LinkStyle,
+  AppTitle,
   CreateButton,
   AppIntWrapper,
   Centered,
@@ -106,9 +106,9 @@ class ApplicationForm extends Component {
             <Wrapper>
               <Centered>
                 <AppIntWrapper>
-                  <LinkStyle>
-                    <div>Complete your application information.</div>
-                  </LinkStyle>
+                  <AppTitle>
+                    <div>Complete your application information</div>
+                  </AppTitle>
                   <DividingLine></DividingLine>
                   <AppFormBox>
                     <Centered>

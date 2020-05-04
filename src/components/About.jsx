@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import Header from "./Header";
+import { Link } from "react-router-dom";
+
 import {
   AboutH1,
   Centered,
   AppIntWrapper,
   AppFormBox,
-  Input,
-  OuterWrapper,
-  CreateButton,
-  Wrapper,
   LinkStyle,
+  OuterWrapper,
+  Wrapper,
   DividingLine,
   GithubLinks,
 } from "./styled";
@@ -26,9 +26,9 @@ class About extends Component {
             <Wrapper>
               <Centered>
                 <AppIntWrapper>
-                  <LinkStyle>
-                    <div> AppTrack</div>
-                  </LinkStyle>
+                  <Link style={linkStyle1} to={`/`}>
+                    <LinkStyle>AppTrack</LinkStyle>
+                  </Link>
                   <DividingLine></DividingLine>
                   <AppFormBox>
                     <AboutH1>
@@ -70,5 +70,8 @@ class About extends Component {
 const linkStyle = {
   color: "blue",
 };
-
+const linkStyle1 = {
+  color: "#00adb5",
+  textDecoration: "none",
+};
 export default About;

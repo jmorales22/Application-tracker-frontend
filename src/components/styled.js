@@ -27,7 +27,7 @@ export const InputDate = styled.input`
   border-radius: 10px;
   border: 1.5px solid #00adb5;
   box-sizing: medium;
-  font-size: 20px;
+  font-size: 1.3rem;
   font-family: Lato, sans-serif;
   padding: 10px;
   &:focus {
@@ -82,7 +82,6 @@ export const Button = styled.button`
   margin-left: 43%;
   margin-top: 35px;
   padding: 0px;
-  
 `;
 
 export const CreateButton = styled.button`
@@ -135,22 +134,22 @@ export const LinkStyle = styled.div`
   width: 100%;
   font-size: 14px;
   font-family: Lato, sans-serif;
+  text-decoration: none;
 `;
 
-
 export const Input = styled.input`
-background-color: rgb(241, 236, 228);
-border: solid;
-margin-top: 4px;
-border-radius: 10px;
-border: 1.5px solid #00adb5;
-box-sizing: medium;
-font-size: 1.3rem;
-font-family: Lato, sans-serif;
-padding: 10px;
-&:focus {
-  outline: none;
-}
+  background-color: rgb(241, 236, 228);
+  border: solid;
+  margin-top: 4px;
+  border-radius: 10px;
+  border: 1.5px solid #00adb5;
+  box-sizing: medium;
+  font-size: 1.3rem;
+  font-family: Lato, sans-serif;
+  padding: 10px;
+  &:focus {
+    outline: none;
+  }
 `;
 
 export const CommentInput = styled.textarea`
@@ -169,9 +168,22 @@ export const CommentInput = styled.textarea`
   max-height: 20rem;
   &:focus {
     outline: none;
-  } 
+  }
 `;
 
+export const AppLinkStyle = styled.div`
+  font-family: Lato, sans-serif;
+  font-size: 14px;
+  border-radius: 10px;
+  height: 20px;
+  color: white;
+  background-color: #00adb5;
+  border: solid 2px #00adb5;
+  text-decoration: none;
+  padding: 0px 8px;
+  padding-top: 4px;
+  position: relative;
+`;
 export const InputBox = styled.input`
   background-color: rgb(241, 236, 228);
   border: solid;
@@ -180,8 +192,8 @@ export const InputBox = styled.input`
   width: 3rem;
   font-size: 1.2rem;
   &:focus {
-  outline: none;
-  } 
+    outline: none;
+  }
 `;
 
 export const Pstyle = styled.div`
@@ -311,7 +323,15 @@ export const DividingLine = styled.span`
   color: white;
   height: 2px;
   background: black;
-  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(#adadad), to(#fff));
+  background: -webkit-gradient(
+    radial,
+    50% 50%,
+    0,
+    50% 50%,
+    350,
+    from(#adadad),
+    to(#fff)
+  );
 `;
 
 export const CompaniesWrapper = styled.div`
@@ -360,11 +380,19 @@ export const InterviewsList = styled.li`
 `;
 
 export const DividingLineCompany = styled.span`
-  display:block;
-  border:none;
-  color:white;
+  display: block;
+  border: none;
+  color: white;
   width: 200px;
   height: 2px;
   background: black;
-  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(#adadad), to(#fff));
+  background: -webkit-gradient(
+    radial,
+    50% 50%,
+    0,
+    50% 50%,
+    350,
+    from(#adadad),
+    to(#fff)
+  );
 `;
