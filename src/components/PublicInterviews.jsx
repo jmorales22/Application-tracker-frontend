@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import NoInterviewData from "./NoInterviewData";
 import PublicInterviewsHeader from "./PublicInterviewsHeader";
-import { Link } from "react-router-dom";
 import {
   Centered,
   OuterIntWrapper,
@@ -51,16 +50,16 @@ class PublicInterviews extends Component {
             <div>
               <Centered>
                 <IntTitle>
-                  {interviews !== [] ?
-                  (`Interviews at ${interviews[0].company_name}`)
+                  {interviews.length === 0 ?
+                  (<NoInterviewData />)
                   :
-                  (`Getting Company Name`)}
+                  (`Interviews at ${interviews[0].company_name}`)}
                 </IntTitle>
               </Centered>
             <Wrapper>
               <Centered>
                 <InterviewsBody style={userApp}>
-                  {!!hasData > 0 ? (
+                  {!!interviews !== 0 ? (
                     interviews.map((interview, index) => {
                       const date = new Date(interview.interview_date);
                       const newDate = date.getDate();
