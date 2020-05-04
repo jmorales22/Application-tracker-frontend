@@ -49,7 +49,6 @@ class UserApps extends Component {
     return (
       <>
         <UserAppsHeader />
-<<<<<<< HEAD
         <Centered>
           <OuterWrapper>
             <Wrapper>
@@ -95,38 +94,6 @@ class UserApps extends Component {
                 ) : (
                   <li>
                     <NoData />
-=======
-        <br />
-        <Wrapper>
-          <p>
-            <Link style={linkStyle} to={`/companies`}>
-              See a List of All User Application Companies
-            </Link>
-          </p>
-          <h3> Your submitted application data:</h3>
-          <p>
-            <Link style={linkStyle} to={`/applicationform`}>
-              <img src={plus} height="20" width="20" alt="add" />
-              Application Form
-            </Link>
-          </p>
-          <ul style={userApp}>
-            {appsArray.length > 0 ? (
-              appsArray.map((app, index) => {
-                return (
-                  <li>
-                    <SingleApp app={this.state.apps[index]}></SingleApp>
-                    <div></div>
-                    <Link
-                      style={linkStyle}
-                      to={`/interviewentry/${app.id}/${app.company_id}`}
-                    >
-                      Enter interview information{" "}
-                    </Link>
-                    <br />
-
-                    <br />
->>>>>>> 09819860317e62a2c64e3c65fa9fb79956e639bf
                   </li>
                 )}
               </MainList>
