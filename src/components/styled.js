@@ -455,7 +455,8 @@ export const DividingLineCompany = styled.span`
     to(#fff)
   );
 `;
-export const LogoImageLogin = styled.div`
+
+export const LogoImageProtected = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
