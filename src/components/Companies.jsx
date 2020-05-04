@@ -2,7 +2,20 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import NoData from "./NoData";
 import CompaniesHeader from "./CompaniesHeader";
-import plus from "../images/plus.png";
+import {
+  Centered,
+  AppForm,
+  OuterWrapper,
+  LinkStyle,
+  Wrapper,
+  CompaniesWrapper,
+  AppIntTitle,
+  MainList,
+  DividingLineCompany,
+  CompanyList,
+  CompanyLink
+ } from "./styled";
+
 
 class Companies extends Component {
   state = {
@@ -30,30 +43,45 @@ class Companies extends Component {
       <div>
         <>
           <CompaniesHeader />
-          <p>
-            <Link style={linkStyle} to={`/applicationform`}>
-              <img src={plus} height="20" width="20" alt="add" />
-              Application Form
-            </Link>
-          </p>
           <br />
-          <h3> Companies that other students have applied to:</h3>
-          <ul style={userApp}>
-            {companyArray.length > 0 ? (
-              companyArray.map((company) => (
-                <li>
-                  <br />
-                  <Link style={linkStyle} to={`/companies/${company.id}`}>
-                    {company.company_name}
-                  </Link>
-                </li>
-              ))
-            ) : (
-              <li>
-                <NoData />
-              </li>
-            )}
-          </ul>
+          <Centered>
+            <OuterWrapper>
+              <Wrapper>
+              <Centered>
+              <CompaniesWrapper>
+                <Centered>
+                  <AppForm>
+                    <Link style={linkStyle} to={`/applicationform`}>
+                      +App
+                    </Link>
+                  </AppForm>
+                </Centered>
+                  <AppIntTitle> Companies others have applied to:</AppIntTitle>
+              <Centered>
+                <div style={userApp}>
+                  {companyArray.length > 0 ? (
+                    companyArray.map((company) => (
+                      <div>
+                        <Link style={linkStyle} to={`/companies/${company.id}`}>
+                          <CompanyLink>
+                              {company.company_name}
+                            </CompanyLink>
+                          </Link>
+                        <DividingLineCompany></DividingLineCompany>
+                      </div>
+                    ))
+                  ) : (
+                    <li>
+                      <NoData />
+                    </li>
+                  )}
+                </div>
+              </Centered>
+              </CompaniesWrapper>
+              </Centered>
+              </Wrapper>
+            </OuterWrapper>
+          </Centered>
         </>
       </div>
     );
@@ -65,7 +93,8 @@ const userApp = {
 };
 
 const linkStyle = {
-  color: "blue",
+  color: "#00adb5",
+  textDecoration: "none",
 };
 
 export default Companies;

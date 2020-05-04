@@ -143,7 +143,7 @@ export const AppForm = styled.div`
   margin-top: 3%;
   margin-bottom: 3%;
   font-size: 14px;
-  font-family: Lato, sans-serif;
+  font-family: Comfortaa, cursive;
 `;
 
 
@@ -206,6 +206,7 @@ export const ListItem = styled.div`
 
 export const IntListItems = styled.div`
   margin-left: 5%;
+  color: black;
 `;
 
 export const ListCategory = styled.div`
@@ -222,6 +223,57 @@ export const DividingLine = styled.span`
   display:block;
   border:none;
   color:white;
+  height: 2px;
+  background: black;
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(#adadad), to(#fff));
+`;
+
+export const CompaniesWrapper = styled.div`
+  padding: 2%;
+  min-width: 342px;
+  margin-bottom: 3%;
+  color: #00adb5;
+  border-radius: 5px;
+  box-shadow: -0.1px 0.1px 3px;
+`;
+
+export const CompanyList = styled.ul`
+  display: flex;
+  color: black;
+`;
+
+export const CompanyLink = styled.div`
+  text-align: center;
+  margin: 5%;
+`;
+
+export const InterviewsBody = styled.div`
+  color: black;
+`;
+
+export const IntTitle = styled.div`
+  margin-top: 1%;
+  margin-bottom: 1%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  width: 95%;
+  max-width: 768px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #e6e8ed;
+  color: #00adb5;
+`;
+
+export const InterviewsList = styled.li`
+  margin-bottom: 2%;
+`;
+
+export const DividingLineCompany = styled.span`
+  display:block;
+  border:none;
+  color:white;
+  width: 200px;
   height: 2px;
   background: black;
   background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(#adadad), to(#fff));
