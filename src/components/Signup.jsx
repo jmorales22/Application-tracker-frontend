@@ -118,7 +118,7 @@ class Signup extends Component {
                         />
                         <br />
                         <Input
-                          type="text"
+                          type="password"
                           placeholder="Password"
                           onChange={this.handleChange}
                           name="password"
