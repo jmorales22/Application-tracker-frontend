@@ -9,7 +9,6 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
   <LoginConsumer>
     {({ user }) => {
       return (
-      
         <Route
           render={(props) => {
             return user.status ? (
@@ -76,14 +75,14 @@ const headerStyle = {
   margin: "0",
 };
 const img = {
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  width: '100%',
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  width: "100%",
 };
 const centerDiv = {
-  marginLeft: '33%',
-  marginRight: 'auto',
+  marginLeft: "33%",
+  marginRight: "auto",
   fontSize: "25px",
   fontFamily: "Comfortaa, cursive",
   color: "#00adb5",
@@ -91,6 +90,6 @@ const centerDiv = {
   flexDirection: "row",
   flexGrow: "0",
   textAlign: "center",
-  };
-  
+};
+
 export default ProtectedRoute;

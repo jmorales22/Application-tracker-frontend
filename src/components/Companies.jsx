@@ -6,16 +6,12 @@ import {
   Centered,
   AppForm,
   OuterWrapper,
-  LinkStyle,
   Wrapper,
   CompaniesWrapper,
   AppIntTitle,
-  MainList,
   DividingLineCompany,
-  CompanyList,
-  CompanyLink
- } from "./styled";
-
+  CompanyLink,
+} from "./styled";
 
 class Companies extends Component {
   state = {
@@ -47,38 +43,44 @@ class Companies extends Component {
           <Centered>
             <OuterWrapper>
               <Wrapper>
-              <Centered>
-              <CompaniesWrapper>
                 <Centered>
-                  <AppForm>
-                    <Link style={linkStyle} to={`/applicationform`}>
-                      +App
-                    </Link>
-                  </AppForm>
-                </Centered>
-                  <AppIntTitle> Companies others have applied to:</AppIntTitle>
-              <Centered>
-                <div style={userApp}>
-                  {companyArray.length > 0 ? (
-                    companyArray.map((company) => (
-                      <div>
-                        <Link style={linkStyle} to={`/companies/${company.id}`}>
-                          <CompanyLink>
-                              {company.company_name}
-                            </CompanyLink>
-                          </Link>
-                        <DividingLineCompany></DividingLineCompany>
+                  <CompaniesWrapper>
+                    <Centered>
+                      <AppForm>
+                        <Link style={linkStyle} to={`/applicationform`}>
+                          +App
+                        </Link>
+                      </AppForm>
+                    </Centered>
+                    <AppIntTitle>
+                      {" "}
+                      Companies others have applied to:
+                    </AppIntTitle>
+                    <Centered>
+                      <div style={userApp}>
+                        {companyArray.length > 0 ? (
+                          companyArray.map((company) => (
+                            <div>
+                              <Link
+                                style={linkStyle}
+                                to={`/companies/${company.id}`}
+                              >
+                                <CompanyLink>
+                                  {company.company_name}
+                                </CompanyLink>
+                              </Link>
+                              <DividingLineCompany></DividingLineCompany>
+                            </div>
+                          ))
+                        ) : (
+                          <li>
+                            <NoData />
+                          </li>
+                        )}
                       </div>
-                    ))
-                  ) : (
-                    <li>
-                      <NoData />
-                    </li>
-                  )}
-                </div>
-              </Centered>
-              </CompaniesWrapper>
-              </Centered>
+                    </Centered>
+                  </CompaniesWrapper>
+                </Centered>
               </Wrapper>
             </OuterWrapper>
           </Centered>

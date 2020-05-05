@@ -68,7 +68,7 @@ class About extends Component {
   }
 }
 const linkStyle = {
-  color: "blue",
+  color: "#00adb5",
 };
 const linkStyle1 = {
   color: "#00adb5",
