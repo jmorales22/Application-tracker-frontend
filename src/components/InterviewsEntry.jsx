@@ -133,9 +133,8 @@ class InterviewsEntry extends Component {
                   </Link>
                 </AppForm>
               </Centered>
-              <br />
-              <AppTitle>Add an Interview to Your Application</AppTitle>
               <IntEntryWrapper>
+              <AppTitle>Add an Interview to Your Application</AppTitle>
                 <AppIntBox>
                   <form onSubmit={(e) => this.handleSubmit(e)}>
                     What round of interview are you in?

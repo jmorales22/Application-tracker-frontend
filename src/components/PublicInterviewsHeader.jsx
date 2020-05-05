@@ -8,6 +8,9 @@ function Header() {
       <div>
         <div style={h1Style}>AppTrack</div>
         <div style={links}>
+          <Link style={HomePage} to={`/companies`}>
+            Back
+          </Link>
           <Link style={HomePage} to={`/applications`}>
             Home Page
           </Link>
