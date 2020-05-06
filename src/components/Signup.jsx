@@ -54,7 +54,7 @@ class Signup extends Component {
         user_password: password,
         is_admin: "no",
       };
-      const url = "http://localhost:2000/adduser";
+      const url = "https://application-tracker-capstone.herokuapp.com/adduser";
       const response = await postAPI(url, data);
 
       if (response.status === 200) {

@@ -29,7 +29,7 @@ class UserApps extends Component {
     let user_id = this.state.user_id;
 
     const response = await fetch(
-      `http://localhost:2000/applications/${user_id}`
+      `https://application-tracker-capstone.herokuapp.com/applications/${user_id}`
     );
     const data = await response.json();
     return data;

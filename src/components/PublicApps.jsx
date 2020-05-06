@@ -7,7 +7,7 @@ class PublicApps extends Component {
   };
 
   async getData() {
-    const response = await fetch("http://localhost:2000/apps");
+    const response = await fetch("https://application-tracker-capstone.herokuapp.com/apps");
     const data = await response.json();
     return data;
   }

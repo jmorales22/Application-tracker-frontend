@@ -91,7 +91,7 @@ class InterviewsEntry extends Component {
         comments: comments,
       };
 
-      const url = "http://localhost:2000/interviewsEntry";
+      const url = "https://application-tracker-capstone.herokuapp.com/interviewsEntry";
       const response = await postAPI(url, data);
 
       if (response.status === 200) {

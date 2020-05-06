@@ -19,7 +19,7 @@ class Companies extends Component {
   };
 
   async getData() {
-    const response = await fetch(`http://localhost:2000/companies`);
+    const response = await fetch(`https://application-tracker-capstone.herokuapp.com/companies`);
     const data = await response.json();
     return data;
   }

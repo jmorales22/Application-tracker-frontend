@@ -9,7 +9,7 @@ class UserInterviews extends Component {
 
   async getInterviews() {
     const response = await fetch(
-      `http://localhost:2000/interviews/${this.state.app_id}`
+      `https://application-tracker-capstone.herokuapp.com/interviews/${this.state.app_id}`
     );
     const data = await response.json();
     return data;

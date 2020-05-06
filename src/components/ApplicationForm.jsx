@@ -72,7 +72,7 @@ class ApplicationForm extends Component {
         make_public: makePublic,
       };
 
-      const url = "http://localhost:2000/userapplications";
+      const url = "https://application-tracker-capstone.herokuapp.com/userapplications";
       const response = await postAPI(url, data);
 
       if (response === 200) {

@@ -43,7 +43,7 @@ class Login extends Component {
         user_password: password,
       };
 
-      const url = 'http://localhost:2000/login/loginuser';
+      const url = 'https://application-tracker-capstone.herokuapp.com/login/loginuser';
       const response = await this.postAPI (url, data);
 
       if (response.userId > 0) {

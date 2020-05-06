@@ -23,7 +23,7 @@ class PublicInterviews extends Component {
 
   async getData() {
     const { id } = this.props.match.params;
-    const response = await fetch(`http://localhost:2000/companies/${id}`);
+    const response = await fetch(`https://application-tracker-capstone.herokuapp.com/companies/${id}`);
     const data = await response.json();
     return data;
   }
